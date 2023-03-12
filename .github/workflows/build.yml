@@ -36,11 +36,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install Node Modules
-      working-directory: '/'
       run: npm install
       
     - name: Build Node Frontend
-      working-directory: '/'
       run: npm run build
 
     - name: Upload Frontend Package
