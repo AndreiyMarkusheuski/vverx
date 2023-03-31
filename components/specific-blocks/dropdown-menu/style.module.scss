@@ -1,0 +1,42 @@
+@import 'styles/colors.scss';
+@import 'styles/to-rem.scss';
+
+.dropdown {
+    display: block;
+
+    & .childs {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background: white;
+        top: calc(100% + 10px);
+        max-height: 0;
+        overflow: hidden;
+
+        & .link {
+            display: block;
+            padding: 0 !important;
+            margin: 0;
+        }
+
+        a {
+            outline: none;
+            text-decoration: none;
+        }
+    }
+
+    &.active {
+
+        & .childs {
+            max-height: 1000px;
+            transition: all .5s ease-in;
+        }
+
+        & .title {
+            color: #000;
+            border-bottom: 2px solid $c-orange;
+        }
+    }
+}

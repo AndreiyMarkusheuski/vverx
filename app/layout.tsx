@@ -1,5 +1,6 @@
 import Header from "../components/header";
-import './globals.scss';
+import Footer from "../components/footer";
+import "./globals.scss";
 
 export const metadata = {
   title: "Вверх Техно",
@@ -8,9 +9,11 @@ export const metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="ru">
+    <head></head>
     <body>
       <Header />
       {children}
+      <Footer />
     </body>
   </html>
 );

@@ -1,0 +1,27 @@
+@import 'styles/colors.scss';
+@import 'styles/to-rem.scss';
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+
+    border-radius: 33px;
+    
+    outline: none;
+    text-decoration: none;
+
+    transition: all .5s ease;
+
+    &.primary {
+        color: $c-second-text;
+        background-color: $c-main-bg;
+        font-size: toRem(18);
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}

@@ -1,3 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+    font-family: "UniNeue";
+    src: url("../public/fonts/UniNeueRegular.woff2");
+    src: url("../public/fonts/UniNeueRegular.ttf") format("ttf"),
+        url("../public/fonts/UniNeueRegular.woff") format("woff"),
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'UniNeue';
+}
+

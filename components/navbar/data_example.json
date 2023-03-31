@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Аренда",
+      "path": "/rent",
+      "childs": [
+        {
+          "id": 11,
+          "title": "Tractor",
+          "path": "/rent/tractor"
+        },
+        {
+          "id": 11,
+          "title": "Tractor",
+          "path": "/rent/tractor"
+        },
+        {
+          "id": 11,
+          "title": "Tractor",
+          "path": "/rent/tractor"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Купить",
+      "path": "/buy",
+      "childs": [
+        {
+          "id": 11,
+          "title": "Container",
+          "path": "/buy/container"
+        },
+        {
+          "id": 11,
+          "title": "Container",
+          "path": "/buy/container"
+        },
+        {
+          "id": 11,
+          "title": "Container",
+          "path": "/buy/container"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Contacts",
+      "path": "/contacts"
+    }
+  ]
+}
