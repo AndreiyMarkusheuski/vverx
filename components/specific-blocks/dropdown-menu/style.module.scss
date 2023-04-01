@@ -3,39 +3,82 @@
 
 .dropdown {
     display: block;
+    position: relative;
 
     & .childs {
         position: absolute;
+        top: toRem(60);
+        left: - toRem(30);
+        padding: 0 toRem(20);
+
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        background: white;
-        top: calc(100% + 10px);
+        align-items: flex-start;
+
+        background: $c-white;
+
+        padding: 0 20px;
         max-height: 0;
         overflow: hidden;
 
         & .link {
+            line-height: 110%;
             display: block;
-            padding: 0 !important;
-            margin: 0;
+            width: max-content;
+            text-transform: uppercase;
+            color: $c-second-text;
+
+            padding: 0 10px;
+            margin: 0 10px;
         }
 
         a {
-            outline: none;
-            text-decoration: none;
+            margin-top: 10px;
         }
     }
 
-    &.active {
+    & .title, a {
+        color: $c-second-text;
+        transition: color .5s ease;
 
+        &:hover {
+            color: $c-orange;
+            cursor: pointer;
+        }
+    }
+
+    & .title {
+        margin: 0 5px;
+        padding: 0 8px;
+        text-transform: uppercase;
+        border-bottom: 2px solid transparent;
+    }
+
+    &.active {
         & .childs {
+            padding: 15px 20px;
+            padding-top: 5px;
             max-height: 1000px;
-            transition: all .5s ease-in;
+            transition: max-height .5s ease-in;
+            z-index: 10;
+
+            & .link {
+                display: inline-flex;
+                align-items: center;
+
+                transition: all .3s ease;
+
+                &.active,
+                &:hover {
+                    color: $c-orange;
+                    cursor: pointer;
+                }
+            }
         }
 
         & .title {
-            color: #000;
+            color: $c-orange;
             border-bottom: 2px solid $c-orange;
         }
     }

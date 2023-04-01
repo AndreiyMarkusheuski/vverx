@@ -6,17 +6,17 @@ import { usePathname } from 'next/navigation';
 
 import DropdownMenu from "../specific-blocks/dropdown-menu";
 import Container from "../specific-blocks/container";
-import Button from '../specific-blocks/button'
+import { CallUsButton } from 'components/specific-buttons'
 
 import styles from "./style.module.scss";
 
 import data from "./data_example.json";
 const { data: navigation } = data; // Only now
 
-const Navbar = (): React.Node => {
+const Navbar = () => {
   const pathname = usePathname();
 
-  const getNavigation = (navigation): React.Node[] => {
+  const getNavigation = (navigation: any[]): React.ReactNode[] => {
     return navigation.map((nav) => (
       <DropdownMenu options={nav} pathname={pathname} />
     ));
@@ -36,10 +36,9 @@ const Navbar = (): React.Node => {
           </Link>
         </div>
         <div className={styles.links}>{getNavigation(navigation)}</div>
-        <Button 
-          styleType='primary'
-          type='call'
-          href='+375291231232' //get from json
+        <CallUsButton 
+          classNames={styles.primary}
+          number='+375291231232' //get from json
           text='Позвонить нам'
         />
       </nav>

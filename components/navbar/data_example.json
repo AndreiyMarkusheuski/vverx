@@ -3,44 +3,37 @@
     {
       "id": 1,
       "title": "Аренда",
-      "path": "/rent",
       "childs": [
         {
-          "id": 11,
-          "title": "Tractor",
-          "path": "/rent/tractor"
+          "id": 111,
+          "title": "Экскаватор-погрузчик",
+          "path": "/rent/tractor1"
         },
         {
-          "id": 11,
-          "title": "Tractor",
-          "path": "/rent/tractor"
+          "id": 112,
+          "title": "Телескопический погрузчик",
+          "path": "/rent/tractor2"
         },
         {
-          "id": 11,
-          "title": "Tractor",
-          "path": "/rent/tractor"
+          "id": 113,
+          "title": "Подъёмники",
+          "path": "/rent/tractor3"
+        },
+        {
+          "id": 114,
+          "title": "Виброплиты",
+          "path": "/rent/tractor4"
         }
       ]
     },
     {
       "id": 2,
       "title": "Купить",
-      "path": "/buy",
       "childs": [
         {
-          "id": 11,
-          "title": "Container",
-          "path": "/buy/container"
-        },
-        {
-          "id": 11,
-          "title": "Container",
-          "path": "/buy/container"
-        },
-        {
-          "id": 11,
-          "title": "Container",
-          "path": "/buy/container"
+          "id": 111,
+          "title": "Контейнеры",
+          "path": "/buy/containers"
         }
       ]
     },

@@ -1,6 +1,3 @@
-const classnames = (...classes): string => {
-    console.log(classes.join(' '))
-    return  classes.join(" ");
-}
+const classnames = (...classes: any[]): string => classes.join(" ").trim();
 
 export default classnames;

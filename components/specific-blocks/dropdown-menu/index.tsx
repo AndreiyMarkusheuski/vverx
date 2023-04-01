@@ -1,14 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+
+import { StyledButton } from 'components/specific-buttons'
 
 import isDefined from "tools/is-defined";
 import classnames from "tools/classnames";
 
 import styles from "./style.module.scss";
 
-const getDropdownChilds = (childs, pathname): React.Node[] =>
+type TProps = {
+  options: { id: string; title: string; path: string; childs: any[] };
+  pathname: string | null;
+};
+
+const getDropdownChilds = (
+  childs: any[],
+  pathname: string | null
+): React.ReactNode[] =>
   childs.map(({ id, title, path }) => (
     <Link key={`${id}-${title}`} href={path}>
       <span
@@ -22,40 +32,52 @@ const getDropdownChilds = (childs, pathname): React.Node[] =>
     </Link>
   ));
 
-const DropdownMenu = ({ options: { id, title, path, childs }, pathname }) => {
+const DropdownMenu = ({
+  options: { id, title, path, childs },
+  pathname,
+}: TProps) => {
   const [isDropdownOpen, setDropdownStatus] = useState(false);
   const childsNodes = isDefined(childs)
     ? getDropdownChilds(childs, pathname)
     : [];
 
-  const handleClick = () => setDropdownStatus((prevState) => !prevState);
-  const closeDropdown = () => setDropdownStatus(false);
+  const dropDownRef = useRef<HTMLDivElement>(null);
+  const hideDropdownMenu = (event: MouseEvent) => {
+    if (
+      isDefined(dropDownRef.current) &&
+      dropDownRef.current &&
+      event.target instanceof HTMLElement &&
+      !dropDownRef.current.contains(event.target)
+    ) {
+      setDropdownStatus(false);
+    }
+  };
 
   useEffect(() => {
-    document.addEventListener("click", closeDropdown);
+    document.addEventListener("click", hideDropdownMenu);
 
     return () => {
-      document.removeEventListener("click", closeDropdown);
+      document.removeEventListener("click", hideDropdownMenu);
     };
   });
 
   return (
     <div
+      ref={dropDownRef}
       className={classnames(
-        pathname === path ? "active" : null,
-        styles.dropdown,
-        isDropdownOpen ? styles.active : ""
+        isDropdownOpen ? styles.active : "",
+        styles.dropdown
       )}
-      onClick={handleClick}
+      onClick={() => setDropdownStatus((prevState) => !prevState)}
     >
-      <span className={styles.title}>{title}</span>
-      <div
-        className={classnames(
-          styles.childs,
-        )}
-      >
-        {childsNodes}
-      </div>
+      <StyledButton
+        classNames={classnames(styles.title)}
+        text={title}
+        href={isDefined(path) ? path : undefined}
+      />
+      {childsNodes.length > 0 && (
+        <div className={classnames(styles.childs)}>{childsNodes}</div>
+      )}
     </div>
   );
 };
