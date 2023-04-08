@@ -1,0 +1,75 @@
+@import 'styles/colors.scss';
+@import 'styles/to-rem.scss';
+@import 'styles/media.scss';
+
+.footer_menu {
+    padding: toRem(40) toRem(15) toRem(60);
+
+    @include media(s) {
+        padding-bottom: toRem(10);
+    }
+
+    & .content_container {
+        max-width: 1200px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include media(l, m) {
+            align-items: flex-start;
+        }
+
+        & .menu_block {
+            display: flex;
+            flex-direction: column;
+
+            @include media(m) {
+                min-width: 49%;
+            }
+
+            @include media(s) {
+                min-width: 100%;
+            }
+
+            & .block_title,
+            & .link {
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 22px;
+                color: $c-main-text;
+                text-transform: uppercase;
+            }
+
+            & .block_list {
+
+                & .list_item,
+                & .link {
+                    font-size: 12px;
+                    font-weight: 100;
+                    line-height: 20px;
+                    color: $c-main-text;
+                    text-transform: uppercase;
+
+                    margin-top: toRem(15);
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            & .link {
+                transition: all .3s ease;
+
+                &:hover {
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}

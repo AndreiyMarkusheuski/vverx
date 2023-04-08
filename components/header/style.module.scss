@@ -7,6 +7,7 @@
     border-bottom: 5px solid $c-orange;
     padding: toRem(10) toRem(15);
     background-color: $c-white;
+    z-index: 99999;
 
 
     @include media(m, s) {

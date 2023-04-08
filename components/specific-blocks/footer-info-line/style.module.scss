@@ -1,0 +1,131 @@
+@import 'styles/colors.scss';
+@import 'styles/to-rem.scss';
+@import 'styles/media.scss';
+
+.footer_info_line {
+    height: 100px;
+    background-color: $c-second-o-bg;
+    padding: 0 toRem(15);
+    
+    @include media(m, s) {
+        height: auto;
+        padding: toRem(15);
+    }
+
+    & .content_container {
+        max-width: 1200px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media(m, s) {
+            flex-direction: column;
+        }
+
+        & .address {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 16px;
+            font-weight: bold;
+            color: $c-main-text;
+
+            @include media(l, m) {
+                max-width: 200px;
+            }
+            
+            @include media(m, s) {
+                max-width: 400px;
+                order: 2;
+                margin-top: toRem(20);
+            }
+
+            &::before {
+                content: '';
+                background-image: url(../../../public/icons/location.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 30px;
+                min-width: 30px;
+                height: 30px;
+                margin-right: toRem(15);
+            }
+        }
+
+        & .contacts {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & a:first-child {
+                margin-right: toRem(30);
+
+                @include media(l,m,s) {
+                    margin-right: toRem(0);
+                }
+            }
+
+            @include media(l, m, s) {
+                flex-direction: column;
+                align-items: flex-start;
+                max-width: 200px;
+                width: 100%;
+            }
+
+            @include media(m, s) {
+                align-items: center;
+                max-width: 400px;
+                order: 3;
+            }
+
+            & .phone,
+            & .mail {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 16px;
+                font-weight: bold;
+                color: $c-main-text;
+
+                transition: all .3s ease;
+
+                @include media(m, s) {
+                    margin-top: toRem(20);
+                }
+
+                &::before {
+                    content: '';
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    min-width: 30px;
+                    width: 30px;
+                    height: 30px;
+                    margin-right: toRem(15);
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: .6;
+                }
+            }
+
+            & .phone {
+                &::before {
+                    background-image: url(../../../public/icons/phone.svg);
+                }
+            }
+
+            & .mail {
+                &::before {
+                    background-image: url(../../../public/icons/mail.svg);
+                }
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-import Navbar from "components/navbar";
+import Navbar from "components/specific-blocks/navbar";
 import { Burger } from "components/specific-buttons";
 
 import classnames from "tools/classnames";

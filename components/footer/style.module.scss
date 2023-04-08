@@ -1,0 +1,21 @@
+@import 'styles/colors.scss';
+@import 'styles/to-rem.scss';
+@import 'styles/media.scss';
+
+.footer {
+    width: 100%;
+    background-color: $c-main-bg;
+    display: flex;
+    flex-direction: column;
+
+    & .copyright {
+        font-size: 13px;
+        font-weight: 100;
+        opacity: .5;
+        color: $c-main-text;
+
+        text-align: center;
+        letter-spacing: 0.1em;
+        padding: toRem(15) 0;
+    }
+}
