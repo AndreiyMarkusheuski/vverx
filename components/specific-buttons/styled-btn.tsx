@@ -7,29 +7,29 @@ import { hrefTypes } from "tools/constants/href";
 import styles from "./style.module.scss";
 
 type TProps = {
-  classNames: string;
+  classes: string;
   href?: string;
-  text: string;
+  text?: string;
   handleClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
 const getButton = (
-  classNames: string,
+  classes: string,
   text: string,
   handleClick?: React.MouseEventHandler<HTMLDivElement>
 ): React.ReactNode => (
-  <div className={classnames(styles.button, classNames)} onClick={handleClick}>
+  <div className={classnames(styles.button, classes)} onClick={handleClick}>
     {text}
   </div>
 );
 
 const Button = ({
-  classNames,
+  classes,
   href = undefined,
-  text,
+  text = '',
   handleClick = undefined,
 }: TProps): JSX.Element => {
-  const button = getButton(classNames, text, handleClick);
+  const button = getButton(classes, text, handleClick);
   if (isDefined(href) && !!href)
     return <Link href={href}>{button}</Link>;
 

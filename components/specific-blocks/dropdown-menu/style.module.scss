@@ -1,9 +1,22 @@
 @import 'styles/colors.scss';
 @import 'styles/to-rem.scss';
+@import 'styles/media.scss';
 
 .dropdown {
     display: block;
     position: relative;
+
+    @include media(m, s) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: toRem(10);
+        width: 100%;
+
+        &:first-child {
+            margin-top: toRem(0);
+        }
+    }
 
     & .childs {
         position: absolute;
@@ -21,6 +34,16 @@
         padding: 0 20px;
         max-height: 0;
         overflow: hidden;
+
+        @include media(m, s) {
+            position: relative;
+            left: auto;
+            top: auto;
+            transition: all .2s ease;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
 
         & .link {
             line-height: 110%;
@@ -57,16 +80,13 @@
 
     &.active {
         & .childs {
-            padding: 15px 20px;
-            padding-top: 5px;
+            padding: toRem(15) toRem(20);
+            padding-top: toRem(5);
             max-height: 1000px;
             transition: max-height .5s ease-in;
             z-index: 10;
 
             & .link {
-                display: inline-flex;
-                align-items: center;
-
                 transition: all .3s ease;
 
                 &.active,

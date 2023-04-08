@@ -3,7 +3,7 @@
 @import 'styles/colors.scss';
 @import 'styles/to-rem.scss';
 
-.styled-btn {
+.button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,5 +13,4 @@
     &:hover {
         cursor: pointer;
     }
-
 }

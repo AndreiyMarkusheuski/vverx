@@ -1,9 +1,50 @@
 @import 'styles/colors.scss';
 @import 'styles/to-rem.scss';
+@import 'styles/media.scss';
 
 .header {
     position: relative;
     border-bottom: 5px solid $c-orange;
-    padding: toRem(10) 0;
+    padding: toRem(10) toRem(15);
     background-color: $c-white;
+
+
+    @include media(m, s) {
+        position: fixed;
+        right: -50vw;
+        top: 0;
+        bottom: 0;
+        width: 50vw;
+        border-bottom: none;
+        border-left: 5px solid $c-orange;
+        padding: toRem(25) 0;
+        padding-left: toRem(50);
+        transition: all .5s ease-in-out;
+    }
+
+    &.active {
+        @include media(m, s) {
+            right: 0;
+            padding: toRem(25) toRem(15);
+        }
+
+        @include media(s) {
+            width: 100%;
+            right: 0;
+            padding: toRem(25) 0;
+            border: none;
+        }
+    }
+
+    .burger {
+        display: none;
+
+        @include media(m, s) {
+            display: block;
+            position: fixed;
+            top: toRem(15);
+            right: toRem(15);
+        }
+    }
+
 }

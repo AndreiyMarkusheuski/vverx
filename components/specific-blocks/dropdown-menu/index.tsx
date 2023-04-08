@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
+import { usePathname } from 'next/navigation';
 import Link from "next/link";
 
 import { StyledButton } from 'components/specific-buttons'
@@ -12,7 +13,6 @@ import styles from "./style.module.scss";
 
 type TProps = {
   options: { id: string; title: string; path: string; childs: any[] };
-  pathname: string | null;
 };
 
 const getDropdownChilds = (
@@ -33,10 +33,10 @@ const getDropdownChilds = (
   ));
 
 const DropdownMenu = ({
-  options: { id, title, path, childs },
-  pathname,
+  options: { id, title, path, childs }
 }: TProps) => {
   const [isDropdownOpen, setDropdownStatus] = useState(false);
+  const pathname = usePathname();
   const childsNodes = isDefined(childs)
     ? getDropdownChilds(childs, pathname)
     : [];
@@ -71,7 +71,7 @@ const DropdownMenu = ({
       onClick={() => setDropdownStatus((prevState) => !prevState)}
     >
       <StyledButton
-        classNames={classnames(styles.title)}
+        classes={classnames(styles.title)}
         text={title}
         href={isDefined(path) ? path : undefined}
       />
