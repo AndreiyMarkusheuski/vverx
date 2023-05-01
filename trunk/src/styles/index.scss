@@ -1,0 +1,57 @@
+@import './vendors/normalize.css';
+@import './tools/index.scss';
+@import './pages/home.scss';
+
+
+@font-face {
+    font-family: "UniNeue";
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url(../fonts/UniNeueRegular.woff2);
+    src: url(../fonts/UniNeueRegular.ttf) format("ttf"), url(../fonts/UniNeueRegular.woff) format("woff")
+}
+
+// fonts variables
+$font-main-regular: 'UniNeue', sans-serif;
+
+// Other page styles
+body {
+    font: 400 14px/1.2 $font-main-regular, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 101;
+    padding: 0 15px;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    outline: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0
+}
+
+ul {
+    list-style: none;
+    padding: 0
+}
+
+.c-orange {
+    color: $c-orange-text;
+}
