@@ -1,1 +1,1 @@
-# Custom page for [Vverx techno](https://vverx.by/)
+# Vverx Page (+ i18n)
