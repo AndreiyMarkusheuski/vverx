@@ -7,7 +7,6 @@ const sellNodes = {
 };
 
 const setActiveItem = (activeSlide, nodeItems) => {
-  console.log(sellNodes.sellNodeItems)
   const { id } = activeSlide;
 
   nodeItems.forEach((nodeItem) => {

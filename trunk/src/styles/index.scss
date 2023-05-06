@@ -1,6 +1,7 @@
 @import './vendors/normalize.css';
 @import './tools/index.scss';
 @import './pages/home.scss';
+@import './vendors/fullpage-styles.scss';
 
 
 @font-face {
@@ -54,4 +55,9 @@ ul {
 
 .c-orange {
     color: $c-orange-text;
+}
+
+.fp-watermark {
+    visibility: hidden;
+    opacity: 0;
 }

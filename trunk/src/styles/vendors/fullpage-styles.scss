@@ -1,0 +1,28 @@
+@import '../tools/index.scss';
+
+#fp{
+    &-nav {
+        ul {
+            li {
+                span {
+                    background-color: $c-orange-text !important;
+                }
+
+                .active span{
+                    background-color: $c-main-bg
+                }
+            }
+        }
+
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     top: -31px;
+        //     left: -80%;
+        //     height: 150px;
+        //     width: 150px;
+        //     border-radius: 50%;
+        //     background-color: black;
+        // }
+    }
+}

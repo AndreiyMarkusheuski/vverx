@@ -13,8 +13,8 @@
 
     &:hover {
         cursor: pointer;
-        // transform: scale(1.1)
-        box-shadow: 0px 0px 20px $c-orange;
+        transform: scale(1.1)
+        // box-shadow: 0px 0px 20px $c-orange;
     }
 
     &.-primary {
@@ -34,7 +34,12 @@
 }
 
 .header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    // position: relative;
     border-bottom: 5px solid $c-main-bg;
     padding: toRem(10) toRem(15);
     background-color: $c-white-bg;
@@ -83,7 +88,7 @@
     .dropdown {
         display: block;
         position: relative;
-    
+
         @media (min-width:521px)and (max-width:768px),
         all and (max-width:520px) {
             & {
@@ -93,19 +98,19 @@
                 margin-top: .625rem;
                 width: 100%
             }
-    
+
             &:first-child {
                 margin-top: 0
             }
         }
-    
+
         &_container {
             position: absolute;
             top: 18px;
             left: - toRem(48);
             max-height: 0;
             overflow: hidden;
-    
+
             &-content {
                 display: flex;
                 flex-direction: column;
@@ -113,9 +118,9 @@
                 align-items: flex-start;
                 background: #fff;
                 padding: 0 toRem(20) toRem(10);
-    
+
             }
-    
+
             @media (min-width:521px)and (max-width:768px),
             all and (max-width:520px) {
                 & {
@@ -128,7 +133,7 @@
                     width: 100%
                 }
             }
-    
+
             & .link {
                 line-height: 110%;
                 display: block;
@@ -139,57 +144,57 @@
                 padding: 0 10px;
                 margin: 0 10px
             }
-    
+
             & a {
                 margin-top: 10px
             }
         }
-    
+
         &_title,
         & a {
             color: #000;
             transition: color .5s ease
         }
-    
+
         &_title:hover,
         & a:hover {
             color: orange;
             cursor: pointer
         }
-    
+
         &_title {
             margin: 0 5px;
             padding: 0 8px;
             text-transform: uppercase;
             border-bottom: 2px solid transparent
         }
-    
+
         &:hover {
             cursor: pointer;
-    
+
             .dropdown_container {
                 padding: toRem(38) toRem(20) toRem(20);
                 max-height: 1000px;
                 transition: max-height .5s ease-in;
                 z-index: 10;
-    
+
                 .link {
                     transition: all .3s ease
                 }
-    
+
                 .link:hover,
                 .link.active {
                     color: orange;
                     cursor: pointer
                 }
             }
-    
+
             .dropdown_title {
                 color: orange;
                 border-bottom: 2px solid orange
             }
         }
-    
+
     }
 
     .nav {
@@ -199,21 +204,21 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-    
-    
+
+
         @media (min-width:521px)and (max-width:768px),
         all and (max-width:520px) {
             height: calc(100vh - 3.125rem);
             flex-direction: column;
             justify-content: space-between;
         }
-    
+
         &_controls {
             display: flex;
             justify-content: flex-end;
             align-items: center;
             width: 100%;
-    
+
             @media (min-width:521px)and (max-width:768px),
             all and (max-width:520px) {
                 height: 100%;
@@ -221,7 +226,7 @@
                 justify-content: space-between
             }
         }
-    
+
         .links {
             height: 100%;
             display: flex;
@@ -230,14 +235,14 @@
             justify-content: center;
             margin: 0 auto
         }
-    
+
         @media (min-width:521px)and (max-width:768px),
         all and (max-width:520px) {
             .links {
                 flex-direction: column
             }
         }
-    
+
         .button-primary {
             color: #000;
             background-color: orange;
@@ -329,14 +334,17 @@
     background-image: url(../images/preview-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 
     &_wrapper {
         max-width: 50%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: flex-start;
-        padding: toRem(200) 0;
+        // padding: toRem(200) 0;
+        height: 100vh;
+        
     }
 
     &_headline {
@@ -380,7 +388,7 @@
 
 .rent, .sell {
     &_wrapper {
-        padding: toRem(50) 0;
+        padding: toRem(140) 0 toRem(50);
     }
 
     &_headline {
