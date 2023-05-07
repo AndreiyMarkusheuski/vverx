@@ -1,3 +1,5 @@
+import Swiper from 'swiper';
+
 const firstRentItem = document.querySelector(".swiper-slide-rent");
 const firstSellItem = document.querySelector(".swiper-slide-sell");
 
@@ -23,6 +25,9 @@ const swiperInit = [
 swiperInit.forEach((swiperName) => {
   const swiper = new Swiper(`.${swiperName.name}`, {
     loop: true,
+    autoplay: {
+      delay: 2000,
+    },
 
     navigation: {
       nextEl: ".swiper-button-next",

@@ -1,2 +1,4 @@
 import './menu';
-import './swiper'
+import './swiper';
+import './pace';
+import './scroll';

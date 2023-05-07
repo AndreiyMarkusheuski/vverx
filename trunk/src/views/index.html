@@ -14,57 +14,66 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.3/pace.min.js"></script>
 </head>
 
 <body>
-    <header class="header" id="header_id menu">
-        <div class="button_burger" id="button_burger_id"><span></span><span></span><span></span></div>
-        <div class="container">
-            <nav class="nav"><a class="logo" href="/">
-                    <img alt="Вверх Техно" loading="lazy" width="100" height="60" decoding="async"
-                        data-nimg="1" style="color:transparent" src="../images/icons/logo.png" /></a>
-                <div class="nav_controls">
-                    <div class="links">
-                        <div class="dropdown">
-                            <div class="dropdown_title">Аренда</div>
-                            <div class="dropdown_container">
-                                <div class="dropdown_container-content">
-                                    <a href="/rent/tractor1"><span
-                                            class="link">Экскаватор-погрузчик</span></a>
-                                    <a href="/rent/tractor2"><span class="link">Телескопический
-                                            погрузчик</span></a>
-                                    <a href="/rent/tractor3"><span class="link">Подъёмники</span></a>
-                                    <a href="/rent/tractor4"><span class="link">Виброплиты</span></a>
+    <div class="page_header">
+        <header class="header" id="header_id">
+            <div class="button_burger" id="button_burger_id">
+                <!-- burger elements -->
+                <span></span><span></span><span></span></div> 
+            <div class="container">
+                <nav class="nav"><a class="logo" href="/">
+                        <img alt="Вверх Техно" loading="lazy" width="100" height="60" decoding="async" data-nimg="1"
+                            style="color:transparent" src="../images/icons/logo.png" /></a>
+                    <div class="nav_controls">
+                        <div class="links">
+                            <div class="dropdown">
+                                <div class="dropdown_title">Аренда</div>
+                                <div class="dropdown_container">
+                                    <div class="dropdown_container-content">
+                                        <a href="/rent/tractor1"><span class="link">Экскаватор-погрузчик</span></a>
+                                        <a href="/rent/tractor2"><span class="link">Телескопический
+                                                погрузчик</span></a>
+                                        <a href="/rent/tractor3"><span class="link">Подъёмники</span></a>
+                                        <a href="/rent/tractor4"><span class="link">Виброплиты</span></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="dropdown">
-                            <div class="dropdown_title">Купить</div>
-                            <div class="dropdown_container">
-                                <div class="dropdown_container-content">
-                                    <a href="/buy/containers"><span class="link">Контейнеры</span></a>
+                            <div class="dropdown">
+                                <div class="dropdown_title">Купить</div>
+                                <div class="dropdown_container">
+                                    <div class="dropdown_container-content">
+                                        <a href="/buy/containers"><span class="link">Контейнеры</span></a>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="dropdown"><a href="/contacts">
+                                    <div class="dropdown_title">Контакты</div>
+                                </a></div>
                         </div>
-                        <div class="dropdown"><a href="/contacts">
-                                <div class="dropdown_title">Контакты</div>
-                            </a></div>
+                        <a class="button-primary" href="callto:+375291231232">Позвонить
+                            нам</a>
                     </div>
-                    <a class="button-primary" href="callto:+375291231232">Позвонить
-                        нам</a>
-                </div>
-            </nav>
-        </div>
+                </nav>
+            </div>
+        </header>
         <div class="button-bg-action" id="button-bg-action_id"></div>
-    </header>
-    <main class="page">
-        <div class="page_wrapper" id="fullpage">
-            
+    </div>
 
-            <!-- <div class="page_inner home"> -->
+    <main class="page">
+        <div id="preloader">
+            <img alt="Вверх Техно" width="100" height="60" decoding="async" data-nimg="1" style="color:transparent; position: fixed;
+            top: calc(50vh - 30px);
+            left: calc(50vw - 50px)" src="../images/icons/logo.png" />
+        </div>
+
+        <div class="page_wrapper" id="container">
             <section class="preview section">
                 <div class="container">
-                    <div class="preview_wrapper">
+                    <div class="preview_wrapper js-scroll">
                         <h1 class="preview_headline">Аренда строительной техники “Вверх<span
                                 class="c-orange">Техно”</span></h1>
                         <p class="preview_description">Качественная строительная техника в аренду, надёжно и быстро!
@@ -118,51 +127,51 @@
                             <div class="swiper-button-prev"></div>
                         </div>
                         <div class="rent_list">
-                            <a href="#" class="list_item list_item-rent" id="JLG_800AJ">
+                            <a href="#" class="list_item list_item-rent slide-left scrolled" id="JLG_800AJ">
                                 <div class="item_bg JLG_800AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 800AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_600AJ">
+                            <a href="#" class="list_item list_item-rent slide-right scrolled" id="JLG_600AJ">
                                 <div class="item_bg JLG_600AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 600AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_510AJ">
+                            <a href="#" class="list_item list_item-rent slide-left" id="JLG_510AJ">
                                 <div class="item_bg JLG_510AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 510AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_800AJ">
+                            <a href="#" class="list_item list_item-rent slide-right" id="JLG_800AJ">
                                 <div class="item_bg JLG_800AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 800AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_600AJ">
+                            <a href="#" class="list_item list_item-rent slide-left" id="JLG_600AJ">
                                 <div class="item_bg JLG_600AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 600AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_510AJ">
+                            <a href="#" class="list_item list_item-rent slide-right" id="JLG_510AJ">
                                 <div class="item_bg JLG_510AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 510AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_800AJ">
+                            <a href="#" class="list_item list_item-rent slide-left" id="JLG_800AJ">
                                 <div class="item_bg JLG_800AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 800AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_600AJ">
+                            <a href="#" class="list_item list_item-rent slide-right" id="JLG_600AJ">
                                 <div class="item_bg JLG_600AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 600AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_510AJ">
+                            <a href="#" class="list_item list_item-rent slide-left" id="JLG_510AJ">
                                 <div class="item_bg JLG_510AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 510AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_800AJ">
+                            <a href="#" class="list_item list_item-rent slide-right" id="JLG_800AJ">
                                 <div class="item_bg JLG_800AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 800AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_600AJ">
+                            <a href="#" class="list_item list_item-rent slide-left" id="JLG_600AJ">
                                 <div class="item_bg JLG_600AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 600AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-rent" id="JLG_510AJ">
+                            <a href="#" class="list_item list_item-rent slide-right" id="JLG_510AJ">
                                 <div class="item_bg JLG_510AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 510AJ</span></h4>
                             </a>
@@ -170,15 +179,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- <section class="contact-us section">
-                    <div class="contact-us_wrapper">
-                        <div class="preview_buttons">
-                            <a class="button -primary" href="callto:+375291231232">Наши продукты</a>
-                            <a class="button -secondary" href="callto:+375291231232">Обратная связь</a>
-                        </div>
-                    </div>
-                </section> -->
 
             <section class="sell section" id="sell">
                 <div class="container">
@@ -226,19 +226,19 @@
                                 <h4 class="item_title">Универсальные блок-контейнеры <span
                                         class="c-orange">CONTAINEX</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-sell" id="JLG_600AJ">
+                            <a href="#" class="list_item list_item-sell slide-left scrolled" id="JLG_600AJ">
                                 <div class="item_bg JLG_600AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 600AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-sell" id="JLG_510AJ">
+                            <a href="#" class="list_item list_item-sell slide-right scrolled" id="JLG_510AJ">
                                 <div class="item_bg JLG_510AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 510AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-sell" id="JLG_600AJ">
+                            <a href="#" class="list_item list_item-sell slide-left" id="JLG_600AJ">
                                 <div class="item_bg JLG_600AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 600AJ</span></h4>
                             </a>
-                            <a href="#" class="list_item list_item-sell" id="JLG_510AJ">
+                            <a href="#" class="list_item list_item-sell slide-right" id="JLG_510AJ">
                                 <div class="item_bg JLG_510AJ"></div>
                                 <h4 class="item_title">КОЛЕНЧАТЫЙ ПОДЪЕМНИК <span class="c-orange">JLG 510AJ</span></h4>
                             </a>
@@ -296,11 +296,12 @@
                 <footer class="footer">
                     <div class="footer_info_line">
                         <div class="content_container">
-                            <p class="address">123456, г. Абрадакадабрия, ул. Улиц, д. 1</p><a class="logo"
-                                href="/"><img alt="Вверх Техно" loading="lazy" width="100" height="60" decoding="async"
-                                    data-nimg="1" style="color:transparent" src="../images/icons/logo.png" /></a>
-                            <div class="contacts"><a class="phone button"
-                                    href="callto:+375291231232">+375291231232</a><a class="mail button"
+                            <div class="contacts"><a class="phone button" href="callto:+375291231232">+375291231232</a>
+                            </div>
+                            <a class="logo" href="/"><img alt="Вверх Техно" loading="lazy" width="100" height="60"
+                                    decoding="async" data-nimg="1" style="color:transparent"
+                                    src="../images/icons/logo.png" /></a>
+                            <div class="contacts"><a class="mail button"
                                     href="mailto:vverx@gmail.com">vverx@gmail.com</a></div>
                         </div>
                     </div>
@@ -340,16 +341,8 @@
                     <h3 class="copyright">© ВСЕ ПРАВА ЗАЩИЩЕНЫ 2023</h3>
                 </footer>
             </section>
-            <!-- </div> -->
-
-            <!-- <div class="page_footer section">
-                
-            </div> -->
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js"></script>
-
 </body>
 
 </html>
