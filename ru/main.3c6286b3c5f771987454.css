@@ -403,13 +403,15 @@ template {
 
 .header .nav{width:100%;height:100%;display:flex;flex-direction:row;align-items:center;justify-content:center}
 
-@media (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.header .nav{height:calc(100vh - 3.125rem);flex-direction:column;justify-content:space-between}}
+@media (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.header .nav{height:calc(90vh - 3.125rem);flex-direction:column;justify-content:space-between}}
 
 .header .nav_controls{display:flex;justify-content:flex-end;align-items:center;width:100%}
 
 @media (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.header .nav_controls{height:100%;flex-direction:column;justify-content:space-between}}
 
 .header .nav .links{height:100%;display:flex;flex-direction:row;align-items:center;justify-content:center;margin:0 auto}
+
+@media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.header .nav .links{margin:0}}
 
 @media (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.header .nav .links{flex-direction:column}}
 
@@ -443,7 +445,9 @@ template {
 
 .preview{background-image:url(images/4dd026823770fac6b7773d3b39cd9bed.jpg);background-size:cover;background-repeat:no-repeat;background-attachment:fixed}
 
-.preview_wrapper{max-width:50%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;height:100vh}
+.preview_container{height:100%}
+
+.preview_wrapper{max-width:50%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;height:100%}
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.preview_wrapper{align-items:center;max-width:100%}}
 
@@ -625,7 +629,7 @@ template {
 
 .footer_menu .content_container .menu_block .block_title,.footer_menu .content_container .menu_block .link{font-size:16px;font-weight:700;line-height:22px;color:#fff;text-transform:uppercase}
 
-.footer_menu .content_container .menu_block .block_list .link,.footer_menu .content_container .menu_block .block_list .list_item{font-size:12px;font-weight:100;line-height:20px;color:#fff;text-transform:uppercase;margin-top:.938rem}
+.footer_menu .content_container .menu_block .block_list .link,.footer_menu .content_container .menu_block .block_list .list_item{font-size:12px;font-weight:100;line-height:20px;color:#fff;text-transform:uppercase;text-decoration:none;outline:none;margin-top:.938rem}
 
 .footer_menu .content_container .menu_block .block_list .link:first-child,.footer_menu .content_container .menu_block .block_list .list_item:first-child{margin-top:0}
 
