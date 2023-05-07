@@ -40,28 +40,27 @@ const handleScrollAnimation = () => {
   });
 };
 
-new fullpage('#container', {
-    licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+new fullpage("#container", {
+  licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
 
-    menu: '#menu',
-	navigation: true,
-	showActiveTooltip: true,
-	slidesNavigation: true,
-	slidesNavPosition: 'bottom',
+  menu: "#menu",
+  navigation: true,
+  showActiveTooltip: true,
+  slidesNavigation: true,
+  slidesNavPosition: "bottom",
 
+  //css
+  css3: true,
+  scrollingSpeed: 700,
+  scrollOverflow: true,
 
-    //css
-    css3: true,
-    scrollingSpeed: 700,
-    scrollOverflow: true,
+  easing: "easeInOutCubic",
 
-    easing: 'easeInOutCubic',
-
-    onScrollOverflow: () => {
-       if (window.screen.width <= 520) {
-        handleScrollAnimation()
-       }
-    },
+  onScrollOverflow: () => {
+    if (window.screen.width <= 520) {
+      handleScrollAnimation();
+    }
+  },
 });
 
 const main = () => {};
