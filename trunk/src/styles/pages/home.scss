@@ -217,7 +217,7 @@
 
         @media (min-width:521px)and (max-width:768px),
         all and (max-width:520px) {
-            height: calc(90vh - 3.125rem);
+            height: calc(90vh - 3.125rem); 
             flex-direction: column;
             justify-content: space-between;
         }
