@@ -1,4 +1,6 @@
-import Swiper from 'swiper';
+import Swiper, { Navigation, Autoplay } from 'swiper';
+
+Swiper.use([Navigation, Autoplay]);
 
 const firstRentItem = document.querySelector(".swiper-slide-rent");
 const firstSellItem = document.querySelector(".swiper-slide-sell");
@@ -27,6 +29,7 @@ swiperInit.forEach((swiperName) => {
     loop: true,
     autoplay: {
       delay: 2000,
+      disableOnInteraction: true,
     },
 
     navigation: {
@@ -40,6 +43,7 @@ swiperInit.forEach((swiperName) => {
     setActiveItem(slides[activeIndex], sellNodes[swiperName.listName]);
   });
 });
+
 
 setActiveItem(firstRentItem, sellNodes.rentNodeItems);
 setActiveItem(firstSellItem, sellNodes.sellNodeItems);
