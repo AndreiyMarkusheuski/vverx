@@ -1,11 +1,13 @@
 import fullpage from "fullpage.js";
+import debounce from "./tools/debounce";
 
 const scrollElements = document.querySelectorAll(".list_item");
-const contactsBtn = document.querySelector("#fullpage-go-to-contacts");
+const preloader = document.querySelector("#preloader");
+
+const fullpageBtns = document.querySelectorAll(".fullpage-go-to");
 
 const elementInView = (el, dividend = 1) => {
   const elementTop = el.getBoundingClientRect().top;
-
   return (
     elementTop <=
     (window.innerHeight || document.documentElement.clientHeight) / dividend
@@ -14,7 +16,6 @@ const elementInView = (el, dividend = 1) => {
 
 const elementOutofView = (el) => {
   const elementTop = el.getBoundingClientRect().top;
-
   return (
     elementTop > (window.innerHeight || document.documentElement.clientHeight)
   );
@@ -47,7 +48,6 @@ new fullpage("#container", {
   slidesNavigation: true,
   slidesNavPosition: "bottom",
 
-  //css
   css3: true,
   scrollingSpeed: 700,
   scrollOverflow: true,
@@ -61,10 +61,22 @@ new fullpage("#container", {
   },
 });
 
-contactsBtn.addEventListener("click", () => {
-  fullpage_api.silentMoveTo("contacts");
-});
+const switchWithEffect = debounce((switchTo, duration = 0.3) => {
+  const switchToElement = switchTo;
+  preloader.classList.remove("hide");
 
-const main = () => {};
+  setTimeout(() => {
+    fullpage_api.silentMoveTo(switchToElement);
+  }, duration * 1000);
 
-export default main;
+  setTimeout(() => {
+    preloader.classList.add("hide");
+  }, duration * 2 * 1000);
+}, 300);
+
+const handleButtonClick = (event) => {
+  const target = event.currentTarget.dataset.target;
+  switchWithEffect(target);
+};
+
+fullpageBtns.forEach((btn) => btn.addEventListener("click", handleButtonClick));

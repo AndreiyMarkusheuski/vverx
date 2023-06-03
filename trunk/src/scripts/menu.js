@@ -1,17 +1,38 @@
 const burgerButton = document.querySelector("#button_burger_id");
 const bgButton = document.querySelector("#button-bg-action_id");
 const header = document.querySelector("#header_id");
+const actionButtons = document.querySelectorAll(".nav_button");
 
-const handleClickToggle = (e) => {
+const dropdownContainers = document.querySelectorAll('.dropdown')
+
+const closeAllDropdowns = () => {
+  dropdownContainers.forEach(dropdownContainer => {
+    dropdownContainer.classList.remove('active')
+  })
+}
+
+const handleMenuToggle = () => {
+  closeAllDropdowns()
   header.classList.toggle("active");
   burgerButton.classList.toggle("open");
 };
 
-const handleClickClose = (e) => {
+const handleMenuClose = () => {
+  closeAllDropdowns()
   header.classList.remove("active");
   burgerButton.classList.remove("open");
 };
 
-burgerButton.addEventListener("click", handleClickToggle);
+const handleDropdownToggle = (dropdownContainer) => {
+  closeAllDropdowns()
+  dropdownContainer.currentTarget.classList.toggle("active");
+};
 
-bgButton.addEventListener("click", handleClickClose);
+burgerButton.addEventListener("click", handleMenuToggle);
+bgButton.addEventListener("click", handleMenuClose);
+actionButtons.forEach((actionButton) =>
+  actionButton.addEventListener("click", handleMenuClose)
+);
+dropdownContainers.forEach((dropdownContainer) =>
+  dropdownContainer.addEventListener("click", handleDropdownToggle)
+);

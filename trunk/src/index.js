@@ -1,2 +1,3 @@
 import './styles/index.scss';
-import './scripts';
+
+console.log('123')

@@ -28,6 +28,33 @@ module.exports = localeConfig.map(locale => merge(common, {
             template: './src/views/index.html',
             favicon: './src/images/favicon.ico',
             locales: localeConfig,
+            chunks: ["main", "form", "pace", "fullpage", "menu", "scroll", "swipre"],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            lang: locale.code,
+            filename: 'rent-page.html',
+            template: './src/views/rent-page.html',
+            favicon: './src/images/favicon.ico',
+            locales: localeConfig,
+            chunks: ["main", "form", "pace", "menu", "scroll"],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            lang: locale.code,
+            filename: 'sell-page.html',
+            template: './src/views/sell-page.html',
+            favicon: './src/images/favicon.ico',
+            locales: localeConfig,
+            chunks: ["main", "form", "pace", "menu", "scroll"],
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
