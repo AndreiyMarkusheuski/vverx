@@ -27,7 +27,7 @@ module.exports = merge(common, {
             filename: 'index.html',
             template: './src/views/index.html',
             favicon: './src/images/favicon.ico',
-            chunks: ["main", "form", "pace", "fullpage", "menu", "scroll", "swipre"],
+            chunks: ["main", "form", "pace", "fullpage", "menu", "scroll", "swiper"],
             locales: []
         }),
         new HtmlWebpackPlugin({
@@ -35,7 +35,7 @@ module.exports = merge(common, {
             filename: 'sell-page.html',
             template: './src/views/sell-page.html',
             favicon: './src/images/favicon.ico',
-            chunks: ["main", "form", "pace", "menu", "scroll"],
+            chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
             locales: []
         }),
         new HtmlWebpackPlugin({
@@ -43,7 +43,7 @@ module.exports = merge(common, {
             filename: 'rent-page.html',
             template: './src/views/rent-page.html',
             favicon: './src/images/favicon.ico',
-            chunks: ["main", "form", "pace", "menu", "scroll"],
+            chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
             locales: []
         }),
         new I18nPlugin(localeConfig, {

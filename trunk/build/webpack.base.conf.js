@@ -12,6 +12,7 @@ module.exports = {
     pace: "./src/scripts/pace.js",
     scroll: "./src/scripts/scroll.js",
     swiper: "./src/scripts/swiper.js",
+    modal: "./src/scripts/modal.js",
   },
   module: {
     rules: [

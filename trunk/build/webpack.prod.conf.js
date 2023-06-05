@@ -28,7 +28,7 @@ module.exports = localeConfig.map(locale => merge(common, {
             template: './src/views/index.html',
             favicon: './src/images/favicon.ico',
             locales: localeConfig,
-            chunks: ["main", "form", "pace", "fullpage", "menu", "scroll", "swipre"],
+            chunks: ["main", "form", "pace", "fullpage", "menu", "scroll", "swiper"],
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,

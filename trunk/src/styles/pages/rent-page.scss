@@ -1,0 +1,65 @@
+@import '../tools/index.scss';
+
+.rent-products {
+    position: relative;
+    z-index: 0;
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        margin-top: toRem(60);
+    }
+
+    &_title {
+        text-align: center;
+    }
+
+    &_product {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: toRem(20) 0 0;
+        padding: toRem(50) 0 toRem(30);
+        border-top: 2px solid $c-l-orange;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .product {
+
+            &_image-block, &_description-block {
+                flex: 1;
+            }
+
+            &_title {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 26px;
+                line-height: 140%;
+                color: $c-second-text;
+                flex-grow: 0;
+                text-transform: uppercase;
+                margin: 0 0 toRem(20) 0;
+
+                @include media(m) {
+                    font-size: 20px;
+                    text-align: left;
+                }
+            }
+
+            &_description {
+                text-decoration: none;
+                outline: none;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 140%;
+                color: $c-second-dark-text;
+                flex-grow: 0;
+                margin: 0 0 toRem(20) 0;
+            }
+        }
+    }
+}
