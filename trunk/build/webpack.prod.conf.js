@@ -41,7 +41,7 @@ module.exports = localeConfig.map(locale => merge(common, {
             template: './src/views/rent-page.html',
             favicon: './src/images/favicon.ico',
             locales: localeConfig,
-            chunks: ["main", "form", "pace", "menu", "scroll"],
+            chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -54,7 +54,7 @@ module.exports = localeConfig.map(locale => merge(common, {
             template: './src/views/sell-page.html',
             favicon: './src/images/favicon.ico',
             locales: localeConfig,
-            chunks: ["main", "form", "pace", "menu", "scroll"],
+            chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,

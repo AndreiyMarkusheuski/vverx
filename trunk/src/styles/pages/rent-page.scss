@@ -27,6 +27,10 @@
             flex-direction: row-reverse;
         }
 
+        @include media(m,s) {
+            flex-direction: column !important;
+        }
+
         .product {
 
             &_image-block, &_description-block {
@@ -43,7 +47,7 @@
                 text-transform: uppercase;
                 margin: 0 0 toRem(20) 0;
 
-                @include media(m) {
+                @include media(m, s) {
                     font-size: 20px;
                     text-align: left;
                 }
