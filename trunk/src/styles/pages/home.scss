@@ -4,9 +4,16 @@
     position: fixed;
     bottom: 15px;
     right: 20px;
-    z-index: 999999;
+    z-index: 5;
     background-color: $c-main-bg;
     padding: 0 toRem(10) 0 0;
+    transition: all .5s ease;
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+    }
 
     @include media(m, s) {
         padding: 0;
@@ -110,6 +117,7 @@
 
     &_wrapper {
         max-width: 50%;
+        min-height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: center;

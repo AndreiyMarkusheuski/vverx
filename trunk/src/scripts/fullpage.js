@@ -3,8 +3,8 @@ import debounce from "./tools/debounce";
 
 const scrollElements = document.querySelectorAll(".list_item");
 const preloader = document.querySelector("#preloader");
-
 const fullpageBtns = document.querySelectorAll(".fullpage-go-to");
+const phoneLink = document.querySelector("#phone_link");
 
 const elementInView = (el, dividend = 1) => {
   const elementTop = el.getBoundingClientRect().top;
@@ -36,7 +36,15 @@ const handleScrollAnimation = () => {
     } else if (elementOutofView(el)) {
       hideScrollElement(el);
     }
-  });
+  }); 
+};
+
+const isHidePhoneLink = (anchor) => anchor === "contacts";
+
+const checkIsShouldDisplayLink = ({anchor}) => {
+  isHidePhoneLink(anchor)
+    ? phoneLink.classList.add("hide")
+    : phoneLink.classList.remove("hide");
 };
 
 new fullpage("#container", {
@@ -58,6 +66,9 @@ new fullpage("#container", {
     if (window.screen.width <= 520) {
       handleScrollAnimation();
     }
+  },
+  beforeLeave: (origin, destination) => {
+    checkIsShouldDisplayLink(destination);
   },
 });
 
