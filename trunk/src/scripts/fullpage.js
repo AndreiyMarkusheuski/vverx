@@ -1,51 +1,16 @@
 import fullpage from "fullpage.js";
 import debounce from "./tools/debounce";
+import {
+  elementInView,
+  elementOutofView,
+  displayScrollElement,
+  hideScrollElement,
+  handleScrollAnimation,
+} from "./scroll";
 
 const scrollElements = document.querySelectorAll(".list_item");
 const preloader = document.querySelector("#preloader");
 const fullpageBtns = document.querySelectorAll(".fullpage-go-to");
-const phoneLink = document.querySelector("#phone_link");
-
-const elementInView = (el, dividend = 1) => {
-  const elementTop = el.getBoundingClientRect().top;
-  return (
-    elementTop <=
-    (window.innerHeight || document.documentElement.clientHeight) / dividend
-  );
-};
-
-const elementOutofView = (el) => {
-  const elementTop = el.getBoundingClientRect().top;
-  return (
-    elementTop > (window.innerHeight || document.documentElement.clientHeight)
-  );
-};
-
-const displayScrollElement = (element) => {
-  element.classList.add("scrolled", "active");
-};
-
-const hideScrollElement = (element) => {
-  element.classList.remove("scrolled", "active");
-};
-
-const handleScrollAnimation = () => {
-  scrollElements.forEach((el) => {
-    if (elementInView(el, 1.25)) {
-      displayScrollElement(el);
-    } else if (elementOutofView(el)) {
-      hideScrollElement(el);
-    }
-  }); 
-};
-
-const isHidePhoneLink = (anchor) => anchor === "contacts";
-
-const checkIsShouldDisplayLink = ({anchor}) => {
-  isHidePhoneLink(anchor)
-    ? phoneLink.classList.add("hide")
-    : phoneLink.classList.remove("hide");
-};
 
 new fullpage("#container", {
   licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
@@ -66,9 +31,6 @@ new fullpage("#container", {
     if (window.screen.width <= 520) {
       handleScrollAnimation();
     }
-  },
-  beforeLeave: (origin, destination) => {
-    checkIsShouldDisplayLink(destination);
   },
 });
 

@@ -1,8 +1,8 @@
 @import './vendors/normalize.css';
 @import './tools/index.scss';
 @import './pages/home.scss';
-@import './pages/sell-page.scss';
-@import './pages/rent-page.scss';
+@import './pages/sell-pages.scss';
+@import './pages/rent-pages.scss';
 @import './vendors/fullpage-styles.scss';
 
 
@@ -174,7 +174,7 @@ ul {
         &.open span:first-child {
             transform: rotate(45deg);
             top: 8px;
-            background-color: orange
+            background-color: $c-orange-text
         }
 
         &.open span:nth-child(2) {
@@ -184,10 +184,9 @@ ul {
         &.open span:nth-child(3) {
             transform: rotate(-45deg);
             top: 8px;
-            background-color: orange
+            background-color: $c-orange-text
         }
     }
-
 
     @media (max-width:520px) {
         &.active {
@@ -292,7 +291,7 @@ ul {
 
         &_title:hover,
         & a:hover {
-            color: orange;
+            color: $c-orange-text;
             cursor: pointer
         }
 
@@ -322,22 +321,22 @@ ul {
 
                 .link:hover,
                 .link.active {
-                    color: orange;
+                    color: $c-orange-text;
                     cursor: pointer
                 }
             }
 
             .dropdown_title {
-                color: orange;
-                border-bottom: 2px solid orange
+                color: $c-orange-text;
+                border-bottom: 2px solid $c-orange-text
             }
         }
     }
 
     .active_url {
-        .dropdown_title {
-            color: orange;
-            border-bottom: 2px solid orange
+        .dropdown_title, &>.link {
+            color: $c-l-orange-text;
+            border-bottom: 2px solid $c-l-orange-text;
         }
     }
 
@@ -379,7 +378,7 @@ ul {
 
         .button-primary {
             color: #000;
-            background-color: orange;
+            background-color: $c-orange-text;
             font-size: 1.125rem;
             padding: 10px 20px;
             border-radius: 33px;
@@ -391,6 +390,56 @@ ul {
         }
 
 
+    }
+}
+
+.company-logo {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        background-image: url(../images/icons/logo-white.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100px;
+        height: 55px;
+    }
+}
+
+.fp-viewing-rent-page,
+.fp-viewing-sell-page,
+.fp-viewing-about {
+    .company-logo {
+        &::before {
+            background-image: url(../images/icons/logo.png);
+        }
+
+        @include media(m, s) {
+            visibility: hidden;
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+}
+
+.fp-viewing-contacts {
+    .company-logo {
+        &::before {
+            background-image: url(../images/icons/logo.png);
+        }
+    }
+
+    .call-us {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
     }
 }
 
@@ -467,6 +516,7 @@ ul {
             }
 
             &.warning {
+
                 &:before,
                 &:after {
                     content: '';
@@ -482,12 +532,15 @@ ul {
                 left: 50%;
             }
 
-            &.focus:before, &.warning::before,
-            &.focus:after, &.warning::after {
+            &.focus:before,
+            &.warning::before,
+            &.focus:after,
+            &.warning::after {
                 width: 50%;
             }
 
-            &.focus>.form_field>label, &.warning>.form_field>label {
+            &.focus>.form_field>label,
+            &.warning>.form_field>label {
                 top: -5px;
                 font-size: 15px;
 
@@ -583,6 +636,55 @@ ul {
         padding: toRem(20) toRem(20) toRem(40);
         background: $c-white-bg;
         border-radius: 30px;
+    }
+
+    &_button_close {
+        display: block;
+        position: absolute;
+        top: toRem(25);
+        right: toRem(25);
+        width: 25px;
+        height: 23px;
+        z-index: 2;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        & span {
+            background-color: $c-main-bg;
+            position: absolute;
+            border-radius: 2px;
+            transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+            width: 100%;
+            height: 3px;
+            transition-duration: .5s;
+
+            &:first-child {
+                top: 0;
+                left: 0;
+                transform: rotate(-3deg) scaleY(1.1)
+            }
+
+            &:nth-child(2) {
+                transform: rotate(45deg);
+                top: 8px;
+                background-color: $c-orange-text
+            }
+
+        }
+
+        & span:first-child {
+            transform: rotate(45deg);
+            top: 8px;
+            background-color: $c-orange-text
+        }
+
+        & span:nth-child(2) {
+            transform: rotate(-45deg);
+            top: 8px;
+            background-color: $c-orange-text
+        }
     }
 }
 

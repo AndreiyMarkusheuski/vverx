@@ -1,6 +1,6 @@
 const scrollElements = document.querySelectorAll(".js-scroll");
 
-const elementInView = (el, dividend = 1) => {
+export const elementInView = (el, dividend = 1) => {
   const elementTop = el.getBoundingClientRect().top;
 
   return (
@@ -9,7 +9,7 @@ const elementInView = (el, dividend = 1) => {
   );
 };
 
-const elementOutofView = (el) => {
+export const elementOutofView = (el) => {
   const elementTop = el.getBoundingClientRect().top;
 
   return (
@@ -17,15 +17,15 @@ const elementOutofView = (el) => {
   );
 };
 
-const displayScrollElement = (element) => {
-  element.classList.add("scrolled");
+export const displayScrollElement = (element) => {
+  element.classList.add("scrolled", "active");
 };
 
-const hideScrollElement = (element) => {
-  element.classList.remove("scrolled");
+export const hideScrollElement = (element) => {
+  element.classList.remove("scrolled", "active");
 };
 
-const handleScrollAnimation = () => {
+export const handleScrollAnimation = () => {
   scrollElements.forEach((el) => {
     if (elementInView(el, 1.25)) {
       displayScrollElement(el);

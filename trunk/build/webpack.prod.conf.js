@@ -11,6 +11,18 @@ const utils = require('./utils');
 
 const localeConfig = utils.getLocales();
 
+
+const rentPageNames = ['rent/backhoe-loader', 'rent/telescopic-loader', 'rent/lifts', 'rent/vibrating-plates'];
+const sellPageNames = ['sell/containers'];
+const multipleHtmlPlugins = (htmlPageNames) => htmlPageNames.map(name => {
+    return new HtmlWebpackPlugin({
+      template: `./src/views/${name}.html`, // relative path to the HTML files
+      filename: `${name.split('/').join('-')}.html`, // output HTML files
+      favicon: './src/images/favicon.ico',
+        chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
+    })
+  });
+
 module.exports = localeConfig.map(locale => merge(common, {
     mode: 'production',
     output: {
@@ -35,34 +47,10 @@ module.exports = localeConfig.map(locale => merge(common, {
                 removeAttributeQuotes: true
             }
         }),
-        new HtmlWebpackPlugin({
-            lang: locale.code,
-            filename: 'rent-page.html',
-            template: './src/views/rent-page.html',
-            favicon: './src/images/favicon.ico',
-            locales: localeConfig,
-            chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeAttributeQuotes: true
-            }
-        }),
-        new HtmlWebpackPlugin({
-            lang: locale.code,
-            filename: 'sell-page.html',
-            template: './src/views/sell-page.html',
-            favicon: './src/images/favicon.ico',
-            locales: localeConfig,
-            chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeAttributeQuotes: true
-            }
-        }),
         new I18nPlugin(locale.config, {
             functionName: 't'
-        })
+        }),
+        ...multipleHtmlPlugins(rentPageNames),
+        ...multipleHtmlPlugins(sellPageNames)
     ]
 }));

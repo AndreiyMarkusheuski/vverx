@@ -9,6 +9,17 @@ const HtmlWebpackInjector = require('html-webpack-injector');
 const common = require('./webpack.base.conf');
 const localeConfig = require('../src/locales/ru.json');
 
+const rentPageNames = ['rent/backhoe-loader', 'rent/telescopic-loader', 'rent/lifts', 'rent/vibrating-plates'];
+const sellPageNames = ['sell/containers'];
+const multipleHtmlPlugins = (htmlPageNames) => htmlPageNames.map(name => {
+    return new HtmlWebpackPlugin({
+      template: `./src/views/${name}.html`, // relative path to the HTML files
+      filename: `${name.split('/').join('-')}.html`, // output HTML files
+      favicon: './src/images/favicon.ico',
+        chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
+    })
+  });
+
 module.exports = merge(common, {
     mode: "development",
     output: {
@@ -30,25 +41,11 @@ module.exports = merge(common, {
             chunks: ["main", "form", "pace", "fullpage", "menu", "scroll", "swiper"],
             locales: []
         }),
-        new HtmlWebpackPlugin({
-            lang: 'ru',
-            filename: 'sell-page.html',
-            template: './src/views/sell-page.html',
-            favicon: './src/images/favicon.ico',
-            chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
-            locales: []
-        }),
-        new HtmlWebpackPlugin({
-            lang: 'ru',
-            filename: 'rent-page.html',
-            template: './src/views/rent-page.html',
-            favicon: './src/images/favicon.ico',
-            chunks: ["main", "form", "pace", "menu", "scroll", "modal"],
-            locales: []
-        }),
         new I18nPlugin(localeConfig, {
             functionName: 't'
         }),
-        new HtmlWebpackInjector()
+        new HtmlWebpackInjector(),
+        ...multipleHtmlPlugins(rentPageNames),
+        ...multipleHtmlPlugins(sellPageNames)
     ]
 });
