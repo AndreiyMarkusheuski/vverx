@@ -401,7 +401,7 @@ template {
 
 .preview_buttons .button:last-child{margin:0}
 
-.rent_wrapper,.sell_wrapper{min-height:650px;padding:1.563rem 0;position:relative}
+.rent_wrapper,.sell_wrapper{min-height:650px;padding:1.563rem 0;box-sizing:border-box;position:relative}
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.rent_wrapper,.sell_wrapper{padding:1rem 0}}
 
@@ -461,7 +461,7 @@ template {
 
 .sell_list .list_item .item_bg.JLG_510AJ{background-image:url(images/08a16c4bfb008b2e1557191bc7959888.jpeg)}
 
-.about-company_wrapper{height:100vh;min-height:650px;position:relative}
+.about-company_wrapper{height:100%;box-sizing:border-box;min-height:650px;position:relative}
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.about-company_wrapper{margin-top:0}}
 
@@ -497,7 +497,7 @@ template {
 
 .about-company_block:last-child{background-image:url(images/2e74432cc6ba7e4ff7cad45de219c25f.jpg);background-attachment:fixed;background-position:center}
 
-.contacts_wrapper{display:flex;justify-content:space-between;align-items:center;height:100vh;min-height:650px}
+.contacts_wrapper{display:flex;justify-content:space-between;align-items:center;height:100%;box-sizing:border-box;min-height:650px}
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.contacts_wrapper{margin-top:0}}
 
@@ -609,11 +609,11 @@ ul{list-style:none;padding:0}
 
 .button.-rectangle{color:#000;background-color:orange;border:transparent}
 
-.header{position:fixed;overflow:scroll;right:-50vw;top:0;bottom:0;width:50vw;border-bottom:none;border-left:5px solid orange;background-color:#fff;padding:1.563rem 0;transition:all .5s ease-in-out;z-index:6}
+.header{position:fixed;overflow:scroll;right:-50vw;top:0;bottom:0;width:50vw;border-bottom:none;border-left:5px solid orange;background-color:#fff;padding:1.563rem 0;transition:all .5s ease-in-out;z-index:9999;box-sizing:border-box}
 
 .header.active{right:0;padding:1.563rem .938rem}
 
-.header .button_burger{display:block;position:fixed;top:1.563rem;right:1.563rem;width:25px;height:23px;z-index:999;background-color:#000}
+.header .button_burger{display:block;position:fixed;top:1.563rem;right:1.563rem;width:25px;height:23px;z-index:999}
 
 .header .button_burger:hover{cursor:pointer}
 
