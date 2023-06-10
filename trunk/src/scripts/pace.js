@@ -10,3 +10,13 @@ Pace.on("done", function () {
     displayScrollElement(el);
   });
 });
+
+document.addEventListener("readystatechange", () => {
+  if (document.readyState === "complete") {
+    Pace.stop();
+    preloader.classList.add("hide")
+    scrollElements.forEach((el) => {
+      displayScrollElement(el);
+    });
+  }
+});
