@@ -401,7 +401,7 @@ template {
 
 .preview_buttons .button:last-child{margin:0}
 
-.rent_wrapper,.sell_wrapper{min-height:650px;padding:1.563rem 0;box-sizing:border-box;position:relative}
+.rent_wrapper,.sell_wrapper{padding:1.563rem 0;box-sizing:border-box;position:relative;min-height:100vh;min-height:-webkit-fill-available}
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.rent_wrapper,.sell_wrapper{padding:1rem 0}}
 
@@ -461,7 +461,7 @@ template {
 
 .sell_list .list_item .item_bg.JLG_510AJ{background-image:url(images/08a16c4bfb008b2e1557191bc7959888.jpeg)}
 
-.about-company_wrapper{height:100%;box-sizing:border-box;min-height:650px;position:relative}
+.about-company_wrapper{height:100%;box-sizing:border-box;min-height:100vh;min-height:-webkit-fill-available;position:relative}
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.about-company_wrapper{margin-top:0}}
 
@@ -497,7 +497,7 @@ template {
 
 .about-company_block:last-child{background-image:url(images/2e74432cc6ba7e4ff7cad45de219c25f.jpg);background-attachment:fixed;background-position:center}
 
-.contacts_wrapper{display:flex;justify-content:space-between;align-items:center;height:100%;box-sizing:border-box;min-height:650px}
+.contacts_wrapper{display:flex;justify-content:space-between;align-items:center;height:100%;box-sizing:border-box;min-height:100vh;min-height:-webkit-fill-available}
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.contacts_wrapper{margin-top:0}}
 
@@ -587,6 +587,28 @@ template {
 
 @font-face{font-family:"UniNeue";font-style:normal;font-weight:normal;font-display:swap;src:url(fonts/f20aac1252aae84cb9dcc63118533249.woff2);src:url(fonts/9f324b1559d799974aeb9c45dbd1c1f4.ttf) format("ttf"),url(fonts/6bc99f6e3f063161e7bce273004cfe24.woff) format("woff")}
 
+body{font:400 14px/1.2 "UniNeue",sans-serif,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;margin:0;padding:0;text-decoration:none;outline:none;min-height:100vh;min-height:-webkit-fill-available}
+
+body.pace-running{overflow:hidden}
+
+.container{max-width:1200px;margin:0 auto;position:relative;z-index:4;padding:0 15px}
+
+a,h1,h2,h3,h4,h5,p{outline:none;text-decoration:none;padding:0;margin:0}
+
+ul{list-style:none;padding:0}
+
+.c-orange{color:orange}
+
+.button{display:flex;justify-content:center;align-items:center;color:#fff;font-size:1.125rem;padding:10px 20px;transition:all .3s ease;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:2px solid transparent}
+
+.button:hover{cursor:pointer;transform:scale(105%)}
+
+.button.-primary{color:#000;background-color:orange;border-radius:33px;border-radius:33px}
+
+.button.-secondary{border:2px solid orange;border-radius:33px;border-radius:33px}
+
+.button.-rectangle{color:#000;background-color:orange;border:transparent}
+
 .button_burger{display:block;position:fixed;top:1.563rem;right:1.563rem;width:25px;height:23px;z-index:999}
 
 .button_burger:hover{cursor:pointer}
@@ -611,29 +633,7 @@ template {
 
 .button_burger.open span:nth-child(3){transform:rotate(-45deg);top:8px;background-color:orange}
 
-body{font:400 14px/1.2 "UniNeue",sans-serif,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;margin:0;padding:0;text-decoration:none;outline:none;min-height:100vh;min-height:-webkit-fill-available}
-
-body.pace-running{overflow:hidden}
-
-.container{max-width:1200px;margin:0 auto;position:relative;z-index:4;padding:0 15px}
-
-a,h1,h2,h3,h4,h5,p{outline:none;text-decoration:none;padding:0;margin:0}
-
-ul{list-style:none;padding:0}
-
-.c-orange{color:orange}
-
-.button{display:flex;justify-content:center;align-items:center;color:#fff;font-size:1.125rem;padding:10px 20px;transition:all .3s ease;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:2px solid transparent}
-
-.button:hover{cursor:pointer;transform:scale(105%)}
-
-.button.-primary{color:#000;background-color:orange;border-radius:33px;border-radius:33px}
-
-.button.-secondary{border:2px solid orange;border-radius:33px;border-radius:33px}
-
-.button.-rectangle{color:#000;background-color:orange;border:transparent}
-
-.header{position:fixed;overflow:scroll;right:-50vw;top:0;bottom:0;width:50vw;border-bottom:none;border-left:5px solid orange;background-color:#fff;padding:1.563rem 0;transition:all .5s ease-in-out;z-index:9;box-sizing:border-box}
+.header{position:fixed;overflow:scroll;right:-50vw;top:0;bottom:0;width:50vw;border-bottom:none;border-left:5px solid orange;background-color:#fff;padding:1.563rem 0;transition:all .5s ease-in-out;z-index:9;box-sizing:border-box;min-height:100vh;min-height:-webkit-fill-available}
 
 .header.active{right:0;padding:1.563rem .938rem}
 
@@ -681,7 +681,7 @@ ul{list-style:none;padding:0}
 
 .header .active_url .dropdown_title,.header .active_url>.link{color:#ffc966;border-bottom:2px solid #ffc966}
 
-.header .nav{min-height:650px;width:100%;display:flex;flex-direction:column;align-items:center;height:calc(90vh - 5.125rem);flex-direction:column;justify-content:space-between}
+.header .nav{min-height:100vh;min-height:-webkit-fill-available;width:100%;display:flex;flex-direction:column;align-items:center;height:calc(90vh - 5.125rem);flex-direction:column;justify-content:space-between}
 
 .header .nav_controls{display:flex;flex-direction:column;justify-content:space-between;align-items:center;width:100%;height:100%}
 
@@ -695,7 +695,7 @@ ul{list-style:none;padding:0}
 
 .header .nav .button-primary:hover{transform:scale(1.1)}
 
-.company-logo{position:absolute;top:25px;width:100%;height:55px;display:flex;align-items:center;justify-content:center;z-index:1}
+.company-logo{position:absolute;top:15px;width:100%;height:55px;display:flex;align-items:center;justify-content:center;z-index:1}
 
 .company-logo::before{content:'';background-image:url(images/55a72f2a09a80c4c9bc456b1db150deb.svg);background-repeat:no-repeat;background-size:contain;width:100px;height:55px}
 
