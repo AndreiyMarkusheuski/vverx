@@ -68,8 +68,6 @@
     }
 }
 
-
-
 .preview {
     position: relative;
     background: url(../images/preview-bg.jpg);
@@ -200,9 +198,13 @@
 .rent,
 .sell {
     &_wrapper {
-        min-height: 650px;
         padding: toRem(25) 0;
+        box-sizing: border-box;
         position: relative;
+
+        min-height: 100vh;
+        /* mobile viewport bug fix */
+        min-height: -webkit-fill-available;
 
         @include media(m, s) {
             padding: toRem(16) 0;
@@ -417,8 +419,11 @@
 
 .about-company {
     &_wrapper {
-        height: 100vh;
-        min-height: 650px;
+        height: 100%;
+        box-sizing: border-box;
+        min-height: 100vh;
+        /* mobile viewport bug fix */
+        min-height: -webkit-fill-available;
         position: relative;
 
         @include media(m, s) {
@@ -460,10 +465,10 @@
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr;
             grid-template-areas:
-            "."
-            "."
-            "."
-            ".";
+                "."
+                "."
+                "."
+                ".";
         }
     }
 
@@ -542,7 +547,7 @@
                 z-index: 2;
                 transition: all .7s ease;
                 cursor: default;
-        
+
                 @include media(m, s) {
                     font-size: 16px;
                 }
@@ -584,8 +589,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 100vh;
-        min-height: 650px;
+        height: 100%;
+        box-sizing: border-box;
+        min-height: 100vh;
+        /* mobile viewport bug fix */
+        min-height: -webkit-fill-available;
 
         @include media(m, s) {
             margin-top: 0;
@@ -642,13 +650,16 @@
                     height: 20px;
                     overflow: hidden;
 
-                    .text, .text-orange {
+                    .text,
+                    .text-orange {
                         transform: translateY(0);
                         transition: all .3s ease .05s;
                     }
 
                     &:hover {
-                        .text, .text-orange {
+
+                        .text,
+                        .text-orange {
                             transform: translateY(-20px);
                         }
                     }
@@ -680,8 +691,10 @@
                     }
                 }
 
-                &.-instagram::after, &.-instagram::before,
-                &.-tiktok::after, &.-tiktok::before {
+                &.-instagram::after,
+                &.-instagram::before,
+                &.-tiktok::after,
+                &.-tiktok::before {
                     content: '';
                     position: absolute;
                     top: 5px;
@@ -692,7 +705,7 @@
                     background-size: contain;
                     transition: all .3s ease .05s;
                 }
-                
+
                 &.-instagram::after {
                     background-image: url(../images/icons/instagram.svg);
                     transform: translateY(0);
@@ -719,15 +732,17 @@
 
 @keyframes jump {
     0% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
+
     50% {
         -webkit-transform: translateY(-10px);
         transform: translateY(-10px);
     }
+
     100% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
-      }
-  }
+    }
+}

@@ -5,6 +5,7 @@ const modalBlock = document.querySelector(".modal");
 const modalBgBtn = document.querySelector(".modal_bg");
 
 const form = document.querySelector("#contact_form");
+const { body } = document;
 
 const inputs = document.querySelectorAll(".form_field_input");
 
@@ -19,6 +20,7 @@ const removeInputFocus = (input) => {
 
 const handleOpenModal = (e) => {
   setAdditionalFieldValue(e.target.dataset.target);
+  body.style.overflowY = "hidden";
   modalBlock.classList.add("open");
 };
 
@@ -26,6 +28,7 @@ const handleCloseModal = (e) => {
   e.preventDefault();
   form.reset();
   inputs.forEach((item) => removeInputFocus(item));
+  body.style.overflowY = "scroll";
   modalBlock.classList.remove("open");
 };
 

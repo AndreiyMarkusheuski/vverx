@@ -26,21 +26,21 @@ const handleSubmitForm = (e) => {
 
   if (isAllRequiredFieldsDone()) {
     form.submit();
-    form.reset()
+    form.reset();
   }
 };
 
 const addInputFocus = (e) => {
   const parent = e.target.parentNode.parentNode;
   parent.classList.add("focus");
-}
+};
 
 const removeInputFocus = (e) => {
   const parent = e.target.parentNode.parentNode;
   if (e.target.value == "") {
     parent.classList.remove("focus");
   }
-}
+};
 
 submitBtn.addEventListener("click", handleSubmitForm);
 inputs.forEach((input) => {

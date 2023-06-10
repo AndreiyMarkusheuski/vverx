@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Autoplay } from 'swiper';
+import Swiper, { Navigation, Autoplay } from "swiper";
 
 Swiper.use([Navigation, Autoplay]);
 
@@ -43,7 +43,6 @@ swiperInit.forEach((swiperName) => {
     setActiveItem(slides[activeIndex], sellNodes[swiperName.listName]);
   });
 });
-
 
 setActiveItem(firstRentItem, sellNodes.rentNodeItems);
 setActiveItem(firstSellItem, sellNodes.sellNodeItems);

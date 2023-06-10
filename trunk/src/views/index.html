@@ -15,16 +15,19 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.3/pace.min.js"></script>
+    <script data-pace-options='{"eventLag": false,"restartOnRequestAfter": false}'
+        src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
 </head>
 
 <body>
+    <div class="button_burger" id="button_burger_id">
+        <!-- burger elements -->
+        <span></span><span></span><span></span>
+    </div>
     <div class="page_header">
+
         <header class="header" id="header_id">
-            <div class="button_burger" id="button_burger_id">
-                <!-- burger elements -->
-                <span></span><span></span><span></span>
-            </div>
+
             <div class="container">
                 <nav class="nav"><span class="nav_button nav_logo fullpage-go-to" data-target="main">
                         <img alt="Вверх Техно" loading="lazy" width="100" height="60" decoding="async" data-nimg="1"
@@ -38,10 +41,14 @@
                                 <div class="dropdown_title">Аренда</div>
                                 <div class="dropdown_container">
                                     <div class="dropdown_container-content">
-                                        <a class='nav_button' href="./rent-backhoe-loader.html"><span class="link">Экскаваторы-погрузчики</span></a>
-                                        <a class='nav_button' href="./rent-telescopic-loader.html"><span class="link">Телескопические погрузчики</span></a>
-                                        <a class='nav_button' href="./rent-lifts.html"><span class="link">Подъёмники</span></a>
-                                        <a class='nav_button' href="./rent-vibrating-plates.html"><span class="link">Виброплиты</span></a>
+                                        <a class='nav_button' href="./rent-backhoe-loader.html"><span
+                                                class="link">Экскаваторы-погрузчики</span></a>
+                                        <a class='nav_button' href="./rent-telescopic-loader.html"><span
+                                                class="link">Телескопические погрузчики</span></a>
+                                        <a class='nav_button' href="./rent-lifts.html"><span
+                                                class="link">Подъёмники</span></a>
+                                        <a class='nav_button' href="./rent-vibrating-plates.html"><span
+                                                class="link">Виброплиты</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +56,8 @@
                                 <div class="dropdown_title">Купить</div>
                                 <div class="dropdown_container">
                                     <div class="dropdown_container-content">
-                                        <a class='nav_button' href="./sell-containers.html"><span class="link">Контейнеры</span></a>
+                                        <a class='nav_button' href="./sell-containers.html"><span
+                                                class="link">Контейнеры</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +117,8 @@
                                         src="../images/rent/JLG_800AJ.jpeg" />
                                     <div class="product_content">
                                         <h3 class="product_title">Экскаваторы-погрузчики</h3>
-                                        <a href="./rent-backhoe-loader.html" class="button -primary product_link">Подробнее</a>
+                                        <a href="./rent-backhoe-loader.html"
+                                            class="button -primary product_link">Подробнее</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide-rent product" id="JLG_600AJ">
@@ -118,7 +127,8 @@
                                         src="../images/rent/JLG_600AJ.jpeg" />
                                     <div class="product_content">
                                         <h3 class="product_title">Телескопические погрузчики</h3>
-                                        <a href="./rent-telescopic-loader.html" class="button -primary product_link">Подробнее</a>
+                                        <a href="./rent-telescopic-loader.html"
+                                            class="button -primary product_link">Подробнее</a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide-rent product" id="JLG_510AJ">
@@ -136,7 +146,8 @@
                                         src="../images/rent/JLG_510AJ.jpeg" />
                                     <div class="product_content">
                                         <h3 class="product_title">Виброплиты</h3>
-                                        <a href="./rent-vibrating-plates.html" class="button -primary product_link">Подробнее</a>
+                                        <a href="./rent-vibrating-plates.html"
+                                            class="button -primary product_link">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -144,19 +155,23 @@
                             <div class="swiper-button-prev"></div>
                         </div>
                         <div class="rent_list">
-                            <a href="./rent-backhoe-loader.html" class="list_item list_item-rent slide-left scrolled" id="JLG_800AJ">
+                            <a href="./rent-backhoe-loader.html" class="list_item list_item-rent slide-left scrolled"
+                                id="JLG_800AJ">
                                 <div class="item_bg JLG_800AJ"></div>
                                 <h4 class="item_title">Экскаваторы-погрузчики</h4>
                             </a>
-                            <a href="./rent-telescopic-loader.html" class="list_item list_item-rent slide-right scrolled" id="JLG_600AJ">
+                            <a href="./rent-telescopic-loader.html"
+                                class="list_item list_item-rent slide-right scrolled" id="JLG_600AJ">
                                 <div class="item_bg JLG_600AJ"></div>
                                 <h4 class="item_title">Телескопические погрузчики</h4>
                             </a>
-                            <a href="./rent-lifts.html" class="list_item list_item-rent slide-right scrolled" id="JLG_600AJ">
+                            <a href="./rent-lifts.html" class="list_item list_item-rent slide-right scrolled"
+                                id="JLG_600AJ">
                                 <div class="item_bg JLG_600AJ"></div>
                                 <h4 class="item_title">Подъёмники</h4>
                             </a>
-                            <a href="./rent-vibrating-plates.html" class="list_item list_item-rent slide-left scrolled" id="JLG_510AJ">
+                            <a href="./rent-vibrating-plates.html" class="list_item list_item-rent slide-left scrolled"
+                                id="JLG_510AJ">
                                 <div class="item_bg JLG_510AJ"></div>
                                 <h4 class="item_title">Виброплиты</h4>
                             </a>
@@ -178,7 +193,8 @@
                                     <div class="product_content">
                                         <h3 class="product_title">Универсальные блок-контейнеры <span
                                                 class="c-orange">CONTAINEX</span></h3>
-                                        <a href="./sell-containers.html" class="button -primary product_link">Подробнее</a>
+                                        <a href="./sell-containers.html"
+                                            class="button -primary product_link">Подробнее</a>
                                     </div>
                                 </div>
                                 <!-- <div class="swiper-slide swiper-slide-sell product" id="JLG_600AJ">
@@ -247,8 +263,7 @@
                     </div>
                     <div class="contacts_form form">
                         <div class="form_content">
-                            <form id="contact_form" action="https://formspree.io/f/moqzoeay"
-                                    method="POST">
+                            <form id="contact_form" action="https://formspree.io/f/moqzoeay" method="POST">
                                 <h2 class="form_title">Обратная связь</h2>
                                 <div class="form_input-div ">
                                     <div class="form_field">
@@ -268,7 +283,8 @@
                                         <textarea name="comment" type="text" class="form_field_input"></textarea>
                                     </div>
                                 </div>
-                                <input id="form_btn-submit" type="submit" class="form_button button -rectangle" value="Отправить">
+                                <input id="form_btn-submit" type="submit" class="form_button button -rectangle"
+                                    value="Отправить">
                             </form>
                         </div>
                         <div class="contacts_info">

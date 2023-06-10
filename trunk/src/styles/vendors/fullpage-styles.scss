@@ -1,6 +1,6 @@
 @import '../tools/index.scss';
 
-#fp{
+#fp {
     &-nav {
         ul {
             li {
@@ -8,21 +8,10 @@
                     background-color: $c-orange-text !important;
                 }
 
-                .active span{
+                .active span {
                     background-color: $c-main-bg
                 }
             }
         }
-
-        // &::after {
-        //     content: '';
-        //     position: absolute;
-        //     top: -31px;
-        //     left: -80%;
-        //     height: 150px;
-        //     width: 150px;
-        //     border-radius: 50%;
-        //     background-color: black;
-        // }
     }
 }
