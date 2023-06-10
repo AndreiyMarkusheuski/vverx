@@ -699,11 +699,9 @@ ul{list-style:none;padding:0}
 
 .company-logo::before{content:'';background-image:url(images/55a72f2a09a80c4c9bc456b1db150deb.svg);background-repeat:no-repeat;background-size:contain;width:100px;height:55px}
 
-.fp-viewing-rent-page .company-logo::before,.fp-viewing-sell-page .company-logo::before,.fp-viewing-about .company-logo::before{background-image:url(images/f5b1c951ecb0593285fac53d683100fb.png)}
+.fp-viewing-rent-page .company-logo::before,.fp-viewing-sell-page .company-logo::before,.fp-viewing-about .company-logo::before,.fp-viewing-contacts .company-logo::before{background-image:url(images/f5b1c951ecb0593285fac53d683100fb.png)}
 
-@media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.fp-viewing-rent-page .company-logo,.fp-viewing-sell-page .company-logo,.fp-viewing-about .company-logo{visibility:hidden;opacity:0;z-index:-1}}
-
-.fp-viewing-contacts .company-logo::before{background-image:url(images/f5b1c951ecb0593285fac53d683100fb.png)}
+@media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.fp-viewing-rent-page .company-logo,.fp-viewing-sell-page .company-logo,.fp-viewing-about .company-logo,.fp-viewing-contacts .company-logo{visibility:hidden;opacity:0;z-index:-1}}
 
 .fp-viewing-contacts .call-us{opacity:0;visibility:hidden;z-index:-1}
 
