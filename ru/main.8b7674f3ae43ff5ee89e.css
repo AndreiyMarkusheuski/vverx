@@ -457,7 +457,7 @@ template {
 
 .rent .product_content,.sell .product_content{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;max-width:40%}
 
-.rent .product_title,.sell .product_title{font-style:normal;font-weight:400;font-size:22px;line-height:140%;color:#555;flex-grow:0;text-transform:uppercase}
+.rent .product_title,.sell .product_title{font-style:normal;font-weight:400;font-size:32px;line-height:140%;color:#555;flex-grow:0;text-transform:uppercase;text-align:left}
 
 @media all and (min-width: 521px) and (max-width: 768px){.rent .product_title,.sell .product_title{font-size:16px;text-align:left}}
 
@@ -475,7 +475,7 @@ template {
 
 .rent_list .list_item.active,.sell_list .list_item.active{opacity:1}
 
-.rent_list .list_item .item_title,.sell_list .list_item .item_title{text-decoration:none;outline:none;font-style:normal;font-weight:400;font-size:16px;line-height:140%;color:#555;flex-grow:0;text-transform:uppercase}
+.rent_list .list_item .item_title,.sell_list .list_item .item_title{text-decoration:none;outline:none;font-style:normal;font-weight:400;font-size:18px;line-height:140%;color:#555;flex-grow:0;text-transform:uppercase;text-align:center}
 
 .rent_list .list_item .item_bg,.sell_list .list_item .item_bg{width:100%;height:200px;background-size:contain;background-repeat:no-repeat}
 
@@ -495,12 +495,6 @@ template {
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.about-company_wrapper{margin-top:0}}
 
-.about-company_title{display:none;font-style:normal;font-weight:700;font-size:40px;line-height:140%;color:#000;margin-bottom:1.875rem}
-
-@media all and (min-width: 769px) and (max-width: 1000px), all and (min-width: 521px) and (max-width: 768px){.about-company_title{font-size:30px}}
-
-@media all and (max-width: 520px){.about-company_title{font-size:20px}}
-
 .about-company_content{height:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;grid-gap:0px 0px;gap:0px 0px;grid-template-areas:". ." ". ."}
 
 @media all and (max-width: 520px){.about-company_content{grid-template-columns:1fr;grid-template-rows:1fr 1fr 1fr 1fr;grid-template-areas:"." "." "." "."}}
@@ -513,7 +507,7 @@ template {
 
 .about-company_block:hover .block_description{opacity:1;transform:translateY(0)}
 
-.about-company_block .block_title{position:relative;font-weight:700;font-size:20px;line-height:140%;color:#000;margin-top:.938rem;z-index:2;transition:all .7s ease;transform:translateY(40px);text-transform:uppercase;cursor:default}
+.about-company_block .block_title{position:relative;font-weight:700;font-size:32px;line-height:140%;color:#000;margin-top:.938rem;z-index:2;transition:all .7s ease;transform:translateY(40px);text-transform:uppercase;cursor:default}
 
 .about-company_block .block_description{opacity:0;max-height:130px;min-height:130px;height:100%;transform:translateY(80px);font-style:normal;text-align:center;font-weight:700;font-size:18px;line-height:140%;color:#000;z-index:2;transition:all .7s ease;cursor:default}
 
@@ -533,13 +527,13 @@ template {
 
 @media all and (max-width: 520px){.contacts_wrapper{flex-direction:column}}
 
-.contacts_map{position:relative;width:100%;height:100%;flex:2}
+.contacts_map{position:relative;width:100%;height:100%;flex:1}
 
 @media all and (max-width: 520px){.contacts_map{display:none}}
 
 .contacts_info{margin:2.188rem 0;width:300px}
 
-.contacts_info .info_title{text-align:center;margin:.938rem 0;color:#555;text-transform:uppercase;font-size:26px;font-weight:100}
+.contacts_info .info_title{text-align:center;margin:.938rem 0;color:#555;text-transform:uppercase;font-size:32px;font-weight:100}
 
 @media all and (min-width: 521px) and (max-width: 768px), all and (max-width: 520px){.contacts_info .info_title{font-size:20px}}
 
@@ -675,7 +669,7 @@ ul{list-style:none;padding:0}
 
 .button_burger.open span:nth-child(3){transform:rotate(-45deg);top:8px;background-color:orange}
 
-.header{position:fixed;overflow:scroll;right:-50vw;top:0;bottom:0;width:50vw;border-bottom:none;border-left:5px solid orange;background-color:#fff;padding:1.563rem 0;transition:all .5s ease-in-out;z-index:10;box-sizing:border-box;min-height:100vh;min-height:-webkit-fill-available}
+.header{position:fixed;overflow:scroll;right:-50vw;top:0;bottom:0;width:35vw;border-bottom:none;border-left:5px solid orange;background-color:#fff;padding:1.563rem 0;transition:all .5s ease-in-out;z-index:10;box-sizing:border-box;min-height:100vh;min-height:-webkit-fill-available}
 
 .header.active{right:0;padding:1.563rem .938rem}
 
