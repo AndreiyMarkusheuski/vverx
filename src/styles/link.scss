@@ -1,5 +1,5 @@
-@import './mixins/link.scss';
+@import './mixins/button.scss';
 
-a {
-  @include link;
+.button {
+  @include button;
 }

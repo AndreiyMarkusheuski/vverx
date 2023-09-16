@@ -15,28 +15,122 @@
   <meta name="theme-color" content="#ffffff">
 
   <link href="src/styles/index.scss" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 
-<body>
+<body class="main">
   <main id="smooth_scroll">
     <header class="header">
-      <div class="header-top_line">
-        <a class="header-top_line-logo"><img src="src/assets/logo.svg"></a>
-        <a class="header-top_line-call_us"></a>
-      </div>
 
-      <nav class="header-nav"></nav>
+      <div class="container">
+        <div class="header-top_line">
+          <a href="/" class="header-top_line-logo"><img src="src/assets/icons/logo.svg"></a>
+          <a href="callto:+375447262626" class="header-top_line-call_us button --phone">+375 (44) 726-26-26</a>
+        </div>
+
+        <nav class="header-nav"></nav>
+      </div>
     </header>
 
 
-    <section class="describe smooth_scroll-section --vertical"></section>
+    <section class="describe smooth_scroll-section --vertical">
+      <div class="container">
+        <div class="describe-wrapper">
+          <h1 class="describe-headline">Аренда строительной техники</h1>
+          <p class="describe-text">Обеспечиваем надежное партнерство с фокусом на производительность и современное
+            оборудование. Ваш успех - наш приоритет.</p>
+          <a href="#" class="describe-link button">Каталог техники</a>
+        </div>
+      </div>
+      <div class="describe-carusel">
+        <img class="describe-carusel-item " src="src/assets/images/plits.png" alt="Виброплиты" />
+        <img class="describe-carusel-item " src="src/assets/images/telehandlers.png" alt="Телескопические погрузчики">
+        <img class="describe-carusel-item " src="src/assets/images/backhoe_loaders.png" alt="Экскаваторы-погрузчики" />
+        <img class="describe-carusel-item " src="src/assets/images/lifts.png" alt="Подъемники" />
+      </div>
+      </div>
+    </section>
 
-    <section class="products smooth_scroll-section --vertical"></section>
+    <section class="products smooth_scroll-section --vertical">
 
-    <section class="about_us smooth_scroll-section --horizontal"></section>
+      <div class="container">
+        <div class="products-wrapper">
+          <h2 class="products-headline">Техника в аренду</h2>
+          <p class="products-text">Откройте мир возможностей с нашим разнообразным каталогом строительной техники.
+            Готовы начать? Переходите в каталог и выбирайте идеальное решение для вашего проекта прямо сейчас!</p>
+        </div>
+        <div class="products-list" id="products_swiper">
+        </div>
+      </div>
+    </section>
 
-    <section class="contacts smooth_scroll-section --horizontal"></section>
+    <section class="about_us smooth_scroll-section --horizontal">
+      <div class="container">
+        <div class="about_us-wrapper">
+          <h2 class="about_us-headline">О Нас</h2>
+          <p class="about_us-text"><span class="text__orange">Вверх Техно</span> - ваш надежный партнер в аренде
+            строительной техники с 2019 года. Наш постоянный рост и
+            стремление к развитию позволяют нам предоставлять качественный сервис для успешной реализации ваших
+            проектов.</p>
+        </div>
+        <div class="about_us-cards" id="about_us-cards"></div>
+        <p class="about_us-partner">Вы так же можете стать нашим партнером!</p>
+      </div>
+    </section>
+
+    <section class="contacts smooth_scroll-section --horizontal">
+      <div class="container">
+        <h2 class="contacts-headline">Свяжитесь с нами!</h2>
+        <a href="callto:+375447262626" class="contacts-link">
+          <p class="text">+375 (44) 726-26-26</p>
+          <p class="text__orange">+375 (44) 726-26-26</p>
+        </a>
+        <a href="callto:+375173783806" class="contacts-link">
+          <p class="text">+375 (17) 378-38-06</p>
+          <p class="text__orange">+375 (17) 378-38-06</p>
+        </a>
+        <a href="mailto:director@vverx.by" class="contacts-link">
+          <p class="text">director@vverx.by</p>
+          <p class="text__orange">director@vverx.by</p>
+        </a>
+        <div class="contacts-social">
+          <a href='https://instagram.com/vverh_tehno' target="_blank" class="contacts-social-link -instagram"></a>
+          <a href='https://www.tiktok.com/@vverh_tehno' target="_blank" class="contacts-social-link -tiktok"></a>
+          </div>
+
+          <div class="contacts-wrapper">
+            <div class="contacts-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55166.09298577327!2d27.467500381867662!3d53.88302667404664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdaac28a85ce9%3A0xd277836d88cc268a!2z0JLQstC10YDRhQ!5e0!3m2!1sru!2sby!4v1685293438499!5m2!1sru!2sby"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contacts-form form">
+              <div class="form-content">
+                <form id="contact_form" action="https://formspree.io/f/moqzoeay" method="POST">
+                  <h2 class="form-headline">Можете связаться с нами, задав свой вопрос в форме для обратной связи, и мы
+                    вам перезвоним!</h2>
+                  <div class="form-field">
+                    <input required name="name" type="text" class="form-field-input" placeholder="Ваше имя">
+                  </div>
+                  <div class="form-field">
+                    <input required name="phone" type="text" class="form-field-input" placeholder="Номер телефона">
+                  </div>
+                  <div class="form-field">
+                    <textarea name="comment" type="text" class="form-field-input"
+                      placeholder="Ваше сообщение"></textarea>
+                  </div>
+                  <input id="form_btn-submit" type="submit" class="form_button button" value="Отправить">
+                </form>
+              </div>
+            </div>
+          </div>
+    </section>
   </main>
+
+  <script type="module" src="/src/widgets/swiper/products"></script>
+  <script type="module" src="/src/widgets/swiper/about_us"></script>
+  <script type="module" src="src/scripts/form.ts"></script>
 </body>
 
 </html>

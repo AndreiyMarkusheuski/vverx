@@ -1,20 +1,99 @@
 @import 'src/styles/colors.scss';
 @import 'src/styles/fonts/index.scss';
+@import 'src/styles/sizes.scss';
 
 :root {
   font-family: $f-main;
   color: $c-text;
   background-color: $c-base-background;
-  overflow: hidden;
+  // overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 // Hide arrows for number inputs
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type=number] {
-    -moz-appearance:textfield;
+  -moz-appearance: textfield;
+}
+
+.container {
+  max-width: $contentWidth;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 toRem(15);
+  box-sizing: border-box;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+
+  &-slide {
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &-button-disabled {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  div > &-pagination {
+    text-align: left;
+    padding: 0 toRem(20);
+    bottom: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-bullet {
+        width: 18px;
+        height: 18px;
+        background-color: $c-light-white;
+        border: none;
+        opacity: 1;
+        border-radius: 0;
+        transition: all .3s ease;
+        max-width: 14px;
+        max-height: 14px;
+
+        &-active {
+            max-width: 18px;
+            max-height: 18px;
+            opacity: 1;
+            background-color: $c-orange;
+        }
+    }
+}
+}
+
+.text {
+  &__orange {
+    color: $c-orange-text;
+    font-weight: 600;
+  }
 }

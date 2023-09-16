@@ -5,6 +5,9 @@ $c-grey: #3A3A3A;
 $c-grey-light: #F3F2F5;
 $c-dark-olive: #555555;
 $c-orange: #FF4D00;
+$c-orange-dark: #FF6320;
+$c-red: #E74500;
+$c-light-white: #F5F5F5;
 
 // Color schema
 $c-primary: $c-orange;
@@ -13,11 +16,15 @@ $c-secondary: $c-grey;
 $c-icon-light: $c-grey-light;
 $c-icon-dark: $c-dark-olive;
 
-$c-text: $c-white;
-$c-text-additional: desaturate(lighten($c-text, 28%), 39%);
-$c-text-mud: desaturate(lighten($c-text, 49%), 51%);
-$c-text-label-header: desaturate(lighten($c-text, 2.5%), 7.6%);
-$c-text-light: desaturate(lighten($c-text, 28%), 39%);
+$c-text: $c-grey;
+$c-orange-text: $c-orange;
+$c-secondary-text: $c-white;
+$c-text-button: $c-white;
 
 $c-base-background: $c-white;
 $c-overlay-background: rgba($c-text, 0.05);
+$c-button-background: $c-orange;
+$c-button-hover-background: $c-orange-dark;
+$c-button-pressed-background: $c-red;
+$c-button-disable-background: rgba(160, 160, 160, 0.57);
+

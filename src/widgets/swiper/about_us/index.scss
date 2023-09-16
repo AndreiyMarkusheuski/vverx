@@ -1,0 +1,44 @@
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/colors.scss';
+
+.about_us-swiper {
+    padding: toRem(40) 0;
+    &-item {
+        width: 332px;
+        height: 310px;
+        padding: toRem(78) toRem(32) toRem(15);
+        box-sizing: border-box;
+        position: relative;
+        background-image: url('../../src/assets/images/about-us-border.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    div > &-img {
+        position: absolute;
+        top: -36.5px; // height/2 
+        left:  calc(50% - 36.5px);
+        width: 75px;
+        height: 75px;
+    }
+
+    &-title {
+        color: $c-text;
+        text-align: center;
+        font-size: toRem(20);
+        font-style: normal;
+        font-weight: 700;
+        line-height: toRem(20);
+        max-width: 180px;
+        margin: 0 auto toRem(45);
+    }
+
+    &-text {
+        color: $c-text;
+        text-align: center;
+        font-size: toRem(16);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}

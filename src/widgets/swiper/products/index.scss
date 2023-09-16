@@ -1,0 +1,40 @@
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/colors.scss';
+
+.products-swiper {
+    padding: toRem(50) toRem(20);
+
+    &-item {
+        height: toRem(380);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: toRem(30) toRem(30) toRem(50);
+        box-sizing: border-box;
+        border-radius: 4px;
+        background-color: $c-white;
+
+        filter: grayscale(1);
+        transition: all .3s ease;
+
+        &:hover {
+            cursor: pointer;
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+
+        img {
+            height: 80%;
+        }
+    }
+
+    &-text {
+        color: $c-text;
+        text-align: center;
+        font-size: toRem(20);
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+}

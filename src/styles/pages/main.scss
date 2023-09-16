@@ -1,0 +1,452 @@
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/fonts/index.scss';
+@import 'src/styles/mixins/z-index.scss';
+
+.main {
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        @include groupedZIndex('header');
+        background: #FFF;
+
+        &-top_line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: toRem(40) 0;
+        }
+    }
+
+    .describe {
+        position: relative;
+        padding: toRem(240) 0 toRem(165);
+        // height: 100vh;
+        box-sizing: border-box;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 50vw;
+            background-color: $c-base-background;
+
+            @include groupedZIndex('background');
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 50vw;
+            background-image: url('/src/assets/images/gerold-hinzen.jpg');
+
+            @include groupedZIndex('background');
+        }
+
+        &-wrapper {
+            position: relative;
+            max-width: toRem(580);
+        }
+
+        &-headline {
+            font-family: $f-main;
+            font-weight: 700;
+            font-size: toRem(48);
+            line-height: toRem(60);
+            margin: 0;
+            padding: 0;
+        }
+
+        &-text {
+            font-weight: 400;
+            font-size: toRem(22);
+            line-height: toRem(40);
+            margin: toRem(20) 0 toRem(32);
+        }
+
+        &-carusel {
+            @include groupedZIndex('layout');
+            max-width: toRem(1500);
+            margin: toRem(70) auto 0;
+            height: toRem(230);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+
+            &-item {
+                margin-right: toRem(30);
+
+                transition: all .3s;
+                filter: grayscale(1);
+
+                &:hover {
+                    cursor: pointer;
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+
+    .products {
+        padding: toRem(180) 0 toRem(90);
+        // height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+
+        background-image: url('/src/assets/images/gerold-hinzen.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &-wrapper {
+            max-width: toRem(800);
+        }
+
+        &-headline {
+            color: $c-orange-text;
+            font-size: toRem(40);
+            font-weight: 700;
+            line-height: toRem(90);
+            text-transform: uppercase;
+        }
+
+        &-text {
+            font-size: toRem(24);
+            font-weight: 500;
+            line-height: toRem(35);
+            position: relative;
+            color: $c-secondary-text;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -20px;
+                top: 0;
+                bottom: 0;
+                border-left: 4px solid $c-white;
+            }
+        }
+
+        &-list {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: toRem(64);
+        }
+
+        // Swiper style only for products section
+        &-swiper-button {
+
+            &-prev,
+            &-next {
+                position: absolute;
+                @include groupedZIndex('layout');
+                transition: all .1s ease;
+                border: none !important;
+            }
+
+            &-prev {
+                transform: rotate(180deg);
+                left: -20px;
+            }
+
+            &-next {
+                right: -20px;
+            }
+        }
+    }
+
+    .about_us {
+        padding: toRem(180) 0 0;
+        // height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+        background-image: url('/src/assets/images/about-us.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &-wrapper {
+            max-width: toRem(1000);
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        &-headline {
+            color: $c-text;
+            font-size: toRem(96);
+            font-weight: 700;
+            line-height: toRem(90);
+            white-space: nowrap;
+            ;
+        }
+
+        &-text {
+            position: relative;
+            color: $c-text;
+            font-size: toRem(22);
+            font-weight: 500;
+            line-height: toRem(34);
+
+            margin: 0;
+            padding: 0;
+            margin-left: toRem(40);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -20px;
+                border-left: 4px solid $c-text;
+            }
+        }
+
+        &-cards {
+            margin-top: toRem(140);
+        }
+
+        &-partner {
+            margin: toRem(130) 0 0;
+            color: $c-orange-text;
+            text-align: left;
+            font-size: toRem(32);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 127%;
+        }
+    }
+
+    .contacts {
+        padding: toRem(150) 0;
+        // height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+        background-image: url('/src/assets/images/contacts.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &-headline {
+            color: $c-orange-text;
+            font-size: toRem(36);
+            font-style: normal;
+            font-weight: 700;
+            line-height: toRem(82);
+        }
+
+
+        &-link {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: fit-content;
+            margin: toRem(10) 0 0;
+            color: $c-secondary-text;
+            font-size: toRem(24);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 41px;
+            outline: none;
+            text-decoration: none;
+            height: 41px;
+            overflow: hidden;
+
+            .text,
+            .text__orange {
+                font-size: toRem(24);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 41px;
+                padding: 0;
+                margin: 0;
+                transform: translateY(0);
+                transition: all .3s ease .05s;
+            }
+
+            &:hover {
+
+                .text,
+                .text__orange {
+                    transform: translateY(-41px);
+                }
+            }
+        }
+
+        &-social {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &-link {
+                position: relative;
+                width: 48px;
+                height: 48px;
+                padding: 5px;
+                margin: toRem(20) 0;
+                overflow: hidden;
+                box-sizing: border-box;
+
+                &:hover {
+                    &::after {
+                        transform: translateY(-48px) !important;
+                    }
+
+                    &::before {
+                        transform: translateY(0) !important;
+                    }
+                }
+
+                &.-instagram::after,
+                &.-instagram::before,
+                &.-tiktok::after,
+                &.-tiktok::before {
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    width: 38px;
+                    height: 38px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    transition: all .3s ease .05s;
+                }
+
+                &.-instagram::after {
+                    background-image: url('/src/assets/icons/instagram.svg');
+                    transform: translateY(0);
+                }
+
+                &.-instagram::before {
+                    background-image: url('/src/assets/icons/instagram-orange.svg');
+                    transform: translateY(48px);
+                }
+
+                &.-tiktok::after {
+                    background-image: url('/src/assets/icons/tiktok.svg');
+                    transform: translateY(0);
+                }
+
+                &.-tiktok::before {
+                    background-image: url('/src/assets/icons/tiktok-orange.svg');
+                    transform: translateY(48px);
+                }
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: toRem(50);
+        }
+
+        &-map {
+            flex: 6;
+            margin-left: toRem(20);
+        }
+
+        &-form {
+            flex: 6;
+            box-sizing: border-box;
+            padding: toRem(50);
+            border: 2.684px solid #FFF;
+    
+            .form {
+                &-headline {
+                    color: $c-secondary-text;
+                    font-size: toRem(24);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 40px;
+                    margin-bottom: toRem(40);
+                }
+        
+                &-field {
+                    position: relative;
+                    max-width: toRem(380);
+
+
+                    margin-top: toRem(12);
+
+                    &-input {
+                        background: none;
+                        text-decoration: none;
+                        outline: none;
+                        border: none;
+
+                        border-radius: 3.691px;
+                        border: 2px solid #FFF;
+                        background: rgba(0, 0, 0, 0.70);
+                        width: -webkit-fill-available;
+                        padding: toRem(22);
+                        resize: none;
+                    }
+
+                    &-input, &-input::placeholder {
+                        font-family: $f-main;
+                        color: rgba(255, 255, 255, 0.60);
+                        font-size: toRem(16);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 19.931px;
+                    }
+        
+                    &:first-child {
+                        margin-top: 0;
+                    }
+        
+                    &:before,
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: -1px;
+                        width: 0%;
+                        height: 2px;
+                        background-color: $c-orange-text;
+                        transition: .4s;
+                    }
+        
+                    &.warning {
+        
+                        &:before,
+                        &:after {
+                            content: '';
+                            background-color: $c-orange-text;
+                        }
+                    }
+        
+                    &:before {
+                        right: 50%;
+                    }
+        
+                    &:after {
+                        left: 50%;
+                    }
+        
+                    &.focus:before,
+                    &.warning::before,
+                    &.focus:after,
+                    &.warning::after {
+                        width: 50%;
+                    }
+        
+                    &.pass {
+                        margin-bottom: 4px;
+                    }
+
+                }
+        
+                &_button {
+                    width: 100%;
+                    max-width: toRem(205);
+                    margin-top: toRem(40);
+                }
+            }
+        }
+    }
+}

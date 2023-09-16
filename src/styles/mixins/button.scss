@@ -1,0 +1,51 @@
+@import 'src/styles/colors.scss';
+
+@mixin button() {
+  display: block;
+  width: fit-content;
+  padding: toRem(20) toRem(22);
+
+  background-color: $c-button-background;
+
+  color: $c-text-button;
+  font-weight: 700;
+  font-size: toRem(20);
+  
+  text-decoration: none;
+
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &.--phone {
+    display: flex;
+    flex-direction: row;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 22px;
+      margin-right: toRem(20);
+      background-image: url('../../src/assets/icons/phone.svg');
+    }
+  }
+
+  &:hover {
+    background-color: $c-button-hover-background;
+    text-decoration: none;
+  }
+
+  &:focus {
+    background-color: $c-button-hover-background;
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: $c-button-pressed-background;
+    text-decoration: none;
+  }
+
+  @content;
+}
