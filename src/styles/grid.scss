@@ -1,0 +1,56 @@
+.grid {
+  $marginSize: 0.5rem;
+
+  @mixin width($size) {
+    width: calc(#{$size} - #{2 * $marginSize});
+  }
+
+  margin-left: -$marginSize;
+  margin-right: -$marginSize;
+
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+
+  &-relative {
+    position: relative;
+  }
+
+  &-item {
+    margin-left: $marginSize;
+    margin-right: $marginSize;
+    float: left;
+    @include width(100%);
+
+    &--first_line{
+      margin-top: 0;
+    }
+
+    &--start {
+      clear: both;
+    }
+
+    &--end {
+      margin-left: auto;
+    }
+
+    &--none {
+      display: none;
+    }
+
+    &--hidden {
+      visibility: hidden;
+    }
+
+    &--size {
+      $grid-size: 12;
+      @for $size from 1 through $grid-size {
+        &--#{$size} {
+          @include width(100% * $size / $grid-size);
+        }
+      }
+    }
+  }
+}

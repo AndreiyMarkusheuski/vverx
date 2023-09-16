@@ -1,0 +1,5 @@
+@import './mixins/link.scss';
+
+a {
+  @include link;
+}

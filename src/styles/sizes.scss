@@ -1,0 +1,4 @@
+@import 'src/styles/tools/to-rem.scss';
+
+$contentWidth: toRem(1200);
+$formButtonMinWidth: toRem(200);

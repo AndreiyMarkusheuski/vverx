@@ -1,0 +1,48 @@
+/* light: 300 */
+@font-face {
+  font-display: swap;
+  font-family: 'GolosText';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('GolosText Regular'),
+    local('GolosText-Regular'),
+    url(./fonts/golos-text/GolosText-Regular.ttf) format('ttf'),
+    url(./fonts/golos-text/GolosText-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'GolosText';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('GolosText Medium'),
+    local('GolosText-Medium'),
+    url(./fonts/golos-text/GolosText-Medium.ttf) format('ttf'),
+    url(./fonts/golos-text/GolosText-Medium.ttf) format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'GolosText';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('GolosText SemiBold'),
+    local('GolosText-SemiBold'),
+    url(./fonts/golos-text/GolosText-SemiBold.ttf) format('ttf'),
+    url(./fonts/golos-text/GolosText-SemiBold.ttf) format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'GolosText';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('GolosText Bold'),
+    local('GolosText-Bold'),
+    url(./fonts/golos-text/GolosText-Bold.ttf) format('ttf'),
+    url(./fonts/golos-text/GolosText-Bold.ttf) format('ttf');
+}

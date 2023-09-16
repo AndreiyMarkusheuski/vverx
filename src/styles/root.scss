@@ -1,0 +1,20 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/fonts/index.scss';
+
+:root {
+  font-family: $f-main;
+  color: $c-text;
+  background-color: $c-base-background;
+  overflow: hidden;
+}
+
+// Hide arrows for number inputs
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
