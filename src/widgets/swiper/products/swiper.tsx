@@ -5,6 +5,8 @@ import { Pagination, Navigation } from "swiper/modules";
 import data from "/src/data/products.json";
 // @ts-ignore
 import Arrow from "/src/widgets/specific-components/arrow";
+// @ts-ignore
+import getImageURL from "/src/widgets/tools/get-image-url";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -19,7 +21,7 @@ const renderSlides = ({ id, name, img_url }: TSlide) => (
   <SwiperSlide key={id} className="products-swiper-item">
     <img
       className="products-swiper-img"
-      src={`/src/assets/images/${img_url}.png`}
+      src={getImageURL(img_url)}
       alt={img_url}
     />
     <p className="products-swiper-text">{name}</p>
@@ -33,7 +35,7 @@ export default function ProductsSwiper() {
         <Arrow />
       </button>
       <Swiper
-        slidesPerView={'auto'}
+        slidesPerView={"auto"}
         centeredSlides={true}
         initialSlide={2}
         pagination={{

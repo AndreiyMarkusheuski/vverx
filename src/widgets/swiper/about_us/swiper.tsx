@@ -3,6 +3,8 @@ import { Pagination } from "swiper/modules";
 
 // @ts-ignore  
 import data from "/src/data/about_us.json";
+// @ts-ignore
+import getImageURL from "/src/widgets/tools/get-image-url";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,7 +17,7 @@ const renderSlides = ({ id, title, text, svg }: TSlide) => (
   <SwiperSlide key={id} className="about_us-swiper-item">
     <img
       className="about_us-swiper-img"
-      src={`/src/assets/images/${svg}.svg`}
+      src={getImageURL(svg)}
       alt={svg}
     />
     <h3 className="about_us-swiper-title">{title}</h3>

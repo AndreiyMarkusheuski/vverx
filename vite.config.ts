@@ -14,5 +14,10 @@ export default defineConfig({
         admin: resolve(__dirname, 'catalog/index.html')
       }
     }
-  }
+  },
+  resolve: {
+    alias: {
+      "@assets": resolve(__dirname, "src/assets/images"),
+    },
+  },
 });
