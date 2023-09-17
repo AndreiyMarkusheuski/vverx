@@ -1,6 +1,8 @@
 @import 'src/styles/colors.scss';
 @import 'src/styles/fonts/index.scss';
 @import 'src/styles/sizes.scss';
+@import 'src/styles/mixins/media.scss';
+@import 'src/styles/mixins/z-index.scss';
 
 :root {
   font-family: $f-main;
@@ -95,5 +97,77 @@ input[type=number] {
   &__orange {
     color: $c-orange-text;
     font-weight: 600;
+  }
+}
+
+.button_burger {
+  display: none;
+  position: fixed;
+  top: toRem(25);
+  right: toRem(25);
+  width: 25px;
+  height: 23px;
+  @include groupedZIndex('overlay');
+
+  @include media(s, m,  l) {
+    display: block;
+  }
+
+  &:hover {
+      cursor: pointer;
+  }
+
+  & span {
+      background-color: $c-dark-background;
+      position: absolute;
+      border-radius: 2px;
+      transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+      width: 100%;
+      height: 3px;
+      transition-duration: .5s;
+
+      &:first-child {
+          top: 0;
+          left: 0
+      }
+
+      &:nth-child(2) {
+          top: 8px;
+          left: 0;
+          opacity: 1
+      }
+
+      &:nth-child(3) {
+          top: 16px;
+          left: 0
+      }
+  }
+
+  &:not(.open):hover span:first-child {
+      transform: rotate(-3deg) scaleY(1.1)
+  }
+
+  &:not(.open):hover span:nth-child(2) {
+      transform: rotate(3deg) scaleY(1.1)
+  }
+
+  &:not(.open):hover span:nth-child(3) {
+      transform: rotate(-4deg) scaleY(1.1)
+  }
+
+  &.open span:first-child {
+      transform: rotate(45deg);
+      top: 8px;
+      background-color: $c-orange;
+  }
+
+  &.open span:nth-child(2) {
+      opacity: 0
+  }
+
+  &.open span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 8px;
+      background-color: $c-orange;
   }
 }

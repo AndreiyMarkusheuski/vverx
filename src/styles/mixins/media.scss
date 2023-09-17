@@ -1,8 +1,8 @@
 $sizes: (
-  s:  (              max: 1023px ),
-  m:  ( min: 1024px, max: 1365px ),
-  l:  ( min: 1366px, max: 1599px ),
-  xl: ( min: 1600px              ),
+  s:  (              max: 399px ),
+  m:  ( min: 400px, max: 875px ),
+  l:  ( min: 876px, max: 1199px ),
+  xl: ( min: 1200px              ),
 );
 
 @function joinQueryString($queryParts, $separator) {

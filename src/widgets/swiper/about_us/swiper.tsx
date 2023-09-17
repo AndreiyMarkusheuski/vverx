@@ -29,6 +29,7 @@ export default function AboutUsSwiper() {
       <Swiper
         slidesPerView={'auto'}
         spaceBetween={30}
+        centeredSlides={true}
         pagination={{
           clickable: true,
         }}

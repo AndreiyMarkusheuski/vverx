@@ -1,5 +1,6 @@
 @import 'src/styles/tools/to-rem.scss';
 @import 'src/styles/colors.scss';
+@import 'src/styles/mixins/media.scss';
 
 .about_us-swiper {
     padding: toRem(40) 0;
@@ -40,5 +41,16 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    @include media(s, m) {
+        .swiper {
+            &-pagination {
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-self: center;
+            }
+        }
     }
 }

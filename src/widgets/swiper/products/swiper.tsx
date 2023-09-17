@@ -33,8 +33,9 @@ export default function ProductsSwiper() {
         <Arrow />
       </button>
       <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
+        slidesPerView={'auto'}
+        centeredSlides={true}
+        initialSlide={2}
         pagination={{
           clickable: true,
         }}
