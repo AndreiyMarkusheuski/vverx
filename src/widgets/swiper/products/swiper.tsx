@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, FreeMode } from "swiper/modules";
 
 // @ts-ignore
 import data from "/src/data/products.json";
@@ -36,16 +36,23 @@ export default function ProductsSwiper() {
       </button>
       <Swiper
         slidesPerView={"auto"}
-        centeredSlides={true}
-        initialSlide={2}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, FreeMode]}
         className="products-swiper"
         navigation={{
           nextEl: ".products-swiper-button-next",
           prevEl: ".products-swiper-button-prev",
+        }}
+        breakpoints={{
+          200: {
+            centeredSlides: true
+          },
+          876: {
+            centeredSlides: false,
+            freeMode: {sticky: true, enable: true}
+          },
         }}
       >
         {data.map(renderSlides)}

@@ -1,5 +1,6 @@
 @import 'src/styles/tools/to-rem.scss';
 @import 'src/styles/colors.scss';
+@import 'src/styles/mixins/media.scss';
 
 .products-swiper {
     padding: toRem(50) toRem(20);
@@ -43,10 +44,19 @@
 
     .swiper {
         &-slide {
-            &-active {
-                filter: grayscale(0);
-                transform: scale(1.1);
+            @include media(l) {
+                &:hover {
+                    filter: grayscale(0);
+                    transform: scale(1.1);
+                }
             }
+            @include media(s, m) {
+                &-active {
+                    filter: grayscale(0);
+                    transform: scale(1.1);
+                }
+            }
+            
         }
     }
 }

@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, FreeMode } from "swiper/modules";
 
 // @ts-ignore  
 import data from "/src/data/about_us.json";
@@ -31,12 +31,20 @@ export default function AboutUsSwiper() {
       <Swiper
         slidesPerView={'auto'}
         spaceBetween={30}
-        centeredSlides={true}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        modules={[Pagination, FreeMode]}
         className="about_us-swiper"
+        breakpoints={{
+          200: {
+            centeredSlides: true
+          },
+          1199: {
+            centeredSlides: false,
+            freeMode: true
+          },
+        }}
       >
         {data.map(renderSlides)}
       </Swiper>
