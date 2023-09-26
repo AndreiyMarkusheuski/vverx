@@ -51,7 +51,7 @@ export default function ProductsSwiper() {
           },
           876: {
             centeredSlides: false,
-            freeMode: {sticky: true, enable: true}
+            freeMode: true
           },
         }}
       >
