@@ -2,7 +2,7 @@ const inputs = document.querySelectorAll(".form-field-input");
 const submitBtn = document.querySelector("#form_btn-submit");
 const form = document.querySelector("#contact_form");
 
-const checkRequiredField = (field: any) => {
+const checkRequiredField = (field) => {
   if (!field.value) {
     field.closest(".form-field").classList.add("warning");
     return false;
@@ -12,9 +12,7 @@ const checkRequiredField = (field: any) => {
 };
 
 const isAllRequiredFieldsDone = () => {
-    // @ts-ignore 
   const nameField = document.forms["contact_form"]["name"];
-  // @ts-ignore 
   const phoneField = document.forms["contact_form"]["phone"];
 
   const isNameDone = checkRequiredField(nameField);
@@ -23,25 +21,23 @@ const isAllRequiredFieldsDone = () => {
   return isNameDone && isPhoneDone;
 };
 
-const addInputFocus = (e: any) => {
+const addInputFocus = (e) => {
   const parent = e.target.parentNode.parentNode;
   parent.classList.add("focus");
 };
 
-const removeInputFocus = (e: any) => {
+const removeInputFocus = (e) => {
   const parent = e.target.parentNode.parentNode;
   if (e.target.value === "") {
     parent.classList.remove("focus");
   }
 };
 
-const handleSubmitForm = (e: any) => {
+const handleSubmitForm = (e) => {
   e.preventDefault();
 
   if (isAllRequiredFieldsDone() && form !== undefined && form !== null) {
-    // @ts-ignore 
     form.submit();
-    // @ts-ignore 
     form.reset();
   }
 };

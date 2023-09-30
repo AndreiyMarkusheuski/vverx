@@ -12,29 +12,22 @@ const closeAllDropdowns = () => {
 
 const handleMenuToggle = () => {
   closeAllDropdowns();
-  // @ts-ignore 
   header.classList.toggle("active");
-  // @ts-ignore 
   burgerButton.classList.toggle("open");
 };
 
 const handleMenuClose = () => {
   closeAllDropdowns();
-  // @ts-ignore 
   header.classList.remove("active");
-  // @ts-ignore 
   burgerButton.classList.remove("open");
 };
 
-const handleDropdownToggle = (dropdownContainer: any) => {
+const handleDropdownToggle = (dropdownContainer) => {
   closeAllDropdowns();
-  // @ts-ignore 
   dropdownContainer.currentTarget.classList.toggle("active");
 };
 
-    // @ts-ignore 
 burgerButton.addEventListener("click", handleMenuToggle);
-// @ts-ignore 
 bgButton.addEventListener("click", handleMenuClose);
 actionButtons.forEach((actionButton) =>
   actionButton.addEventListener("click", handleMenuClose)

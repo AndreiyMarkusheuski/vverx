@@ -1,23 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, FreeMode } from "swiper/modules";
 
-// @ts-ignore
 import data from "/data/products.json";
-// @ts-ignore
 import Arrow from "/widgets/specific-components/arrow";
-// @ts-ignore
 import getImageURL from "/widgets/tools/get-image-url";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-type TSlide = {
-  id: string;
-  name: string;
-  img_url: string;
-};
-
-const renderSlides = ({ id, name, img_url }: TSlide) => (
+const renderSlides = ({ id, name, img_url }) => (
   <SwiperSlide key={id} className="products-swiper-item">
     <img
       className="products-swiper-img"

@@ -1,4 +1,4 @@
-const getImageURL = (img_url: string) => {
+const getImageURL = (img_url) => {
   const gallery = Object.values(
     import.meta.glob("@assets/*.{png,svg,jpg,jpeg,PNG,JPEG}", {
       eager: true,
@@ -9,3 +9,4 @@ const getImageURL = (img_url: string) => {
 };
 
 export default getImageURL;
+
