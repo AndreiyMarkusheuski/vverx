@@ -1,0 +1,50 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/fonts/index.scss';
+@import 'src/styles/mixins/media.scss';
+
+.card {
+    background: $c-white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: toRem(20) toRem(30);
+    // max-height: 470px;
+    height: 100%;
+    box-sizing: border-box;
+
+    &-img {
+        max-height: 230px;
+        min-height: 230px;
+        width: 100%;
+        object-fit: cover;
+        
+    }
+
+    &-headline {
+        margin-top: toRem(40);
+        color: $c-text-additional;
+        font-size: toRem(20);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &-describe {
+        color: $c-text-additional;
+        font-size: toRem(16);
+        font-style: normal;
+        font-weight: 500;
+        line-height: toRem(30); /* 211.25% */
+    }
+
+    &-button {
+        margin-top: toRem(22);
+        align-self: center;
+        max-height: 50px;
+        min-height: 50px;
+        margin-top: auto;
+    }
+}

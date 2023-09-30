@@ -21,6 +21,10 @@
     display: flex;
     flex-direction: row;
 
+    span {
+      margin-left: toRem(20);
+    }
+
     &::before {
       content: '';
       display: block;

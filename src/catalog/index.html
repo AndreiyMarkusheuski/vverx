@@ -15,12 +15,12 @@
   <meta name="theme-color" content="#ffffff">
 
   <link href="../styles/index.scss" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 
-<body>
+<body id="root">
   <main class="catalog">
     <header class="header" id="header">
-
       <div class="container">
         <div class="header-top_line">
           <a href="/" class="header-top_line-logo"><img src="../assets/icons/logo.svg"></a>
@@ -67,9 +67,10 @@
       </div>
     </header>
     <div class="button_bg_action" id="button_bg_action_id"></div>
+  
+    <div id="catalog" class="catalog-products"></div>
   </main>
-  <div id="catalog"></div>
-  <script type="module" src="./widgets/catalog"></script>
+  <script type="module" src="./app"></script>
 </body>
 
 </html>

@@ -9,24 +9,44 @@ $c-orange-dark: #FF6320;
 $c-red: #E74500;
 $c-light-white: #F5F5F5;
 $c-light-black: #202020;
-
-// Color schema
-$c-primary: $c-orange;
-$c-secondary: $c-grey;
+$c-red: #DC2A2A;
+$c-green: #1E824C;
+$c-blue: #0472E7;
+$c-yellow: #F7F79E;
+$c-blek: #EFEFEF;
 
 $c-icon-light: $c-grey-light;
 $c-icon-dark: $c-dark-olive;
 
 $c-text: $c-grey;
+$c-text-contrast: $c-white;
+$c-text-additional: $c-light-black;
 $c-orange-text: $c-orange;
 $c-secondary-text: $c-white;
 $c-text-button: $c-white;
 
 $c-base-background: $c-white;
 $c-dark-background: $c-grey;
+$c-light-dark-background: $c-grey-light;
+$c-black-background: $c-light-black;
 $c-overlay-background: rgba($c-text, 0.05);
 $c-button-background: $c-orange;
 $c-button-hover-background: $c-orange-dark;
 $c-button-pressed-background: $c-red;
 $c-button-disable-background: rgba(160, 160, 160, 0.57);
+$c-list-background: $c-blek;
 
+// Color schema
+$c-primary: $c-orange;
+$c-secondary: $c-grey;
+$c-error: $c-red;
+$c-success: $c-green;
+$c-warning: $c-orange;
+$c-changing: rgba($c-yellow, .25);
+
+
+$c-divider-border: adjust-hue(desaturate(lighten($c-text, 83.5%), 26%), 5deg);
+
+// shadow presets
+$s-common-shadow-settings: 0 4px 24px;
+$s-panel: $s-common-shadow-settings rgba(adjust-hue(desaturate(darken($c-primary, 2.5%), 76.5%), 27.7deg), 0.1);

@@ -11,15 +11,10 @@ $ZIndexGroups: (
   background: -1,
 );
 
-$ZIndexGlobalGroups: (
-  app: 1,
-  portal: 2,
-);
-
 @mixin groupedZIndex($groupName, $value: 0) {
   z-index: map-get($ZIndexGroups, $groupName) + $value;
 }
 
 @mixin containerZIndex($groupName, $value: 0) {
-  z-index: map-get($ZIndexGlobalGroups, $groupName) + $value;
+  z-index: map-get($ZIndexGroups, $groupName) + $value;
 }

@@ -1,0 +1,68 @@
+
+@import 'src/styles/colors.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/fonts/index.scss';
+@import 'src/styles/mixins/media.scss';
+
+$baseClass: 'title';
+$htmlHeadersSelector: h1, h2, h3, h4, h5, h6;
+$levelCount: 6;
+
+#{$htmlHeadersSelector},
+.#{$baseClass} {
+  margin: 0;
+  color: $c-text;
+  font-weight: 700;
+  line-height: 1.361;
+}
+
+@for $level from 1 through $levelCount {
+  h#{$level},
+  .#{$baseClass}--level--clumsy_#{$level} {
+    font-size: toRem(36 - ($level - 1) * 4);
+    margin-bottom: toRem(30 - ($level - 1) * 4);
+  }
+}
+
+.title {
+  &--mode{
+    &--shifted{
+      margin-bottom: toRem(30);
+    }
+  }
+  &--type {
+    &--graceful {
+      color: $c-text-additional;
+      font-weight: 400;
+    }
+    &--collapsed {
+      color: $c-text-additional;
+      font-weight: 400;
+    }
+    &--reduced{
+      color: $c-text-additional;
+      font-weight: 400;
+    }
+  }
+
+  &--level {
+    @for $level from 1 through $levelCount {
+      &--graceful_#{$level} {
+        font-size: toRem(24 - ($level - 1) * 1.75);
+        margin-bottom: toRem(24 - ($level - 1) * 1.75);
+      }
+    }
+    @for $level from 1 through $levelCount {
+      &--collapsed_#{$level} {
+        font-size: toRem(24 - ($level - 1) * 1.75);
+        margin-bottom: 0;
+      }
+    }
+    @for $level from 1 through $levelCount {
+      &--reduced_#{$level} {
+        font-size: toRem(22 - ($level - 1) * 1.5);
+        margin-bottom: toRem(24 - ($level - 1) * 1.75);
+      }
+    }
+  }
+}

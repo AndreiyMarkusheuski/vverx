@@ -1,0 +1,11 @@
+@import 'src/styles/tools/to-rem.scss';
+
+.list {
+    margin-top: toRem(75);
+
+    &-wrapper {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        gap: 16px 14px;
+    }
+}

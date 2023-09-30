@@ -1,0 +1,135 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/fonts/index.scss';
+@import 'src/styles/mixins/media.scss';
+@import 'src/styles/mixins/link.scss';
+
+$className: 'styled-button';
+
+.#{$className} {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  border: 2px solid $c-base-background;
+  padding: 22px 40px;
+  margin: 0 toRem(10);
+  box-sizing: border-box;
+  background: transparent;
+
+  max-width: 310px;
+  width: 100%;
+
+  transition: all .3s ease;
+
+  font-size: toRem(16);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal; 
+  text-transform: uppercase;
+  color: $c-text-contrast;
+
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  
+  &.--active {
+    background: $c-base-background;
+    border: 2px solid $c-button-background;
+    color: $c-button-background;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px 5px $c-button-background;
+  }
+
+  &:focus {
+    box-shadow: 0 0 5px 1px $c-button-background;
+  }
+
+  &--size {
+    &--m {
+      min-height: toRem(100);
+      font-size: toRem(16);
+    }
+    &--s {
+      min-height: toRem(70);
+    }
+  }
+
+  &--mode {
+    &--white {
+      border: 2px solid $c-black-background;
+      color: $c-text-additional;
+    }
+
+    &--active {
+      background: $c-base-background;
+      border: 2px solid $c-button-background;
+      color: $c-button-background;
+    }
+
+
+    &--link {
+      @include link {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        height: auto;
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: 1em;
+        font-style: inherit;
+        display: inline-flex;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &--text {
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+      height: auto;
+      font-weight: inherit;
+      display: inline-block;
+      font-size: 1em;
+      font-style: inherit;
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--disabled {
+    background-color: darken($c-secondary, 5%);
+    color: rgba($c-text, 0.5);
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--text_align {
+    &--nowrap {
+      white-space: nowrap;
+    }
+  }
+}
