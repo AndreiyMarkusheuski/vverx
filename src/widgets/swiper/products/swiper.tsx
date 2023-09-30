@@ -2,11 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, FreeMode } from "swiper/modules";
 
 // @ts-ignore
-import data from "/src/data/products.json";
+import data from "/data/products.json";
 // @ts-ignore
-import Arrow from "/src/widgets/specific-components/arrow";
+import Arrow from "/widgets/specific-components/arrow";
 // @ts-ignore
-import getImageURL from "/src/widgets/tools/get-image-url";
+import getImageURL from "/widgets/tools/get-image-url";
 
 import "swiper/css";
 import "swiper/css/navigation";

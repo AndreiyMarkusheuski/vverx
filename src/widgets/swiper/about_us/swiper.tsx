@@ -2,9 +2,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, FreeMode } from "swiper/modules";
 
 // @ts-ignore  
-import data from "/src/data/about_us.json";
+import data from "/data/about_us.json";
 // @ts-ignore
-import getImageURL from "/src/widgets/tools/get-image-url";
+import getImageURL from "/widgets/tools/get-image-url";
 
 import "swiper/css";
 import "swiper/css/pagination";
