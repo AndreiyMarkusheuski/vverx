@@ -458,8 +458,8 @@ input[type=number] {
 
     div>&-pagination {
         text-align: left;
-        padding: 0 toRem(20);
-        bottom: 2;
+        padding: toRem(20) 0;
+        bottom: -20px;
         display: flex;
         justify-content: flex-start;
         align-items: center;

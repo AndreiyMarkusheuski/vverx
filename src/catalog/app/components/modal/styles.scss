@@ -92,6 +92,10 @@
     color: $c-text;
     overflow: auto;
 
+    @include media(s, m) {
+      padding: toRem(15);
+    }
+
     &--loading {
       min-height: 7rem;
     }

@@ -1,6 +1,6 @@
-const preload = document.querySelector('#preloader')
+/* eslint-disable */
+const preloader = document.querySelector("#preloader");
 
-document.addEventListener("DOMContentLoaded", () => {
-    // alert("DOM готов!");
-    preload.classList.add('hide')
-  });
+Pace.on("done", function () {
+  preloader.classList.add("hide");
+});

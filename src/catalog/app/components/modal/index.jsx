@@ -1,6 +1,7 @@
 import classnames from "classnames";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 import isDefined from "/scripts/tools/is-defined";
 
@@ -9,10 +10,16 @@ import CloseIcon from "../close";
 import "./styles.scss";
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-// Modal.setAppElement('#root');
 Modal.setAppElement("#root");
 
 export const ModalDialog = (props) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+
   const close = (event) => {
     const { onClose } = props;
 

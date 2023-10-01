@@ -13,6 +13,10 @@
     height: 100%;
     box-sizing: border-box;
 
+    @include media(s, m) {
+        flex-direction: column;
+    }
+
     &-swiper {
         flex: 1;
     }
@@ -34,6 +38,10 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+
+        @include media(s, m) {
+            font-size: toRem(24);
+        }
     }
 
     &-short_describe {
@@ -44,6 +52,10 @@
         font-weight: 500;
         line-height: toRem(30);
 
+        @include media(s, m) {
+            font-size: toRem(16);
+        }
+
         a {
             text-decoration: none;
             outline: none;
@@ -53,12 +65,20 @@
     &-describe {
         margin-top: toRem(30);
 
+        @include media(s, m) {
+            margin-top: toRem(22);
+        }
+
         &-text {
             color: $c-dark-olive;
             font-size: toRem(16);
             font-style: normal;
             font-weight: 400;
-            line-height: normal
+            line-height: normal;
+
+            @include media(s, m) {
+                font-size: toRem(12);
+            }
         }
 
         &-list {
@@ -79,6 +99,11 @@
                 margin: 0 0 2px;
                 padding: toRem(18) toRem(25);
 
+                @include media(s, m) {
+                    font-size: toRem(13);
+                    padding: toRem(10) toRem(15);
+                }
+
                 &::before {
                     content: '';
                     width: 5px;
@@ -93,13 +118,35 @@
 
     &-button {
         margin: toRem(42) 0 0;
+
+        @include media(s, m) {
+            margin: toRem(30) 0 0;
+            padding: toRem(15) toRem(15);
+
+            &::before {
+                max-width: 16px;
+                max-height: 16px;
+            }
+
+            span {
+                font-size: toRem(16);
+                margin-left: toRem(10) !important;
+            }
+        }
     }
 
     .swiper {
         padding-bottom: 40px;
+        @include media(s, m) {
+            max-width: 320px;
+        }
 
         &-pagination {
             justify-content: center;
+            // &-bullet {
+                
+            //     display: flex !important;
+            // }
         }
     }
 }
