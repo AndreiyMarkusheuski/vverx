@@ -35,7 +35,6 @@ const List = ({ items }) => {
 
   const renderError = () => <div className="list-empry">Список пуск</div>;
 
-  console.log(modalItem)
   return (
     <>
       <div className="list">

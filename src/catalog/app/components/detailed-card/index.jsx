@@ -10,7 +10,6 @@ import getImageURL from "../../tools/get-image-url";
 import "./styles.scss";
 
 const DetailedCard = ({ item }) => {
-  console.log(item);
   const { title, shortDescribtion, imgUrls, describtionList } = item;
 
   const getDescribeList = useMemo(

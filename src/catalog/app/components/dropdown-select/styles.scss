@@ -1,0 +1,118 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/fonts/index.scss';
+@import 'src/styles/mixins/media.scss';
+
+div .dropdown_select {
+    position: relative;
+    border-radius: 3px;
+    border: 2px solid $c-primary;
+    box-sizing: border-box;
+    background: $c-base-background;
+
+    min-width: 320px;
+    max-width: 320px;
+    min-height: 58px;
+
+
+    &-item {
+        &__control {
+            // Reset all required styles from lib
+            border: none;
+            outline: none;
+            box-shadow: none;
+            background: transparent;
+            border-radius: none;
+            min-width: 320px;
+            max-width: 320px;
+            min-height: 58px;
+            box-sizing: border-box;
+
+            &:hover {
+                border: none;
+            }
+        }
+
+        &__single-value {
+            color: $c-orange-text ;
+            font-size: toRem(20);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        &__indicator {
+            color: $c-primary ;
+
+            &-separator {
+                display: none;
+            }
+
+            svg {
+                height: 30px;
+                width: 30px;
+            }
+        }
+
+        &__menu {
+            outline: none;
+            box-shadow: none;
+            border: 2px solid $c-primary ;
+            border-radius: 3px;
+            background: $c-base-background ;
+            padding: 0;
+            margin: 10px -2px;
+
+            min-width: 320px;
+            max-width: 320px;
+
+            &-list {
+                padding: 0;
+            }
+        }
+
+        &__option {
+            min-height: 58px;
+            background: $c-base-background ;
+            box-sizing: border-box;
+            border-bottom: 2px solid $c-primary ;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            color: $c-orange-text ;
+            font-size: toRem(20);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+
+            transition: all .3s ease;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                color: $c-text-contrast;
+                background: $c-button-background ;
+            }
+
+            &--is-selected {
+                color: $c-text-contrast;
+                background: $c-button-background ;
+            }
+        }
+    }
+
+
+    &-item {
+        color: $c-orange-text;
+        font-size: toRem(20);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}

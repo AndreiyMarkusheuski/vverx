@@ -23,7 +23,6 @@ const Close = props => {
 
     const { className, imgClassName, text = defaultProps.text } = props;
 
-    console.log(getImageURL('close'))
     return (
       <CloseIcon
         className={classnames('close_icon', className)}
