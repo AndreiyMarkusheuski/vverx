@@ -1,6 +1,7 @@
 @import 'src/styles/tools/to-rem.scss';
-.close_icon{
-  &-image{
+
+.close_icon {
+  &-image {
     width: toRem(28);
     height: toRem(28);
     padding: 0.5rem;

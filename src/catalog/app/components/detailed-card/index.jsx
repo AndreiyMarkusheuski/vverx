@@ -5,7 +5,8 @@ import { Pagination } from "swiper/modules";
 
 import CallButton from "../button/call-button";
 import Title from "../title";
-import getImageURL from "../../tools/get-image-url";
+
+import getImageURL from "/widgets/tools/get-image-url";
 
 import "./styles.scss";
 
@@ -65,8 +66,11 @@ const DetailedCard = ({ item }) => {
           {shortDescribtion}
         </Title>
         {getDescribeList}
-        <CallButton classNames='detailed_card-button' />
-        <p className='detailed_card-short_describe'>Или напишите нам на почту <a href="mailto:director@vverx.by">director@vverx.b</a></p>
+        <CallButton classNames="detailed_card-button" />
+        <p className="detailed_card-short_describe">
+          Или напишите нам на почту{" "}
+          <a href="mailto:director@vverx.by">director@vverx.b</a>
+        </p>
       </div>
     </div>
   );

@@ -14,7 +14,6 @@ div .dropdown_select {
     max-width: 320px;
     min-height: 58px;
 
-
     &-item {
         &__control {
             // Reset all required styles from lib
@@ -95,7 +94,6 @@ div .dropdown_select {
 
             &:hover {
                 cursor: pointer;
-
                 color: $c-text-contrast;
                 background: $c-button-background ;
             }

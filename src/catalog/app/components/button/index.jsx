@@ -1,7 +1,7 @@
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-import isDefinedNotEmpty from "../../../../scripts/tools/is-defined-and-not-empty";
+import isDefinedNotEmpty from "/scripts/tools/is-defined-and-not-empty";
 import "./styles.scss";
 
 const Button = (props) => {
@@ -37,7 +37,7 @@ const Button = (props) => {
     <Component
       className={classnames(
         {
-          'styled-button': true,
+          "styled-button": true,
           [`styled-button--mode--${mode}`]: !!mode,
           [`styled-button--size--${size}`]: !!size,
         },
@@ -58,16 +58,18 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
-    label: PropTypes.string,
-    children: PropTypes.node,
-    classNames: PropTypes.string,
-    component: PropTypes.node,
-    mode: PropTypes.oneOf(['primary' | 'secondary' | 'white' | 'active' | 'link' | 'text']), 
-    role: PropTypes.string,
-    size: PropTypes.oneOf(['xs' | 's' | 'm']), 
-    tabIndex: PropTypes.number,
-    type:PropTypes.oneOf(['button' | 'reset' | 'submit']),
-    labelMode: PropTypes.oneOf(['nowrap' | 'word-wrap']),
-  };
+  label: PropTypes.string,
+  children: PropTypes.node,
+  classNames: PropTypes.string,
+  component: PropTypes.node,
+  mode: PropTypes.oneOf([
+    "primary" | "secondary" | "white" | "active" | "link" | "text",
+  ]),
+  role: PropTypes.string,
+  size: PropTypes.oneOf(["xs" | "s" | "m"]),
+  tabIndex: PropTypes.number,
+  type: PropTypes.oneOf(["button" | "reset" | "submit"]),
+  labelMode: PropTypes.oneOf(["nowrap" | "word-wrap"]),
+};
 
 export default Button;

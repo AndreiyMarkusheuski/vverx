@@ -13,7 +13,7 @@ $className: 'styled-button';
   border-radius: 3px;
   border: 2px solid $c-base-background;
   padding: 22px 40px;
-  margin: 0 toRem(10);
+  margin: toRem(10);
   box-sizing: border-box;
   background: transparent;
 
@@ -25,7 +25,7 @@ $className: 'styled-button';
   font-size: toRem(16);
   font-style: normal;
   font-weight: 700;
-  line-height: normal; 
+  line-height: normal;
   text-transform: uppercase;
   color: $c-text-contrast;
 
@@ -37,7 +37,7 @@ $className: 'styled-button';
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
-  
+
   &.--active {
     background: $c-base-background;
     border: 2px solid $c-button-background;
@@ -57,6 +57,7 @@ $className: 'styled-button';
       min-height: toRem(100);
       font-size: toRem(16);
     }
+
     &--s {
       min-height: toRem(70);
     }

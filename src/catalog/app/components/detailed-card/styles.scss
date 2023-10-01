@@ -10,8 +10,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    // padding: toRem(30);
-    // max-height: 470px;
     height: 100%;
     box-sizing: border-box;
 
@@ -45,7 +43,7 @@
         font-style: normal;
         font-weight: 500;
         line-height: toRem(30);
-        
+
         a {
             text-decoration: none;
             outline: none;
@@ -91,19 +89,17 @@
                 }
             }
         }
-
     }
 
     &-button {
-        // background: $c-button-background;
         margin: toRem(42) 0 0;
     }
 
     .swiper {
         padding-bottom: 40px;
+
         &-pagination {
             justify-content: center;
-            // bottom: -20px;
         }
     }
 }

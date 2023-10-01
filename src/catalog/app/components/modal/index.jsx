@@ -2,7 +2,8 @@ import classnames from "classnames";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
 
-import isDefined from "../../../../scripts/tools/is-defined";
+import isDefined from "/scripts/tools/is-defined";
+
 import CloseIcon from "../close";
 
 import "./styles.scss";

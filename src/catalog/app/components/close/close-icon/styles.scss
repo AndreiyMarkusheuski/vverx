@@ -6,7 +6,7 @@
 @import 'src/styles/mixins/z-index.scss';
 
 .icon {
-  position: relative;  
+  position: relative;
   $modes: (
     'primary': $c-primary,
     'secondary': rgba($c-text, 0.05),
@@ -14,66 +14,66 @@
     'negative': rgba($c-error, .25),
   );
 
-  border: none;
-  background: none;
-  color: desaturate(lighten($c-text, 18%), 41%);
-  cursor: pointer;
-  border-radius: 50%;
-  overflow: visible;
-  padding: 0;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  outline: none;
-  box-sizing: border-box;
+border: none;
+background: none;
+color: desaturate(lighten($c-text, 18%), 41%);
+cursor: pointer;
+border-radius: 50%;
+overflow: visible;
+padding: 0;
+transition: background-color 0.3s, box-shadow 0.3s;
+outline: none;
+box-sizing: border-box;
 
-  &:hover {
-    color: $c-primary;
-    background-color: map-get($modes, 'secondary');
-  }
+&:hover {
+  color: $c-primary;
+  background-color: map-get($modes, 'secondary');
+}
 
-  &:focus {
-    @include groupedZIndex('layout');
-    box-shadow: 0 0 5px $c-primary;
-  }
+&:focus {
+  @include groupedZIndex('layout');
+  box-shadow: 0 0 5px $c-primary;
+}
 
-  &:active {
-    color: $c-primary;
-    background-color: darken(map-get($modes, 'secondary'), 10);
-  }
+&:active {
+  color: $c-primary;
+  background-color: darken(map-get($modes, 'secondary'), 10);
+}
 
-  &--mode {
-    @each $name, $color in $modes {
-      &--#{$name} {
-        &:hover {
-          background-color: $color;
-        }
+&--mode {
+  @each $name, $color in $modes {
+    &--#{$name} {
+      &:hover {
+        background-color: $color;
+      }
 
-        &:focus {
-          box-shadow: 0 0 5px $c-primary;
-        }
+      &:focus {
+        box-shadow: 0 0 5px $c-primary;
+      }
 
-        &:active {
-          color: $c-primary;
-          background-color: darken($color, 10);
-        }
+      &:active {
+        color: $c-primary;
+        background-color: darken($color, 10);
       }
     }
   }
+}
 
-  &-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 1;
-    height: 100%;
+&-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 100%;
 
-    &:hover {
-      color: $c-text;
-    }
+  &:hover {
+    color: $c-text;
   }
+}
 
-  &-mark {
-    position: absolute;
-    right: toRem(-8);
-    top: toRem(-8);
-  }
+&-mark {
+  position: absolute;
+  right: toRem(-8);
+  top: toRem(-8);
+}
 }

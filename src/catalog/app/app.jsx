@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
 
 import jsonData from "/data/catalog.json";
-// import getImageURL from "/widgets/tools/get-image-url";
 
 import Title from "./components/title";
 import Picker from "./components/picker";

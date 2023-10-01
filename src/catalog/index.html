@@ -20,6 +20,11 @@
 
 <body id="root">
   <main class="catalog">
+    <div id="preloader">
+      <img alt="Вверх Техно" width="100" height="60" decoding="async" data-nimg="1" style="color:transparent; position: fixed;
+      top: calc(50vh - 30px);
+      left: calc(50vw - 50px)" src="../assets/icons/logo.svg" />
+    </div>
     <header class="header" id="header">
       <div class="container">
         <div class="header-top_line">
@@ -70,30 +75,34 @@
 
     <div id="catalog" class="catalog-products"></div>
 
-    <footer class="contacts">
+    <footer class="footer_contacts">
       <div class="container">
-        <h2 class="contacts-headline">Свяжитесь с нами!</h2>
-        <p class="contacts-text">Забронировать технику или узнать подробнее о ней можно по указанным номерам телефона или написав нам письмо на электронную почту:</p>
-        <a href="callto:+375447262626" class="contacts-link">
+        <h2 class="footer_contacts-headline">Свяжитесь с нами!</h2>
+        <p class="footer_contacts-text">Забронировать технику или узнать подробнее о ней можно по указанным номерам
+          телефона или написав нам письмо на электронную почту:</p>
+        <a href="callto:+375447262626" class="footer_contacts-link">
           <p class="text">+375 (44) 726-26-26</p>
           <p class="text__orange">+375 (44) 726-26-26</p>
         </a>
-        <a href="callto:+375173783806" class="contacts-link">
+        <a href="callto:+375173783806" class="footer_contacts-link">
           <p class="text">+375 (17) 378-38-06</p>
           <p class="text__orange">+375 (17) 378-38-06</p>
         </a>
-        <a href="mailto:director@vverx.by" class="contacts-link">
+        <a href="mailto:director@vverx.by" class="footer_contacts-link">
           <p class="text">director@vverx.by</p>
           <p class="text__orange">director@vverx.by</p>
         </a>
-        <div class="contacts-social">
-          <a href='https://instagram.com/vverh_tehno' target="_blank" class="contacts-social-link -instagram"></a>
-          <a href='https://www.tiktok.com/@vverh_tehno' target="_blank" class="contacts-social-link -tiktok"></a>
+        <div class="footer_contacts-social">
+          <a href='https://instagram.com/vverh_tehno' target="_blank"
+            class="footer_contacts-social-link -instagram"></a>
+          <a href='https://www.tiktok.com/@vverh_tehno' target="_blank" class="footer_contacts-social-link -tiktok"></a>
         </div>
       </div>
     </footer>
   </main>
   <script type="module" src="./app"></script>
+  <script type="module" src="../scripts/menu.js"></script>
+  <script type="module" src="../scripts/onload.js"></script>
 </body>
 
 </html>

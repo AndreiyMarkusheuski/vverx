@@ -20,11 +20,16 @@
 
 <body class="main">
   <main id="smooth_scroll">
+    <div id="preloader">
+      <img alt="Вверх Техно" width="100" height="60" decoding="async" data-nimg="1" style="color:transparent; position: fixed;
+      top: calc(50vh - 30px);
+      left: calc(50vw - 50px)" src="./assets/icons/logo.svg" />
+    </div>
     <header class="header" id="header">
 
       <div class="container">
         <div class="header-top_line">
-          <a href="/" class="header-top_line-logo"><img src="./assets/icons/logo.svg"></a>
+          <a href="./" class="header-top_line-logo"><img src="./assets/icons/logo.svg"></a>
           <a href="callto:+375447262626" class="header-top_line-call_us button --phone"><span>+375 (44)
               726-26-26</span></a>
         </div>
@@ -36,7 +41,7 @@
         <div class="header-nav">
 
           <nav class="header-nav-menu">
-            <a href="/" class="header-nav-logo"><img src="./assets/icons/logo.svg"></a>
+            <a href="./" class="header-nav-logo"><img src="./assets/icons/logo.svg"></a>
             <ul class="header-nav-links">
               <li><a class="header-nav-link" href="#">главная</a></li>
               <li><a class="header-nav-link" href="#">аренда</a></li>
@@ -75,7 +80,7 @@
           <h1 class="describe-headline">Аренда строительной техники</h1>
           <p class="describe-text">Обеспечиваем надежное партнерство с фокусом на производительность и современное
             оборудование. Ваш успех - наш приоритет.</p>
-          <a href="#" class="describe-link button">Каталог техники</a>
+          <a href="./catalog/" class="describe-link button">Каталог техники</a>
         </div>
       </div>
       <div class="describe-carusel swiper">
@@ -169,6 +174,7 @@
   <script type="module" src="./scripts/form.js"></script>
   <script type="module" src="./scripts/menu.js"></script>
   <script type="module" src="./scripts/swiper-main.js"></script>
+  <script type="module" src="./scripts/onload.js"></script>
 </body>
 
 </html>

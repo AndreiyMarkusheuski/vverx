@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
+import classnames from "classnames";
 
 import Button from "../button";
 import Title from "../title";
-import getImageURL from "../../tools/get-image-url";
+
+import getImageURL from "/widgets/tools/get-image-url";
 
 import "./styles.scss";
 
-const Card = ({ title, shortDescribtion, imgUrls, onClick }) => (
-  <div className="card">
+const Card = ({ title, shortDescribtion, imgUrls, onClick, classNames }) => (
+  <div className={classnames("card", classNames)}>
     <img className="card-img" src={getImageURL(imgUrls[0])} alt={title} />
     <Title classNames="card-headline" level={5}>
       {title}
@@ -26,6 +28,7 @@ Card.propTypes = {
   shortDescribtion: PropTypes.string,
   imgUrls: PropTypes.array,
   onClick: PropTypes.func,
+  classNames: PropTypes.string,
 };
 
 export default Card;

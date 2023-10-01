@@ -23,7 +23,7 @@ const Picker = ({ onChange, values, className, activeId, isCommon }) => {
   );
 
   const getSecondaryPicker = () =>
-    width > 875 ? (
+    width > 1199 ? (
       values.map(renderButton)
     ) : (
       <SelectDropdown values={values} onChange={onChange} />
