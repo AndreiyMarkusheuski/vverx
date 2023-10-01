@@ -4,7 +4,7 @@ import classnames from "classnames";
 import Button from "../button";
 import Container from "../container";
 import SelectDropdown from "../dropdown-select";
-import useWindowDimensions from '../../hooks/use-window-dem'
+import useWindowDimensions from "../../hooks/use-window-dem";
 
 import "./styles.scss";
 
@@ -21,8 +21,13 @@ const Picker = ({ onChange, values, className, activeId, isCommon }) => {
       {title}
     </Button>
   );
-  
-  const getSecondaryPicker = () => !width > 875 ? values.map(renderButton) : <SelectDropdown values={values} onChange={onChange} />
+
+  const getSecondaryPicker = () =>
+    width > 875 ? (
+      values.map(renderButton)
+    ) : (
+      <SelectDropdown values={values} onChange={onChange} />
+    );
 
   return (
     <div className={classnames("picker", className)}>
