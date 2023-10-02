@@ -1,7 +1,7 @@
 const burgerButton = document.querySelector("#button_burger_id");
 const bgButton = document.querySelector("#button_bg_action_id");
 const header = document.querySelector("#header");
-const actionButtons = document.querySelectorAll(".nav_button");
+const actionButtons = document.querySelectorAll(".header-nav-link");
 const body = document.body;
 
 const handleMenuToggle = () => {

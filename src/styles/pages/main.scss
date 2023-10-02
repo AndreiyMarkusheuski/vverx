@@ -151,7 +151,7 @@
         background-size: cover;
 
         @include media(s, m) {
-            padding: toRem(222) 0 toRem(80);
+            padding: toRem(100) 0 toRem(80);
         }
 
         &-wrapper {
