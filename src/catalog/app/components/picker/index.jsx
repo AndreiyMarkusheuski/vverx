@@ -45,7 +45,7 @@ Picker.propTypes = {
   onChange: PropTypes.func,
   values: PropTypes.array,
   activeId: PropTypes.string,
-  isCommon: PropTypes.boolean,
+  isCommon: PropTypes.bool,
 };
 
 export default Picker;

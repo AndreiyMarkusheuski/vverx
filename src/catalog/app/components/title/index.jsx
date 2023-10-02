@@ -39,8 +39,8 @@ const Title = (props) => {
 
 Title.propTypes = {
   classNames: PropTypes.string,
-  level: PropTypes.oneOf([1 | 2 | 3 | 4 | 5 | 6]),
-  type: PropTypes.oneOf(["graceful" | "clumsy" | "collapsed" | "reduced"]),
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  type: PropTypes.oneOf(["graceful", "clumsy", "collapsed", "reduced"]),
   children: PropTypes.node,
   tag: PropTypes.string,
 };

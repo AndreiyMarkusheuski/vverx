@@ -28,10 +28,11 @@ const List = ({ items }) => {
   }, []);
 
   const renderError = () => <div className="list-empry">Список пуск</div>;
-  const renderCards = (product) => {
+  const renderCards = (product, index) => {
     const { title, shortDescribtion, imgUrls } = product;
     return (
       <Card
+        key={title+index}
         title={title}
         shortDescribtion={shortDescribtion}
         imgUrls={imgUrls}

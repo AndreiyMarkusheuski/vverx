@@ -63,13 +63,13 @@ Button.propTypes = {
   classNames: PropTypes.string,
   component: PropTypes.node,
   mode: PropTypes.oneOf([
-    "primary" | "secondary" | "white" | "active" | "link" | "text",
+    "primary", "secondary", "white", "active", "link", "text",
   ]),
   role: PropTypes.string,
-  size: PropTypes.oneOf(["xs" | "s" | "m"]),
+  size: PropTypes.oneOf(["xs",  "s",  "m"]),
   tabIndex: PropTypes.number,
-  type: PropTypes.oneOf(["button" | "reset" | "submit"]),
-  labelMode: PropTypes.oneOf(["nowrap" | "word-wrap"]),
+  type: PropTypes.oneOf(["button", "reset", "submit"]),
+  labelMode: PropTypes.oneOf(["nowrap", "word-wrap"]),
 };
 
 export default Button;

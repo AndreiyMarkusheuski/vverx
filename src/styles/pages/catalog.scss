@@ -5,6 +5,13 @@
     overflow: hidden;
     background-color: $c-light-dark-background;
 
+    .header-nav {
+        @include media(xl) {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
     &-products {
         padding: toRem(160) 0 toRem(54);
 

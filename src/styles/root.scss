@@ -64,8 +64,15 @@ input[type=number] {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #FFF;
+    background: transparent;
+    // transition: background .3s ease;
     @include groupedZIndex('header');
+
+    // @include media(xl) {
+    //     &.rent-section, &.contacts-section {
+    //         background: $c-base-background;
+    //     }
+    // }
 
     @include media(s, m, l) {
         background: transparent;
@@ -76,7 +83,7 @@ input[type=number] {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: toRem(40) 0;
+        padding: toRem(30) 0;
         position: relative;
 
         @include media(s, m, l) {
@@ -154,16 +161,33 @@ input[type=number] {
         top: 0;
         bottom: 0;
         right: 0;
-        left: 50%;
-        background: $c-white;
+        left: 0;
         padding: toRem(25);
-        transform: translatex(100%);
-        visibility: hidden;
-        opacity: 0;
-        transition: all .5s ease-in-out;
 
-        @include media(s, m) {
+        @include media(xl) {
+            position: relative;
+
+            background: transparent;
+            top: 20%;
+            bottom: unset;
+            max-width: $contentWidth;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 toRem(15);
+            box-sizing: border-box;
+
+            display: flex;
+            box-sizing: border-box;
+            justify-content: flex-end;
+        }
+
+        @include media(s, m, l) {
             left: 0;
+            transform: translatex(100%);
+            transition: all .5s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+            background: $c-base-background;
         }
 
         &-menu {
@@ -174,6 +198,13 @@ input[type=number] {
             height: -webkit-fill-available;
             height: -moz-available;
             height: fill-available;
+
+            @include media(xl) {
+                justify-content: center;
+                align-items: flex-end;
+                position: absolute;
+                top: 40vh;
+            }
         }
 
         &-logo {
@@ -181,6 +212,10 @@ input[type=number] {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include media(xl) {
+                display: none;
+            }
         }
 
         &-links {
@@ -189,13 +224,85 @@ input[type=number] {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            position: relative;
 
-            & li:last-child {
-                a::after {
-                    content: none;
+            @include media(xl) {
+                align-items: flex-end;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 6px;
+                    bottom: 45px;
+                    right: 6px;
+                    width: 2px;
+                    background: $c-base-background;
+                    transition: all .5s ease-in-out;
+                }
+
+                &.dark {
+                    &::after {
+                        background: $c-base-background;
+                    }
+
+                    .header-nav-link {
+                        color: $c-text-contrast;
+
+                        &::after {
+                            background: $c-base-background;
+                        }
+
+
+                        &.active {
+                            color: $c-orange-text;
+                            font-size: toRem(20);
+                            font-weight: 700;
+                            text-transform: uppercase;
+
+                            &::after {
+                                background: $c-button-background;
+                            }
+                        }
+                    }
+                }
+
+                &.light {
+                    &::after {
+                        background: $c-black-background;
+                    }
+
+                    .header-nav-link {
+                        color: $c-text-additional;
+
+                        &::after {
+                            background: $c-black-background;
+                        }
+
+
+                        &.active {
+                            color: $c-orange-text;
+                            font-size: toRem(20);
+                            font-weight: 700;
+                            text-transform: uppercase;
+
+                            &::after {
+                                background: $c-button-background;
+                            }
+                        }
+                    }
                 }
             }
+
+            @include media(s, m, l) {
+                align-items: center;
+
+                & li:last-child {
+                    a::after {
+                        content: none;
+                    }
+                }
+            }
+
         }
 
         &-link {
@@ -203,14 +310,13 @@ input[type=number] {
             text-decoration: none;
             color: $c-text;
             display: flex;
-            flex-direction: column;
             text-align: center;
             font-size: toRem(16);
             font-style: normal;
             font-weight: 700;
             line-height: 26.4px;
             text-transform: uppercase;
-            transition: all .3s ease;
+            transition: all .5s ease-in-out;
             position: relative;
             margin-bottom: toRem(18);
 
@@ -219,23 +325,60 @@ input[type=number] {
                 color: $c-orange-text;
             }
 
-            &::after {
-                content: '';
-                background-image: url('/assets/icons/nav_border.svg');
-                background-repeat: no-repeat;
-                width: toRem(230);
-                height: 1px;
-                margin-top: toRem(18);
+            @include media(xl) {
+                flex-direction: row;
+                align-items: baseline;
+                @include groupedZIndex('overlay');
+                margin-bottom: toRem(30);
+                font-weight: 500;
+
+                &::after {
+                    content: '';
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 33px;
+                    margin-left: toRem(24);
+                    transition: all .5s ease-in-out;
+                    
+                    @include groupedZIndex('overlay');
+                }
+
+                &:hover {
+                    &::after {
+                        cursor: pointer;
+                        background: $c-button-background;
+                    }
+                }
             }
 
-            &::before {
-                content: '';
-                width: toRem(230);
-                height: 1px;
-                margin-bottom: toRem(18);
+            @include media(s, m, l) {
+                flex-direction: column;
+
+                &::after {
+                    content: '';
+                    background-image: url('/assets/icons/nav_border.svg');
+                    background-repeat: no-repeat;
+                    width: toRem(230);
+                    height: 1px;
+                    margin-top: toRem(18);
+                }
             }
+
+
+
+            // &::before {
+            //     content: '';
+            //     width: toRem(230);
+            //     height: 1px;
+            //     margin-bottom: toRem(18);
+            // }
         }
 
+        &-contacts {
+            @include media(xl) {
+                display: none;
+            }
+        }
 
         .contacts {
 
@@ -459,7 +602,7 @@ input[type=number] {
     div>&-pagination {
         text-align: left;
         padding: toRem(20) 0;
-        bottom: -20px;
+        bottom: -20px !important;
         display: flex;
         justify-content: flex-start;
         align-items: center;
