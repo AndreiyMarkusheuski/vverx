@@ -19,9 +19,12 @@ let isBeyondScroll = false;
 let isCanDown = true;
 let isCanUp = true;
 
+let isPrevScrollDown = true
+// let isFirstScroll = true;
+
 let activeAnimation = false;
 let _g_animateScroll;
-const delay = 800;
+const delay = 500;
 
 const setTranslate = (yPos) => {
   sectionsContainer.style.transform =
@@ -104,28 +107,38 @@ function scrolling(type) {
   } 
 
   if (isCanBeScrolled(nextActiveOptions.index)) {
-
-    if (isCanUp && !isScrollDown) {
-        scrollTo(nextActiveOptions, delay, currentSection, () => {
+    if ((isCanUp || isPrevScrollDown) && !isScrollDown) {
+        scrollTo(nextActiveOptions, delay, () => {
+            resetActiveClass(currentSection);
             canScroll = true;
+            isPrevScrollDown = false
         });
         return
     }
 
-    if (isCanDown && isScrollDown) {
-        scrollTo(nextActiveOptions, delay, currentSection, () => {
+    if ((isCanDown || !isPrevScrollDown) && isScrollDown) {
+        scrollTo(nextActiveOptions, delay, () => {
+            resetActiveClass(currentSection);
             canScroll = true;
+            isPrevScrollDown = true;
         });
         return
+    }
+
+    if (isScrollDown) {
+        isCanUp = false;
+    } else {
+        isCanDown = false;
     }
 
     if (isBeyondScroll) {
         scrollBeyondScroll(currentSection, isScrollDown);
+        return
     }
     
     
     if (!isBeyondScroll) {
-        scrollTo(nextActiveOptions, delay, currentSection, () => {
+        scrollTo(nextActiveOptions, delay, () => {
         canScroll = true;
         });
     }
@@ -188,41 +201,22 @@ function scrollBeyondScroll(currentSection, isScrollDown) {
 
   if (isScrollDown) {
     if (window.innerHeight - bottom + 10 >= 0) {
-    //   setTimeout(() => {
-
-    // console.log('bottom')
-    //     isBeyondScroll = true;
-    //   }, 1300);
     setTimeout(() => {
         console.log('down - true --------------')
         isCanDown = true
     }, delay);
-    
     }
   } else {
     if (top === 0) {
-    //   setTimeout(() => {
-    //     console.log('top')
-    //     isBeyondScroll = true;
-    //   }, 1300);
     setTimeout(() => {
         console.log('up - true --------------')
         isCanUp = true
     }, delay);
     }
   }
-
-//   if (isBeyondScroll) {
-//     isBeyondScroll = false;
-//   }
-// return false
-
-//   scrollTo(nextActiveOptions, delay, currentSection, () => {
-//     canScroll = true;
-//   });
 }
 
-function scrollTo(elementOptions, duration, currentSection, callback) {
+function scrollTo(elementOptions, duration, callback) {
   let startTime;
   const elementPosition = getScrolledPositionByIndex(elementOptions.index);
 
@@ -241,7 +235,6 @@ function scrollTo(elementOptions, duration, currentSection, callback) {
 
     if (activeAnimation) {
       if (currentTime <= duration) {
-        resetActiveClass(currentSection);
         setTranslate(elementPosition);
         setActiveClass(elementOptions.node);
       }

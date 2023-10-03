@@ -19,9 +19,9 @@
                 padding: toRem(155) 0 toRem(100);
             }
 
-            @include media(s, m) {
-                padding-bottom: 230px;
-            }
+            // @include media(s, m) {
+            //     padding-bottom: 230px;
+            // }
         }
 
         &::before {
@@ -120,8 +120,8 @@
 
             @include media(s, m) {
                 height: toRem(164);
-                position: absolute;
-                bottom: - toRem(40);
+                // position: absolute;
+                // bottom: - toRem(40);
             }
 
             &-item {
