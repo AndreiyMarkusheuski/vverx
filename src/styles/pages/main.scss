@@ -53,6 +53,12 @@
             width: 50vw;
             background-image: url('/assets/images/gerold-hinzen.jpg');
 
+
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
             @include groupedZIndex('background');
 
             @include media(l) {
@@ -145,6 +151,8 @@
 
     .products {
         background-image: url('/assets/images/gerold-hinzen.jpg');
+        background-attachment: fixed;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -253,8 +261,10 @@
 
     .about_us {
         background-image: url('/assets/images/about-us.png');
+        background-attachment: fixed;
+        background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
 
         &-content {
             padding: toRem(150) 0 0;
@@ -349,6 +359,8 @@
 
     .contacts_footer {
         background-image: url('/assets/images/contacts.jpg');
+        background-attachment: fixed;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 

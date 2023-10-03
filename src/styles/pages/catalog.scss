@@ -34,8 +34,12 @@
         &::before {
             content: '';
             background-image: url('/assets/images/contacts.png');
+
+            background-attachment: fixed;
+            background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+
             position: absolute;
             top: 0;
             bottom: 0;

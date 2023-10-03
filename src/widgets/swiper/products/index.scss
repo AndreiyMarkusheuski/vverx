@@ -22,10 +22,12 @@
         filter: grayscale(1);
         transition: all .3s ease;
 
-        &:hover {
-            cursor: pointer;
-            filter: grayscale(0);
-            transform: scale(1.1);
+        @include media(l, xl) {
+            &:hover {
+                cursor: pointer;
+                filter: grayscale(0);
+                transform: scale(1.1);
+            }
         }
 
         img {
@@ -44,7 +46,7 @@
 
     .swiper {
         &-slide {
-            @include media(l) {
+            @include media(l, xl) {
                 &:hover {
                     filter: grayscale(0);
                     transform: scale(1.1);
