@@ -21,7 +21,6 @@ const deletePrevTheme = (itemNode) => {
 // };
 
 const resetClasses = () => {
-    console.log('here')
   disableAllNavLinks();
   deletePrevTheme(navContainer);
 //   clearHeader();

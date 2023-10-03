@@ -1,0 +1,22 @@
+.smooth_scroll {
+    height: 100%;
+    position: relative;
+    touch-action: none;
+    transform: translate3d(0px, 0px, 0px);
+    transition: transform .5s ease-in-out;
+
+    &-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    &-wrapper {
+        overflow-y: auto;
+        justify-content: flex-start;
+        max-height: 100vh;
+        outline: none;
+    }
+}

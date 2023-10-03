@@ -6,19 +6,22 @@
 .main {
 
     .describe {
-        // height: 100vh;
-
         position: relative;
-        padding: toRem(240) 0 toRem(165);
-        box-sizing: border-box;
-        @include groupedZIndex('section');
+        &-content {
+            position: relative;
+            padding: toRem(150) 0;
+            height: 100%;
+            margin: auto 0;
+            box-sizing: border-box;
+            @include groupedZIndex('section');
 
-        @include media(l) {
-            padding: toRem(155) 0 toRem(100);
-        }
+            @include media(l) {
+                padding: toRem(155) 0 toRem(100);
+            }
 
-        @include media(s, m) {
-            padding-bottom: 230px;
+            @include media(s, m) {
+                padding-bottom: 230px;
+            }
         }
 
         &::before {
@@ -35,7 +38,7 @@
             @include media(l) {
                 width: 70vw;
             }
-            
+
             @include media(s, m) {
                 width: 100vw;
             }
@@ -87,8 +90,8 @@
             }
 
             @include media(s, m) {
-            font-size: toRem(46);
-            line-height: toRem(52);
+                font-size: toRem(46);
+                line-height: toRem(52);
             }
         }
 
@@ -141,17 +144,20 @@
     }
 
     .products {
-        padding: toRem(180) 0 toRem(90);
-        // height: 100vh;
-        position: relative;
-        box-sizing: border-box;
-
         background-image: url('/assets/images/gerold-hinzen.jpg');
         background-repeat: no-repeat;
         background-size: cover;
 
-        @include media(s, m) {
-            padding: toRem(100) 0 toRem(80);
+        &-content {
+            padding: toRem(150) 0 0;
+            // height: 100vh;
+            position: relative;
+            box-sizing: border-box;
+
+
+            @include media(s, m) {
+                padding: toRem(100) 0 toRem(80);
+            }
         }
 
         &-wrapper {
@@ -246,16 +252,18 @@
     }
 
     .about_us {
-        padding: toRem(180) 0 0;
-        // height: 100vh;
-        position: relative;
-        box-sizing: border-box;
         background-image: url('/assets/images/about-us.png');
         background-repeat: no-repeat;
         background-size: contain;
 
-        @include media(s, m) {
-            padding-top: toRem(60);
+        &-content {
+            padding: toRem(150) 0 0;
+            position: relative;
+            box-sizing: border-box;
+
+            @include media(s, m) {
+                padding-top: toRem(60);
+            }
         }
 
         &-wrapper {
@@ -278,7 +286,7 @@
             font-weight: 700;
             line-height: toRem(90);
             white-space: nowrap;
-            
+
             @include media(s, m) {
                 font-size: toRem(64);
                 line-height: toRem(88);
@@ -307,7 +315,7 @@
                 bottom: 0;
                 left: -20px;
                 border-left: 4px solid $c-text;
-            
+
                 @include media(s, m) {
                     left: -18px;
                 }
@@ -330,7 +338,7 @@
             font-style: normal;
             font-weight: 600;
             line-height: 127%;
-            
+
             @include media(s, m) {
                 margin-top: toRem(80);
                 margin-bottom: toRem(30);
@@ -340,16 +348,19 @@
     }
 
     .contacts_footer {
-        padding: toRem(150) 0;
-        // height: 100vh;
-        position: relative;
-        box-sizing: border-box;
         background-image: url('/assets/images/contacts.jpg');
         background-repeat: no-repeat;
         background-size: cover;
 
-        @include media(s, m) {
-            padding: toRem(85) 0;
+        &-content {
+            padding: toRem(150) 0;
+            // height: 100vh;
+            position: relative;
+            box-sizing: border-box;
+
+            @include media(s, m) {
+                padding: toRem(85) 0;
+            }
         }
 
         &-headline {
@@ -536,7 +547,7 @@
                 padding: toRem(22) toRem(30);
                 margin-top: toRem(30);
             }
-    
+
             .form {
                 &-headline {
                     color: $c-secondary-text;
@@ -552,7 +563,7 @@
                         margin-bottom: toRem(30);
                     }
                 }
-        
+
                 &-field {
                     position: relative;
                     max-width: toRem(380);
@@ -578,7 +589,8 @@
                         resize: none;
                     }
 
-                    &-input, &-input::placeholder {
+                    &-input,
+                    &-input::placeholder {
                         font-family: $f-main;
                         color: rgba(255, 255, 255, 0.60);
                         font-size: toRem(16);
@@ -586,11 +598,11 @@
                         font-weight: 400;
                         line-height: 19.931px;
                     }
-        
+
                     &:first-child {
                         margin-top: 0;
                     }
-        
+
                     &:before,
                     &:after {
                         content: '';
@@ -601,37 +613,37 @@
                         background-color: $c-orange-text;
                         transition: .4s;
                     }
-        
+
                     &.warning {
-        
+
                         &:before,
                         &:after {
                             content: '';
                             background-color: $c-orange-text;
                         }
                     }
-        
+
                     &:before {
                         right: 50%;
                     }
-        
+
                     &:after {
                         left: 50%;
                     }
-        
+
                     &.focus:before,
                     &.warning::before,
                     &.focus:after,
                     &.warning::after {
                         width: 50%;
                     }
-        
+
                     &.pass {
                         margin-bottom: 4px;
                     }
 
                 }
-        
+
                 &_button {
                     width: 100%;
                     max-width: toRem(205);

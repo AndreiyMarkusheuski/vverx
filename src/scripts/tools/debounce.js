@@ -1,15 +1,13 @@
-function debounce(f, ms) {
-  let isCooldown = false;
-
+const debounce = function (fn, d) {
+  let timer;
   return function () {
-    if (isCooldown) return;
-
-    f.apply(this, arguments);
-
-    isCooldown = true;
-
-    setTimeout(() => (isCooldown = false), ms);
+    let context = this;
+    let args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn.apply(context, args);
+    }, d);
   };
-}
+};
 
 export default debounce;
