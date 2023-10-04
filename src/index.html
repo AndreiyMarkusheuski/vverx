@@ -16,6 +16,13 @@
 
   <link href="./styles/index.scss" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"
+    integrity="sha512-pYyQWhzi2lV+RM4GmaUA56VPL48oLVvsHmP9tuQ8MaZMDHomVEDjXXnfSVKXayy+wLclKPte0KbsuVoFImtE7w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <script data-pace-options='{"eventLag": false,"restartOnRequestAfter": false}'
     src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js">
     </script>
@@ -76,10 +83,11 @@
   <div class="button_bg_action" id="button_bg_action_id"></div>
 
 
-  <main class="smooth_scroll">
-    <section id="main-section" data-theme="dark" data-anchor="describe" class="describe smooth_scroll-section active_section --vertical">
-      <div class="smooth_scroll-wrapper">
-        <div data-intro="intro"  class="describe-content">
+  <main class="smooth_scroll" id="smooth_scroll">
+    <section id="main-section" data-theme="dark" data-anchor="describe"
+      class="section describe smooth_scroll-section active_section --vertical">
+      <!-- <div class="smooth_scroll-wrapper"> -->
+        <div data-intro="intro" class="describe-content"> 
           <div class="container">
             <div class="describe-wrapper">
               <h1 class="describe-headline">Аренда строительной техники</h1>
@@ -99,11 +107,12 @@
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </section>
 
-    <section id="rent-section" data-theme="dark" data-anchor="products" class="products smooth_scroll-section --vertical">
-      <div class="smooth_scroll-wrapper">
+    <section id="rent-section" data-theme="dark" data-anchor="products"
+      class="section products smooth_scroll-section --vertical">
+      <!-- <div class="smooth_scroll-wrapper"> -->
         <div data-name="intro" class="products-content">
           <div class="container">
             <div class="products-wrapper">
@@ -114,12 +123,13 @@
             <div class="products-list" id="products_swiper">
             </div>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
     </section>
 
-    <section id="about_us-section" data-theme="light" data-anchor="about_us" class="about_us smooth_scroll-section --horizontal">
-      <div class="smooth_scroll-wrapper">
+    <section id="about_us-section" data-theme="light" data-anchor="about_us"
+      class="section about_us smooth_scroll-section --horizontal">
+      <!-- <div class="smooth_scroll-wrapper"> -->
         <div data-name="intro" class="about_us-content">
           <div class="container">
             <div class="about_us-wrapper">
@@ -132,12 +142,13 @@
             <div class="about_us-cards" id="about_us-cards"></div>
             <p class="about_us-partner">Вы так же можете стать нашим партнером!</p>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
     </section>
 
-    <section id="contacts-section" data-theme="dark" data-anchor="contacts_footer" class="contacts_footer smooth_scroll-section --horizontal">
-      <div class="smooth_scroll-wrapper">
+    <section id="contacts-section" data-theme="dark" data-anchor="contacts_footer"
+      class="section contacts_footer smooth_scroll-section --horizontal">
+      <!-- <div class="smooth_scroll-wrapper"> -->
         <div data-name="intro" class="contacts_footer-content">
           <div class="container">
             <h2 class="contacts_footer-headline">Свяжитесь с нами!</h2>
@@ -189,7 +200,7 @@
               </div>
             </div>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
     </section>
   </main>
