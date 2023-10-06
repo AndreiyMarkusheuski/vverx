@@ -24,9 +24,9 @@ body {
     }
 }
 
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
     display: none;
-  }
+}
 
 // Hide arrows for number inputs
 input::-webkit-outer-spin-button,
@@ -255,9 +255,10 @@ input[type=number] {
                         &::after {
                             background: $c-base-background;
                         }
+                    }
 
-
-                        &.active {
+                    & .active {
+                        .header-nav-link {
                             color: $c-orange-text;
                             font-size: toRem(20);
                             font-weight: 700;
@@ -281,9 +282,10 @@ input[type=number] {
                         &::after {
                             background: $c-black-background;
                         }
+                    }
 
-
-                        &.active {
+                    & .active {
+                        .header-nav-link {
                             color: $c-orange-text;
                             font-size: toRem(20);
                             font-weight: 700;
@@ -343,7 +345,7 @@ input[type=number] {
                     border-radius: 33px;
                     margin-left: toRem(24);
                     transition: all .5s ease-in-out;
-                    
+
                     @include groupedZIndex('overlay');
                 }
 

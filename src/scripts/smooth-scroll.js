@@ -16,8 +16,8 @@ new fullpage("#smooth_scroll", {
   licenseKey: 'C7F41B00-5E824594-9A5EFB99-B556A3D5',
 
   // licenseKey: "GPLv3",
-  // anchors: ["main", "rent-page", "sell-page", "about", "contacts"],
-  // menu: "#menu",
+  anchors: ["describe", "products", "about_us", "contacts_footer"],
+  menu: "#menu",
   // navigation: true,
   // showActiveTooltip: true,
   // slidesNavigation: true,
@@ -26,8 +26,13 @@ new fullpage("#smooth_scroll", {
   // css3: true,
   scrollingSpeed: 1000,
   scrollOverflow: true,
+  // fadingEffect: true,
+  // autoScrolling:true,
+  parallax: true,
 
   easing: "easeInOutCubic",
+  // normalScrollElements: '.describe, .products, .about_us, .contacts_footer',
+  // touchSensitivity: 3,
 
   // onScrollOverflow: () => {
   //   if (window.screen.width <= 520) {

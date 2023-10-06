@@ -3,24 +3,63 @@
 @import 'src/styles/mixins/z-index.scss';
 @import 'src/styles/mixins/media.scss';
 
-.main {
+.fp-viewing-describe {
 
+    @include media(xl) {
+        .products {
+            max-width: 50% !important;
+
+            &-content{  
+            transition: all .3s ease !important;}
+        }
+    }
+}
+
+.main {
     .describe {
-        position: relative;
+
+        @include media(xl) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: fit-content;
+            transform: translateX(-50%);
+            transition: z-index .8s .8s ease, transform .8s ease-in-out;
+
+            @include groupedZIndex('background');
+        }
+
+        &.active {
+            transform: translateX(0);
+            @include groupedZIndex('section', 1);
+
+            @include media(xl) {
+                transition: z-index 0s 0s ease, transform .8s ease-in-out;
+            }
+
+            .describe-content {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
         &-content {
             position: relative;
             padding: toRem(150) 0;
-            // height: 100%;
+            height: fit-content;
             margin: auto 0;
             box-sizing: border-box;
-            @include groupedZIndex('section');
+            visibility: hidden;
+            opacity: 0;
+            transition: all .8s ease-in-out;
 
             @include media(l) {
                 padding: toRem(155) 0 toRem(100);
             }
 
             @include media(s, m) {
-                padding-bottom: 230px;
+                padding: toRem(100) 0 toRem(60);
             }
         }
 
@@ -41,32 +80,6 @@
 
             @include media(s, m) {
                 width: 100vw;
-            }
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            width: 50vw;
-            background-image: url('/assets/images/gerold-hinzen.jpg');
-
-
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            @include groupedZIndex('background');
-
-            @include media(l) {
-                width: 30vw;
-            }
-
-            @include media(s, m) {
-                width: 0;
             }
         }
 
@@ -151,20 +164,38 @@
 
     .products {
         background-image: url('/assets/images/gerold-hinzen.jpg');
-        background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 
+        @include groupedZIndex('section');
+
+        float: right;
+        height: fit-content;
+        transition: all .8s ease-in-out;
+        max-width: 100%;
+
+        &.active {
+            max-width: 100%;
+
+            .products-content {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
         &-content {
             padding: toRem(150) 0 0;
-            // height: 100vh;
+            height: fit-content;
             position: relative;
             box-sizing: border-box;
 
+            visibility: hidden;
+            transition: all .8s .3s ease;
+            opacity: 0;
 
             @include media(s, m) {
-                padding: toRem(100) 0 toRem(80);
+                padding: toRem(100) 0 toRem(60);
             }
         }
 
@@ -272,7 +303,7 @@
             box-sizing: border-box;
 
             @include media(s, m) {
-                padding-top: toRem(60);
+                padding: toRem(100) 0 toRem(60);
             }
         }
 
@@ -284,6 +315,7 @@
             justify-content: space-between;
 
             @include media(s, m) {
+                max-width: 100%;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
@@ -338,6 +370,13 @@
             @include media(s, m) {
                 margin-top: toRem(70);
             }
+
+            .swiper-pagination {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
         }
 
         &-partner {
@@ -366,12 +405,12 @@
 
         &-content {
             padding: toRem(150) 0;
-            // height: 100vh;
+            height: fit-content;
             position: relative;
             box-sizing: border-box;
 
             @include media(s, m) {
-                padding: toRem(85) 0;
+                padding: toRem(100) 0 toRem(60);
             }
         }
 
