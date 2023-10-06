@@ -1,6 +1,5 @@
 const navLinks = document.querySelectorAll(".header-nav-link");
 const navContainer = document.querySelector(".header-nav-links");
-// const header = document.querySelector("#header");
 
 const disableAllNavLinks = () => {
   navLinks.forEach((navItem) => {
@@ -13,17 +12,9 @@ const deletePrevTheme = (itemNode) => {
   itemNode.classList.remove("light");
 };
 
-// const clearHeader = () => {
-//   navLinks.forEach((navLink) => {
-//     const removedClass = navLink.id.split("-link")[0];
-//     header.classList.remove(removedClass);
-//   });
-// };
-
 const resetClasses = () => {
   disableAllNavLinks();
   deletePrevTheme(navContainer);
-//   clearHeader();
 };
 
 window.onload = () => {
@@ -46,7 +37,6 @@ window.onload = () => {
           .querySelector(`#${activeSectionId}-link`)
           .classList.add("active");
         navContainer.classList.add(activeSectionTheme);
-        // header.classList.add(activeSectionId);
       }
     });
   }, options);
