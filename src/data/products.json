@@ -1,27 +1,18 @@
 [
   {
-    "id": 1,
     "name": "Подъемники",
-    "img_url": "lifts"
+    "id": "lifts"
   },
   {
-    "id": 2,
     "name": "Виброплиты",
-    "img_url": "plits"
+    "id": "plits"
   },
   {
-    "id": 3,
     "name": "Телескопические погрузчики",
-    "img_url": "telehandlers"
+    "id": "telehandlers"
   },
   {
-    "id": 4,
     "name": "Экскаваторы-погрузчики",
-    "img_url": "backhoe_loaders"
-  },
-  {
-    "id": 5,
-    "name": "Экскаваторы-погрузчики",
-    "img_url": "backhoe_loaders"
+    "id": "backhoe_loaders"
   }
 ]

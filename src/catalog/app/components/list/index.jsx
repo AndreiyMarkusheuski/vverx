@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 import Card from "../card";
 import DetailedCard from "../detailed-card";
@@ -10,10 +10,27 @@ import isDefined from "/scripts/tools/is-defined";
 
 import "./styles.scss";
 
+const SWITCH_TYPES = Object.freeze({
+  block: "block",
+  row: "row",
+});
+
 const List = ({ items }) => {
   const isValidItems = Array.isArray(items) && items.length > 0;
   const [modalItem, setModalItem] = useState(undefined);
-  const [typeShape, setTypeShape] = useState("block");
+  const [typeShape, setTypeShape] = useState(SWITCH_TYPES.block);
+  const [shouldDisplaySwitches, setDisplaySwitches] = useState(true);
+
+  useEffect(() => {
+    setDisplaySwitchesRules(items.length > 1);
+  }, [items]);
+
+  const setDisplaySwitchesRules = (isMoreThenOne) => {
+    setDisplaySwitches(isMoreThenOne);
+    if (isMoreThenOne) {
+      setTypeShape(SWITCH_TYPES.row);
+    } else setTypeShape(SWITCH_TYPES.block);
+  };
 
   const handleClick = useCallback((product) => {
     setModalItem(product);
@@ -32,12 +49,12 @@ const List = ({ items }) => {
     const { title, shortDescribtion, imgUrls } = product;
     return (
       <Card
-        key={title+index}
+        key={title + index}
         title={title}
         shortDescribtion={shortDescribtion}
         imgUrls={imgUrls}
         onClick={() => handleClick(product)}
-        classNames={`--${typeShape}`}
+        className={`--${typeShape}`}
       />
     );
   };
@@ -46,16 +63,20 @@ const List = ({ items }) => {
     <>
       <div className="list">
         <div className={`list-switches --${typeShape}`}>
-          <CustomSwitch
-            onClick={handleChangeShape}
-            classNames="list-switch"
-            switchDataType="block"
-          />
-          <CustomSwitch
-            onClick={handleChangeShape}
-            classNames="list-switch"
-            switchDataType="row"
-          />
+          {shouldDisplaySwitches && (
+            <>
+              <CustomSwitch
+                onClick={handleChangeShape}
+                className="list-switch"
+                switchDataType="block"
+              />
+              <CustomSwitch
+                onClick={handleChangeShape}
+                className="list-switch"
+                switchDataType="row"
+              />
+            </>
+          )}
         </div>
         {isValidItems && (
           <div className={`list-wrapper --${typeShape}`}>

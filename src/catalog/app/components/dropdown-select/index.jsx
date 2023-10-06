@@ -1,14 +1,11 @@
 import PropTypes from "prop-types";
-import { useMemo, useCallback } from "react";
+import { useCallback } from "react";
 import Select from "react-select";
 
 import "./styles.scss";
 
-const SelectDropdown = ({ values, onChange }) => {
-  const parsedOption = useMemo(
-    () => values.map(({ id, title }) => ({ value: id, label: title })),
-    [values]
-  );
+const SelectDropdown = ({ values, onChange, defaultValue }) => {
+  const parseValue = ({ id, title }) => ({ value: id, label: title });
 
   const handleChange = useCallback(
     ({ value }) => {
@@ -19,11 +16,13 @@ const SelectDropdown = ({ values, onChange }) => {
 
   return (
     <Select
-      defaultValue={parsedOption[0]}
+      defaultValue={
+        defaultValue ? parseValue(defaultValue) : defaultValue(values[0])
+      }
       className="dropdown_select"
       classNamePrefix="dropdown_select-item"
       isSearchable={false}
-      options={parsedOption}
+      options={values.map(parseValue)}
       onChange={handleChange}
     />
   );
@@ -32,6 +31,7 @@ const SelectDropdown = ({ values, onChange }) => {
 SelectDropdown.propTypes = {
   values: PropTypes.array,
   onChange: PropTypes.func,
+  defaultValue: PropTypes.object,
 };
 
 export default SelectDropdown;

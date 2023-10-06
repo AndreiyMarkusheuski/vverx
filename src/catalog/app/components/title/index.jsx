@@ -5,7 +5,7 @@ import "./styles.scss";
 
 const Title = (props) => {
   const defaultProps = {
-    classNames: undefined,
+    className: undefined,
     children: undefined,
     isBottomShift: true,
     level: 1,
@@ -14,7 +14,7 @@ const Title = (props) => {
   };
 
   const {
-    classNames = defaultProps.classNames,
+    className = defaultProps.className,
     children = defaultProps.children,
     level = defaultProps.level,
     tag = defaultProps.tag,
@@ -28,7 +28,7 @@ const Title = (props) => {
         "title",
         `title--level--${type}_${level}`,
         `title--type--${type}`,
-        classNames
+        className
       )}
       {...props}
     >
@@ -38,7 +38,7 @@ const Title = (props) => {
 };
 
 Title.propTypes = {
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   type: PropTypes.oneOf(["graceful", "clumsy", "collapsed", "reduced"]),
   children: PropTypes.node,

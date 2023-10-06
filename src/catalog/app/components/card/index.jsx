@@ -8,16 +8,16 @@ import getImageURL from "/widgets/tools/get-image-url";
 
 import "./styles.scss";
 
-const Card = ({ title, shortDescribtion, imgUrls, onClick, classNames }) => (
-  <div className={classnames("card", classNames)}>
+const Card = ({ title, shortDescribtion, imgUrls, onClick, className }) => (
+  <div className={classnames("card", className)}>
     <img className="card-img" src={getImageURL(imgUrls[0])} alt={title} />
-    <Title classNames="card-headline" level={5}>
+    <Title className="card-headline" level={5}>
       {title}
     </Title>
-    <Title classNames="card-describe" level={6}>
+    <Title className="card-describe" level={6}>
       {shortDescribtion}
     </Title>
-    <Button classNames="card-button" onClick={onClick} mode={"active"}>
+    <Button customSlassNames="card-button" onClick={onClick} mode={"active"}>
       Подробнее
     </Button>
   </div>
@@ -28,7 +28,7 @@ Card.propTypes = {
   shortDescribtion: PropTypes.string,
   imgUrls: PropTypes.array,
   onClick: PropTypes.func,
-  classNames: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Card;

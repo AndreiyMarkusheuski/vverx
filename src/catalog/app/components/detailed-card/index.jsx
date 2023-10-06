@@ -16,7 +16,7 @@ const DetailedCard = ({ item }) => {
   const getDescribeList = useMemo(
     () => (
       <div className="detailed_card-describe">
-        <Title classNames="detailed_card-describe-text" level={7}>
+        <Title className="detailed_card-describe-text" level={7}>
           Технические характеристики:
         </Title>
         <ul className="detailed_card-describe-list">
@@ -59,14 +59,14 @@ const DetailedCard = ({ item }) => {
     <div className="detailed_card">
       {Array.isArray(imgUrls) && renderSwiper(imgUrls)}
       <div className="detailed_card-info">
-        <Title classNames="detailed_card-headline" level={5}>
+        <Title className="detailed_card-headline" level={5}>
           {title}
         </Title>
-        <Title classNames="detailed_card-short_describe" level={6}>
+        <Title className="detailed_card-short_describe" level={6}>
           {shortDescribtion}
         </Title>
         {getDescribeList}
-        <CallButton classNames="detailed_card-button" />
+        <CallButton className="detailed_card-button" />
         <p className="detailed_card-short_describe">
           Или напишите нам на почту{" "}
           <a href="mailto:director@vverx.by">director@vverx.b</a>

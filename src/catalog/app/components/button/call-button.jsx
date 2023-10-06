@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 
 import jsonData from "/data/common.json";
 
-const CallButton = ({ classNames }) => (
+const CallButton = ({className}) => (
   <a
-    href={`callto:${jsonData.phone}`}
-    className={classnames("button --phone", classNames)}
+    href={`tel:${jsonData.phone}`}
+    className={classnames("button --phone", className)}
   >
     <span>{jsonData.phone}</span>
   </a>
 );
 
 CallButton.propTypes = {
-  classNames: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default CallButton;

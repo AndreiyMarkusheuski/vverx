@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
-const CustomSwitch = ({ classNames, switchDataType, onClick }) => (
+const CustomSwitch = ({ className, switchDataType, onClick }) => (
   <div
     data-type={switchDataType}
-    className={`--${switchDataType} ${classNames}`}
+    className={`--${switchDataType} ${className}`}
     onClick={() => onClick(switchDataType)}
   >
     <span></span>
@@ -14,7 +14,7 @@ const CustomSwitch = ({ classNames, switchDataType, onClick }) => (
 );
 
 CustomSwitch.propTypes = {
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   switchDataType: PropTypes.string,
   onClick: PropTypes.func,
 };

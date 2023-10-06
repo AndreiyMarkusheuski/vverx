@@ -94,14 +94,14 @@ export const ModalDialog = (props) => {
     return null;
   };
 
-  const { title, children, classNames, contentClass } = props;
+  const { title, children, className, contentClass } = props;
 
   return (
     <Modal
       onRequestClose={close}
       shouldCloseOnOverlayClick={false}
       contentLabel={title}
-      className={classnames("modal_dialog", classNames)}
+      className={classnames("modal_dialog", className)}
       overlayClassName={classnames("modal_dialog-wrapper")}
       {...props}
     >
@@ -118,7 +118,7 @@ ModalDialog.propTypes = {
   onClose: PropTypes.func,
   children: PropTypes.node,
   title: PropTypes.string,
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   contentClass: PropTypes.string,
   footer: PropTypes.node,
   header: PropTypes.node,

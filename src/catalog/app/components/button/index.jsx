@@ -6,7 +6,7 @@ import "./styles.scss";
 
 const Button = (props) => {
   const defaultProps = {
-    classNames: "",
+    customSlassNames: "",
     component: "button",
     mode: "secondary",
     role: "button",
@@ -21,7 +21,7 @@ const Button = (props) => {
   const {
     label,
     children,
-    classNames = defaultProps.classNames,
+    customSlassNames = defaultProps.customSlassNames,
     component: Component = defaultProps.component,
     mode = defaultProps.mode,
     role = defaultProps.role,
@@ -42,7 +42,7 @@ const Button = (props) => {
           [`styled-button--size--${size}`]: !!size,
         },
         `styled-button--text_align--${labelMode}`,
-        classNames
+        customSlassNames
       )}
       aria-label={isDefinedNotEmpty(label) ? undefined : label}
       role={type === role || Component === "button" ? undefined : role}
@@ -60,7 +60,7 @@ const Button = (props) => {
 Button.propTypes = {
   label: PropTypes.string,
   children: PropTypes.node,
-  classNames: PropTypes.string,
+  customSlassNames: PropTypes.string,
   component: PropTypes.node,
   mode: PropTypes.oneOf([
     "primary", "secondary", "white", "active", "link", "text",

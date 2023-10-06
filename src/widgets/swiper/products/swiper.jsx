@@ -8,14 +8,12 @@ import getImageURL from "/widgets/tools/get-image-url";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const renderSlides = ({ id, name, img_url }) => (
+const renderSlides = ({ id, name }) => (
   <SwiperSlide key={id} className="products-swiper-item">
-    <img
-      className="products-swiper-img"
-      src={getImageURL(img_url)}
-      alt={img_url}
-    />
-    <p className="products-swiper-text">{name}</p>
+    <a href={`/catalog/?type=rent&equipment=${id}`}>
+      <img className="products-swiper-img" src={getImageURL(id)} alt={id} />
+      <p className="products-swiper-text">{name}</p>
+    </a>
   </SwiperSlide>
 );
 
@@ -38,11 +36,11 @@ export default function ProductsSwiper() {
         }}
         breakpoints={{
           200: {
-            centeredSlides: true
+            centeredSlides: true,
           },
           876: {
             centeredSlides: false,
-            freeMode: true
+            freeMode: true,
           },
         }}
       >

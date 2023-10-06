@@ -2,6 +2,8 @@ import { useEffect, useState, useCallback, useMemo } from "react";
 
 import jsonData from "/data/catalog.json";
 
+import isDefined from "/scripts/tools/is-defined";
+
 import Title from "./components/title";
 import Picker from "./components/picker";
 import Container from "./components/container";
@@ -9,11 +11,28 @@ import List from './components/list'
 
 const Catalog = () => {
   const topLevelTypes = jsonData.items;
-  const [ defaulActiveItem ] = topLevelTypes;
-  const { id: defaultActiveTopType, items } = defaulActiveItem;
-  
-  const [activeTopType, setActiveTopType] = useState(defaultActiveTopType);
-  const [activeItemType, setActiveItemType] = useState(items[0].id);
+  const getTopType = useMemo(() => {
+    const searchParams = new URLSearchParams(document.location.search);
+    const topType = searchParams.get("type");
+    const topLevelTypes = jsonData.items;
+    const [defaulActiveItem] = topLevelTypes;
+    const { id: defaultActiveTopType } = defaulActiveItem;
+
+    return isDefined(topType) ? topType : defaultActiveTopType;
+  }, []);
+
+  const getItemType = useMemo(() => {
+    const searchParams = new URLSearchParams(document.location.search);
+    const itemType = searchParams.get("equipment");
+    const topLevelTypes = jsonData.items;
+    const [defaulActiveItem] = topLevelTypes;
+    const { items } = defaulActiveItem;
+
+    return isDefined(itemType) ? itemType : items[0].id;
+  }, []);
+
+  const [activeTopType, setActiveTopType] = useState(getTopType);
+  const [activeItemType, setActiveItemType] = useState(getItemType);
   const [activeItems, setActiveItems] = useState([]);
 
   const itemLevelTypes = useMemo(
@@ -24,11 +43,35 @@ const Catalog = () => {
     [activeTopType, topLevelTypes]
   );
 
+  const setToUrlParams = useCallback((activeTopType, activeItemType) => {
+    let queryParam = { type: activeTopType, equipment: activeItemType };
+    let preparedQueryParams = new URLSearchParams(queryParam).toString();
+    updateURL(preparedQueryParams);
+  }, []);
+
   useEffect(() => {
-    const selectedItem = itemLevelTypes
+    setToUrlParams(activeTopType, activeItemType);
+  }, [activeTopType, activeItemType, setToUrlParams]);
+
+  const updateURL = (query) => {
+    if (history.pushState) {
+      var baseUrl =
+        window.location.protocol +
+        "//" +
+        window.location.host +
+        window.location.pathname;
+      var newUrl = `${baseUrl}?${query}`;
+      history.pushState(null, null, newUrl);
+    } else {
+      console.warn("History API не поддерживается");
+    }
+  };
+
+  useEffect(() => {
+    const [ itemList ] = itemLevelTypes
       .filter(({ id }) => id === activeItemType)
-      .map(({ items }) => items)[0];
-    setActiveItems(selectedItem);
+      .map(({ items }) => items);
+    setActiveItems(isDefined(itemList) ? itemList : []);
   }, [activeTopType, activeItemType, itemLevelTypes]);
 
   const handleTopLevelTypeChange = useCallback((selectedId) => {
@@ -59,14 +102,14 @@ const Catalog = () => {
         className={"item_level"}
       />
       <Container>
-        <p className='products-describe'>
+        <p className="products-describe">
           В нашем парке подъемников представлены лидеры своего рынка, это
-          компании JLG и Haulotte. Мы предлагаем Вам <span className='text__orange'>коленчатые и ножничные </span>
+          компании JLG и Haulotte. Мы предлагаем Вам{" "}
+          <span className="text__orange">коленчатые и ножничные </span>
           подъемники.
         </p>
         <List items={activeItems} />
       </Container>
-      {/* // Modal */}
     </>
   );
 };

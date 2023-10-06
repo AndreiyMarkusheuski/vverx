@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import { useMemo } from "react";
 
 import Button from "../button";
 import Container from "../container";
@@ -16,17 +17,25 @@ const Picker = ({ onChange, values, className, activeId, isCommon }) => {
       onClick={() => onChange(id)}
       size="s"
       mode={isCommon ? "secondary" : "white"}
-      classNames={classnames({ "--active": activeId === id })}
+      customSlassNames={classnames({ "--active": activeId === id })}
     >
       {title}
     </Button>
   );
 
+  const getActiveValue = useMemo(() => {
+    return values.filter(({ id }) => id === activeId)[0];
+  }, [activeId, values]);
+
   const getSecondaryPicker = () =>
     width > 1199 ? (
       values.map(renderButton)
     ) : (
-      <SelectDropdown values={values} onChange={onChange} />
+      <SelectDropdown
+        values={values}
+        onChange={onChange}
+        defaultValue={getActiveValue}
+      />
     );
 
   return (
