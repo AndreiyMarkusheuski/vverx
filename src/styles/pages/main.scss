@@ -46,7 +46,7 @@
 
         &-content {
             position: relative;
-            padding: toRem(150) 0;
+            // padding: toRem(150) 0;
             height: fit-content;
             margin: auto 0;
             box-sizing: border-box;
@@ -54,13 +54,13 @@
             opacity: 0;
             transition: all .8s ease-in-out;
 
-            @include media(l) {
-                padding: toRem(155) 0 toRem(100);
-            }
+            // @include media(l) {
+            //     padding: toRem(155) 0 toRem(100);
+            // }
 
-            @include media(s, m) {
+            // @include media(s, m) {
                 padding: toRem(100) 0 toRem(60);
-            }
+            // }
         }
 
         &::before {
@@ -185,7 +185,7 @@
         }
 
         &-content {
-            padding: toRem(150) 0 0;
+            // padding: toRem(150) 0 0;
             height: fit-content;
             position: relative;
             box-sizing: border-box;
@@ -194,9 +194,9 @@
             transition: all .8s .3s ease;
             opacity: 0;
 
-            @include media(s, m) {
+            // @include media(s, m) {
                 padding: toRem(100) 0 toRem(60);
-            }
+            // }
         }
 
         &-wrapper {
@@ -298,13 +298,13 @@
         background-size: cover;
 
         &-content {
-            padding: toRem(150) 0 0;
+            // padding: toRem(150) 0 0;
             position: relative;
             box-sizing: border-box;
 
-            @include media(s, m) {
+            // @include media(s, m) {
                 padding: toRem(100) 0 toRem(60);
-            }
+            // }
         }
 
         &-wrapper {
@@ -404,14 +404,14 @@
         background-size: cover;
 
         &-content {
-            padding: toRem(150) 0;
+            // padding: toRem(150) 0;
             height: fit-content;
             position: relative;
             box-sizing: border-box;
 
-            @include media(s, m) {
+            // @include media(s, m) {
                 padding: toRem(100) 0 toRem(60);
-            }
+            // }
         }
 
         &-headline {
