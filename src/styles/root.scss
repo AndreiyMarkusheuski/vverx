@@ -25,7 +25,7 @@ body {
 }
 
 *::-webkit-scrollbar {
-    display: none;
+    display: none !important;
 }
 
 // Hide arrows for number inputs

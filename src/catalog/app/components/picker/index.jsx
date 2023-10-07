@@ -17,7 +17,7 @@ const Picker = ({ onChange, values, className, activeId, isCommon }) => {
       onClick={() => onChange(id)}
       size="s"
       mode={isCommon ? "secondary" : "white"}
-      customSlassNames={classnames({ "--active": activeId === id })}
+      сlassName={classnames({ "--active": activeId === id })}
     >
       {title}
     </Button>

@@ -10,7 +10,8 @@
             max-width: 50% !important;
 
             &-content{  
-            transition: all .3s ease !important;}
+            transition: all .3s ease !important;
+            }
         }
     }
 }
@@ -58,7 +59,6 @@
             //     padding: toRem(155) 0 toRem(100);
             // }
 
-            // @include media(s, m) {
                 padding: toRem(100) 0 toRem(60);
             // }
         }
@@ -82,6 +82,26 @@
                 width: 100vw;
             }
         }
+
+            @include media(s, m, l) {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 30vw;
+                    background-image: url('/assets/images/gerold-hinzen.jpg');
+                    @include groupedZIndex('background');
+        
+                    @include media(s, m) {
+                        top: unset;
+                        width: 100%;
+                        height: 20vh;
+                    }
+                }
+            }
+            
 
         &-wrapper {
             position: relative;
@@ -166,7 +186,7 @@
         background-image: url('/assets/images/gerold-hinzen.jpg');
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: auto;
 
         @include groupedZIndex('section');
 

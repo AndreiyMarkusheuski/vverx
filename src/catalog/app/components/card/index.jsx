@@ -17,7 +17,7 @@ const Card = ({ title, shortDescribtion, imgUrls, onClick, className }) => (
     <Title className="card-describe" level={6}>
       {shortDescribtion}
     </Title>
-    <Button customSlassNames="card-button" onClick={onClick} mode={"active"}>
+    <Button сlassName="card-button" onClick={onClick} mode={"active"}>
       Подробнее
     </Button>
   </div>
