@@ -9,8 +9,8 @@
         .products {
             max-width: 50% !important;
 
-            &-content{  
-            transition: all .3s ease !important;
+            &-content {
+                transition: all .3s ease !important;
             }
         }
     }
@@ -59,7 +59,7 @@
             //     padding: toRem(155) 0 toRem(100);
             // }
 
-                padding: toRem(100) 0 toRem(60);
+            padding: toRem(100) 0 toRem(60);
             // }
         }
 
@@ -82,26 +82,6 @@
                 width: 100vw;
             }
         }
-
-            @include media(s, m, l) {
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    right: 0;
-                    width: 30vw;
-                    background-image: url('/assets/images/gerold-hinzen.jpg');
-                    @include groupedZIndex('background');
-        
-                    @include media(s, m) {
-                        top: unset;
-                        width: 100%;
-                        height: 20vh;
-                    }
-                }
-            }
-            
 
         &-wrapper {
             position: relative;
@@ -157,15 +137,41 @@
             align-items: center;
             justify-content: flex-start;
 
+
+            // @include media(s, m, l) {
+            //     &::after {
+            //         content: '';
+            //         position: absolute;
+            //         top: 0;
+            //         bottom: 0;
+            //         right: 0;
+            //         width: 30vw;
+            //         background-image: url('/assets/images/gerold-hinzen.jpg');
+            //         @include groupedZIndex('background');
+            //     }
+            // }
+
             @include media(s, m) {
                 height: toRem(164);
+
                 // position: absolute;
                 // bottom: - toRem(40);
+                // &::after {
+
+                //     @include media(s, m) {
+                //         top: unset;
+                //         width: 100%;
+                //         height: 20vh;
+                //     }
+                // }
+
             }
+
 
             &-item {
                 margin-right: toRem(30);
                 width: toRem(300);
+                object-fit: contain;
 
                 transition: all .3s;
                 filter: grayscale(1);
@@ -215,7 +221,7 @@
             opacity: 0;
 
             // @include media(s, m) {
-                padding: toRem(100) 0 toRem(60);
+            padding: toRem(100) 0 toRem(60);
             // }
         }
 
@@ -324,7 +330,7 @@
             box-sizing: border-box;
 
             // @include media(s, m) {
-                padding: toRem(100) 0 toRem(60);
+            padding: toRem(100) 0 toRem(60);
             // }
         }
 
@@ -431,7 +437,7 @@
             box-sizing: border-box;
 
             // @include media(s, m) {
-                padding: toRem(100) 0 toRem(60);
+            padding: toRem(100) 0 toRem(60);
             // }
         }
 
@@ -601,9 +607,9 @@
             @include media(s, m) {
                 flex: auto;
                 margin: 0 -15px;
-                min-height: 500px;
+                min-height: 300px;
+                max-height: 40vh;
                 height: 500px;
-                max-height: 500px;
                 position: relative;
             }
         }
