@@ -192,7 +192,7 @@
         background-image: url('/assets/images/gerold-hinzen.jpg');
         background-position: center;
         background-repeat: no-repeat;
-        background-size: auto;
+        background-size: cover;
 
         @include groupedZIndex('section');
 
