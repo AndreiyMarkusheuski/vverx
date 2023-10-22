@@ -22,20 +22,15 @@
     }
 
     &.fp-viewing-products, &.fp-viewing-contacts_footer {
-        @include media(l, xl) {
-            .header-top_line-logo{
-                background-image: url('/assets/icons/logo-light.svg');
-            }
-        }
+        // @include media(l, xl) {
+        //     .header-top_line-logo{
+        //         background-image: url('/assets/icons/logo-light.svg');
+        //     }
+        // }
     }
 
     &:not(.fp-viewing-describe) {
         .header {
-            &-top_line-logo{
-                max-width: toRem(108);
-                max-height: toRem(40);
-            }
-
             &-nav {
                 &-menu {
                     top: 12vh;

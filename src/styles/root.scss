@@ -88,19 +88,28 @@ input[type=number] {
         }
 
         &-logo {
+            position: relative;
             width: toRem(165);
             height: toRem(60);
-            max-width: toRem(165);
-            max-height: toRem(60);
-            background-image: url('/assets/icons/logo.svg');
+            max-width: toRem(108);
+            max-height: toRem(40);
+            background-image: url('/assets/icons/logo-light.svg') !important;
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
             transition: background-image .3s .3s ease, max-width .5s ease-in-out, max-height .5s ease-in-out;
-
-            @include media(s, m, l) {
-                max-width: toRem(108);
-                max-height: toRem(40);
+            margin-left: 15px;
+                
+            &::before {
+                content: '';
+                position: absolute;
+                top: -100px;
+                left: -15px;
+                bottom: -15px;
+                right: -15px;
+                border-radius: 5px;
+                background-color: $c-primary;
+                z-index: -1;
             }
         }
 
