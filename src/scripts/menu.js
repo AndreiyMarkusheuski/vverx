@@ -6,13 +6,13 @@ const body = document.body;
 
 const handleMenuToggle = () => {
   header.classList.toggle("active");
-  body.classList.toggle("stop-scroll")
+  body.classList.toggle("stop_scroll")
   burgerButton.classList.toggle("open");
 };
 
 const handleMenuClose = () => {
   header.classList.remove("active");
-  body.classList.remove("stop-scroll")
+  body.classList.remove("stop_scroll")
   burgerButton.classList.remove("open");
 };
 

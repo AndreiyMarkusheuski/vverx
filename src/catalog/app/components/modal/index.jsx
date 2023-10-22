@@ -28,57 +28,13 @@ export const ModalDialog = (props) => {
     }
   };
 
-  const renderHeader = () => {
-    const {
-      title,
-      subtitle,
-      beforeTitleText,
-      header,
-      headerClass,
-      subtitleClassName,
-    } = props;
-
-    if (isDefined(header)) {
-      return (
-        <div className={classnames("modal_dialog-header", headerClass)}>
-          {header}
-        </div>
-      );
-    }
-
-    return (
-      <div className="modal_dialog-header">
+  const renderClose = () => (
         <CloseIcon
           className="modal_dialog-close_button"
           imgClassName="modal_dialog-close_icon"
           onClick={close}
         />
-
-        <div className="modal_dialog-header_wrapper">
-          {beforeTitleText ? (
-            <div
-              className={classnames(
-                "modal_dialog-before_title_text",
-                subtitleClassName
-              )}
-            >
-              {beforeTitleText}
-            </div>
-          ) : null}
-          {title !== "" ? (
-            <div className="modal_dialog-title">{title}</div>
-          ) : null}
-          {subtitle ? (
-            <div
-              className={classnames("modal_dialog-subtitle", subtitleClassName)}
-            >
-              {subtitle}
-            </div>
-          ) : null}
-        </div>
-      </div>
     );
-  };
 
   const renderFooter = () => {
     const { footer, footerClass } = props;
@@ -105,7 +61,7 @@ export const ModalDialog = (props) => {
       overlayClassName={classnames("modal_dialog-wrapper")}
       {...props}
     >
-      {renderHeader()}
+      {renderClose()}
       <div className={classnames("modal_dialog-content", contentClass)}>
         {children}
       </div>

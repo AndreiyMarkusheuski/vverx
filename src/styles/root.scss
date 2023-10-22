@@ -4,6 +4,10 @@
 @import 'src/styles/mixins/media.scss';
 @import 'src/styles/mixins/z-index.scss';
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     font-family: $f-main;
     color: $c-text;
@@ -19,8 +23,8 @@
 body {
     overflow-x: hidden;
 
-    &.stop-scroll {
-        overflow: hidden;
+    &.stop_scroll {
+        overflow: hidden !important;
     }
 }
 
@@ -543,10 +547,6 @@ input[type=number] {
                 }
             }
         }
-
-
-
-
     }
 
     &~.button_bg_action {

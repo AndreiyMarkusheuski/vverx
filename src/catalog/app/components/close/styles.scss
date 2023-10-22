@@ -2,9 +2,9 @@
 
 .close_icon {
   &-image {
-    width: toRem(28);
-    height: toRem(28);
-    padding: 0.5rem;
+    width: 25px;
+    height: 25px;
+    // padding: 0.5rem;
     transition: all .3s ease;
 
     &:hover {

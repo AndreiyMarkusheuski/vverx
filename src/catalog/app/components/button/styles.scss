@@ -29,9 +29,9 @@ $className: 'styled-button';
   text-transform: uppercase;
   color: $c-text-contrast;
 
-  text-decoration: none;
+  text-decoration: none !important;
   text-align: center;
-  outline: none;
+  outline: none !important;
 
   cursor: pointer;
   -webkit-appearance: none;
@@ -45,11 +45,15 @@ $className: 'styled-button';
   }
 
   &:hover {
-    box-shadow: 0 0 10px 5px $c-button-background;
+    background: $c-button-background;
+    border: 2px solid $c-button-background;
+    color: $c-text-contrast;
   }
 
   &:focus {
-    box-shadow: 0 0 5px 1px $c-button-background;
+    background: $c-button-pressed-background;
+    border: 2px solid $c-button-pressed-background;
+    color: $c-text-contrast;
   }
 
   &--size {

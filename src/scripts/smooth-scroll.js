@@ -7,4 +7,5 @@ new fullpage("#smooth_scroll", {
   scrollingSpeed: 900,
   scrollOverflow: true,
   easing: "easeInOutCubic",
+  responsiveWidth: 875
 });

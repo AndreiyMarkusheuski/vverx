@@ -18,7 +18,7 @@ const SWITCH_TYPES = Object.freeze({
 const List = ({ items }) => {
   const isValidItems = Array.isArray(items) && items.length > 0;
   const [modalItem, setModalItem] = useState(undefined);
-  const [typeShape, setTypeShape] = useState(SWITCH_TYPES.block);
+  const [typeShape, setTypeShape] = useState(SWITCH_TYPES.row);
   const [shouldDisplaySwitches, setDisplaySwitches] = useState(true);
 
   useEffect(() => {
@@ -27,9 +27,7 @@ const List = ({ items }) => {
 
   const setDisplaySwitchesRules = (isMoreThenOne) => {
     setDisplaySwitches(isMoreThenOne);
-    if (isMoreThenOne) {
-      setTypeShape(SWITCH_TYPES.row);
-    } else setTypeShape(SWITCH_TYPES.block);
+    setTypeShape(SWITCH_TYPES.row);
   };
 
   const handleClick = useCallback((product) => {

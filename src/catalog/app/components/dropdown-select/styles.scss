@@ -55,15 +55,20 @@ div .dropdown_select {
 
         &__menu {
             outline: none;
-            box-shadow: none;
-            border: 2px solid $c-primary ;
-            border-radius: 3px;
-            background: $c-base-background ;
-            padding: 0;
+            background: $c-base-background;
+            box-shadow: 0px 0px 10px 0px black;
+            // border: 2px solid $c-grey-light;
+            // border: 1px solid $c-dark-background;
+
+            padding: toRem(8);
+            box-sizing: border-box;
             margin: 10px -2px;
+
 
             min-width: 320px;
             max-width: 320px;
+            border-radius: 5px !important;
+            overflow: hidden !important;
 
             &-list {
                 padding: 0;
@@ -72,35 +77,43 @@ div .dropdown_select {
 
         &__option {
             min-height: 58px;
-            background: $c-base-background ;
             box-sizing: border-box;
-            border-bottom: 2px solid $c-primary ;
 
             display: flex;
             align-items: center;
             justify-content: flex-start;
 
-            color: $c-orange-text ;
+            color: $c-text-contrast;
             font-size: toRem(20);
             font-style: normal;
             font-weight: 700;
             line-height: normal;
 
+            border: 2px solid $c-grey;
+            border-radius: 4px;
+            margin-bottom: toRem(5);
+
             transition: all .3s ease;
+            
+            outline: none !important;
+            text-decoration: none !important;
+            background: transparent;
+            background: rgba($c-grey, 0.9);
 
             &:last-child {
-                border-bottom: none;
+                margin-bottom: 0;
             }
 
             &:hover {
-                cursor: pointer;
-                color: $c-text-contrast;
-                background: $c-button-background ;
+                border: 2px solid $c-button-pressed-background;
+                color: $c-presed-text;
+                background: $c-base-background;
             }
-
+            
             &--is-selected {
-                color: $c-text-contrast;
-                background: $c-button-background ;
+                border: 2px solid $c-primary ;
+                color: $c-orange-text;
+                background: $c-base-background;
             }
         }
     }
@@ -114,3 +127,4 @@ div .dropdown_select {
         line-height: normal;
     }
 }
+

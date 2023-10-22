@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 
 import jsonData from "/data/catalog.json";
 
@@ -7,9 +7,10 @@ import isDefined from "/scripts/tools/is-defined";
 import Title from "./components/title";
 import Picker from "./components/picker";
 import Container from "./components/container";
-import List from './components/list'
+import List from "./components/list";
 
 const Catalog = () => {
+  const ref = useRef(null);
   const topLevelTypes = jsonData.items;
   const getTopType = useMemo(() => {
     const searchParams = new URLSearchParams(document.location.search);
@@ -68,7 +69,7 @@ const Catalog = () => {
   };
 
   useEffect(() => {
-    const [ itemList ] = itemLevelTypes
+    const [itemList] = itemLevelTypes
       .filter(({ id }) => id === activeItemType)
       .map(({ items }) => items);
     setActiveItems(isDefined(itemList) ? itemList : []);
@@ -80,7 +81,17 @@ const Catalog = () => {
 
   const handleItemLevelTypeChange = useCallback((selectedId) => {
     setActiveItemType(selectedId);
+    scrollToContainer();
   }, []);
+
+  const scrollToContainer = () => {
+    const scrollEl = ref.current;
+    const { top } = scrollEl.getBoundingClientRect();
+    window.scrollTo({
+      top: top + window.pageYOffset,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -102,7 +113,7 @@ const Catalog = () => {
         className={"item_level"}
       />
       <Container>
-        <p className="products-describe">
+        <p ref={ref} className="products-describe">
           В нашем парке подъемников представлены лидеры своего рынка, это
           компании JLG и Haulotte. Мы предлагаем Вам{" "}
           <span className="text__orange">коленчатые и ножничные </span>
