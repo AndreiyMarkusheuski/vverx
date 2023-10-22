@@ -22,7 +22,13 @@
         box-sizing: border-box;
         border-radius: 4px;
         background-color: $c-white;
-        max-height: 40vh;
+        max-height: 380px;
+
+        @include media(xl) {
+            padding: toRem(15) toRem(15) toRem(25);
+            max-height: 250px;
+            min-width: 180px;
+        }
 
         filter: grayscale(1);
         transition: all .3s ease;
@@ -31,7 +37,7 @@
             margin: 0 15px;
         }
 
-        @include media(l, xl) {
+        @include media(l, xxl, xl) {
             &:hover {
                 cursor: pointer;
                 filter: grayscale(0);
@@ -43,6 +49,10 @@
             height: auto;
             height: 200px;
             max-height: 80%;
+
+            @include media(xl) {
+                height: 120px;
+            }
         }
 
         a {
@@ -62,7 +72,7 @@
 
     .swiper {
         &-slide {
-            @include media(l, xl) {
+            @include media(l, xxl, xl) {
                 &:hover {
                     filter: grayscale(0);
                     transform: scale(1.1);

@@ -34,7 +34,7 @@ export default function AboutUsSwiper() {
           200: {
             centeredSlides: true
           },
-          1199: {
+          1000: {
             centeredSlides: false,
             freeMode: true
           },

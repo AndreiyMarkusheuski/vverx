@@ -6,7 +6,7 @@
     background-color: $c-light-dark-background;
 
     .header-nav {
-        @include media(xl) {
+        @include media(xxl, xl) {
             visibility: hidden;
             opacity: 0;
         }

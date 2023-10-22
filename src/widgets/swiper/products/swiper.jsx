@@ -40,7 +40,7 @@ export default function ProductsSwiper() {
             slidesPerView: 'auto',
             freeMode: false,
           },
-          1200: {
+          1000: {
             freeMode: true,
             centeredSlides: false,
             slidesPerView: 4,

@@ -17,6 +17,11 @@
   cursor: pointer;
   border-radius: 4px;
 
+  @include media(xl) {
+    padding: toRem(15) toRem(20);
+    font-size: toRem(16);
+  }
+
   &.--phone {
     display: flex;
     flex-direction: row;
@@ -33,6 +38,11 @@
       background-image: url('/assets/icons/phone.svg');
       background-size: contain;
       background-repeat: no-repeat;
+
+      @include media(xl) {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 

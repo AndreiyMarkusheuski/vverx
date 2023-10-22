@@ -99,6 +99,11 @@ input[type=number] {
             background-position: center;
             transition: background-image .3s .3s ease, max-width .5s ease-in-out, max-height .5s ease-in-out;
             margin-left: 15px;
+
+            @include media(xl) {
+                max-width: toRem(90);
+                max-height: toRem(30);
+            }
                 
             &::before {
                 content: '';
@@ -110,6 +115,12 @@ input[type=number] {
                 border-radius: 5px;
                 background-color: $c-primary;
                 z-index: -1;
+
+                @include media(xl) {
+                    left: -5px;
+                    bottom: -8px;
+                    right: -5px;
+                }
             }
         }
 
@@ -179,7 +190,7 @@ input[type=number] {
         left: 0;
         padding: toRem(25);
 
-        @include media(xl) {
+        @include media(xxl, xl) {
             position: relative;
 
             background: transparent;
@@ -214,12 +225,12 @@ input[type=number] {
             height: -moz-available;
             height: fill-available;
 
-            @include media(xl) {
+            @include media(xxl, xl) {
                 justify-content: center;
                 align-items: flex-end;
                 position: absolute;
                 transition: all .8s ease;
-                top: 37vh;
+                top: 28vh;
             }
         }
 
@@ -229,7 +240,7 @@ input[type=number] {
             justify-content: center;
             align-items: center;
 
-            @include media(xl) {
+            @include media(xxl, xl) {
                 display: none;
             }
         }
@@ -242,8 +253,9 @@ input[type=number] {
             justify-content: center;
             position: relative;
             transition: all .8s ease;
+            
 
-            @include media(xl) {
+            @include media(xxl, xl) {
                 align-items: flex-end;
 
                 &::after {
@@ -255,6 +267,10 @@ input[type=number] {
                     width: 2px;
                     background: $c-base-background;
                     transition: all .8s ease;
+
+                    @include media(xl) {
+                        bottom: 38px;
+                    }
                 }
 
                 &.dark {
@@ -276,6 +292,10 @@ input[type=number] {
                             font-size: toRem(20);
                             font-weight: 700;
                             text-transform: uppercase;
+
+                            @include media(xl) {
+                                font-size: toRem(15);
+                            }
 
                             &::after {
                                 background: $c-button-background;
@@ -303,6 +323,10 @@ input[type=number] {
                             font-size: toRem(20);
                             font-weight: 700;
                             text-transform: uppercase;
+
+                            @include media(xl) {
+                                font-size: toRem(15);
+                            }
 
                             &::after {
                                 background: $c-button-background;
@@ -346,7 +370,7 @@ input[type=number] {
                 color: $c-orange-text;
             }
 
-            @include media(xl) {
+            @include media(xxl, xl) {
                 flex-direction: row;
                 align-items: baseline;
                 @include groupedZIndex('overlay');
@@ -372,6 +396,12 @@ input[type=number] {
                 }
             }
 
+            @include media(xl) {
+                font-size: toRem(12);
+                line-height: 16px;
+                margin-bottom: toRem(10);
+            }
+
             @include media(s, m, l) {
                 flex-direction: column;
 
@@ -384,19 +414,10 @@ input[type=number] {
                     margin-top: toRem(18);
                 }
             }
-
-
-
-            // &::before {
-            //     content: '';
-            //     width: toRem(230);
-            //     height: 1px;
-            //     margin-bottom: toRem(18);
-            // }
         }
 
         &-contacts {
-            @include media(xl) {
+            @include media(xxl, xl) {
                 display: none;
             }
         }
@@ -618,7 +639,7 @@ input[type=number] {
 
     div>&-pagination {
         text-align: left;
-        padding: toRem(20) 0;
+        padding: toRem(20) 15px;
         bottom: -20px !important;
         display: flex;
         justify-content: flex-start;

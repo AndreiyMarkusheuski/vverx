@@ -10,7 +10,7 @@
 
     &.fp-viewing-describe {
 
-        @include media(xl) {
+        @include media(xxl, xl) {
             .products {
                 max-width: 50% !important;
     
@@ -22,7 +22,7 @@
     }
 
     &.fp-viewing-products, &.fp-viewing-contacts_footer {
-        // @include media(l, xl) {
+        // @include media(l, xxl) {
         //     .header-top_line-logo{
         //         background-image: url('/assets/icons/logo-light.svg');
         //     }
@@ -34,6 +34,10 @@
             &-nav {
                 &-menu {
                     top: 12vh;
+
+                    @include media(xl) {
+                        top: 15vh;
+                    }
                 }
 
                 &-links::after {
@@ -43,13 +47,18 @@
                 &-link {
                     margin-bottom: toRem(13);
                     font-size: toRem(14);
+
+                    @include media(xl) {
+                        margin-bottom: toRem(10);
+                        font-size: toRem(12);
+                    }
                 }
             }
         }
     }
 
     .describe {
-        @include media(xl) {
+        @include media(xxl, xl) {
             position: absolute;
             top: 0;
             left: 0;
@@ -65,12 +74,12 @@
             transform: translateX(0);
         }
 
-        @include media(l, xl) {
+        @include media(l, xxl, xl) {
             &.active {
                 transform: translateX(0);
                 @include groupedZIndex('section', 1);
 
-                @include media(xl) {
+                @include media(xxl, xl) {
                     transition: z-index 0s 0s ease, transform .8s ease-in-out;
                 }
 
@@ -114,13 +123,17 @@
             visibility: hidden;
             opacity: 0;
             transition: all .8s ease-in-out;
-            padding-top: 12vh;
+            padding-top: 100px;
             padding-bottom: 30px;
 
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @include media(xl) {
+                padding-bottom: 10px;
+            }
 
             @include media(s, m) {
                 padding: 150px 0 0;
@@ -133,6 +146,10 @@
         &-wrapper {
             position: relative;
             max-width: toRem(580);
+
+            @include media(xl) {
+                max-width: 45%;
+            }
 
             @include media(l) {
                 max-width: 65vw;
@@ -151,8 +168,9 @@
             margin: 0;
             padding: 0;
 
-            @include media(l) {
-                max-width: toRem(500);
+            @include media(xl) {
+                font-size: toRem(30);
+                line-height: toRem(38);
             }
 
             @include media(s, m) {
@@ -166,6 +184,12 @@
             font-size: toRem(22);
             line-height: toRem(40);
             margin: toRem(20) 0 toRem(32);
+
+            @include media(xl) {
+                font-size: toRem(18);
+                line-height: toRem(28);
+                margin: toRem(13) 0 toRem(25);
+            }
 
             @include media(s, m) {
                 font-size: toRem(20);
@@ -183,6 +207,11 @@
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
+
+            @include media(xl) {
+                margin: toRem(30) auto 0;
+                height: toRem(150);
+            }
 
             @include media(m) {
                 margin-top: 100px;
@@ -203,6 +232,10 @@
 
                 &:nth-child(odd) {
                     filter: grayscale(0);
+                }
+
+                @include media(xl) {
+                    width: toRem(180);
                 }
 
                 @include media(s, xs, xxs) {
@@ -226,11 +259,11 @@
             margin-top: -25vh;
         }
 
-        @include media(s, xs ) {
+        @include media(s, xs) {
             margin-top: -100px;
         }
 
-        @include media(l, xl) {
+        @include media(l, xxl, xl) {
             float: right;
             &.active {
                 max-width: 100%;
@@ -249,7 +282,7 @@
             visibility: hidden;
             transition: all .8s .3s ease;
             opacity: 0;
-            padding-top: 12vh;
+            padding-top: 100px;
             padding-bottom: 30px;
 
             height: 100%;
@@ -274,6 +307,10 @@
         &-wrapper {
             max-width: toRem(800);
 
+            @include media(xl) {
+                max-width: 70%;
+            }
+
             @include media(s, m) {
                 max-width: 100%;
             }
@@ -285,6 +322,11 @@
             font-weight: 700;
             line-height: toRem(42);
             text-transform: uppercase;
+            
+            @include media(xl) {
+                font-size: toRem(30);
+                line-height: toRem(38);
+            }
 
             @include media(s, m) {
                 font-size: toRem(32);
@@ -298,6 +340,11 @@
             line-height: toRem(35);
             position: relative;
             color: $c-secondary-text;
+
+            @include media(xl) {
+                font-size: toRem(18);
+                line-height: toRem(28);
+            }
 
             @include media(s, m) {
                 font-size: toRem(20);
@@ -323,7 +370,6 @@
             align-items: center;
             position: relative;
             margin-top: toRem(64);
-            max-height: 40vh;
         }
 
         // Swiper style only for products section
@@ -374,13 +420,18 @@
             height: fit-content;
             position: relative;
             box-sizing: border-box;
-            padding-top: 12vh;
+            padding-top: 100px;
             padding-bottom: 30px;
 
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @include media(xl) {
+                padding-top: 100px;
+                padding-bottom: 15px;
+            }
 
             @include media(m) {
                 padding: 100px 0;
@@ -398,6 +449,10 @@
             align-items: flex-start;
             justify-content: space-between;
 
+            @include media(xl) {
+                max-width: 80%;
+            }
+
             @include media(s, m) {
                 max-width: 100%;
                 flex-direction: column;
@@ -412,6 +467,11 @@
             font-weight: 700;
             line-height: toRem(90);
             white-space: nowrap;
+
+            @include media(xl) {
+                font-size: toRem(56);
+                line-height: toRem(60);
+            }
 
             @include media(s, m) {
                 font-size: toRem(64);
@@ -429,6 +489,11 @@
             margin: 0;
             padding: 0;
             margin-left: toRem(40);
+
+            @include media(xl) {
+                font-size: toRem(16);
+                line-height: toRem(24);
+            }
 
             @include media(s, m) {
                 margin-left: toRem(28);
@@ -451,6 +516,10 @@
         &-cards {
             margin-top: toRem(34);
 
+            @include media(xl) {
+                margin-top: toRem(15);
+            }
+
             @include media(s, m) {
                 margin-top: toRem(70);
             }
@@ -460,6 +529,7 @@
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
+                padding: 0 15px;
             }
         }
 
@@ -491,7 +561,7 @@
             height: fit-content;
             position: relative;
             box-sizing: border-box;
-            padding-top: 12vh;
+            padding-top: 100px;
             padding-bottom: 30px;
 
             @include media(m) {
@@ -509,6 +579,11 @@
             font-style: normal;
             font-weight: 700;
             line-height: toRem(82);
+
+            @include media(xl) {
+                font-size: toRem(28);
+                line-height: toRem(42);
+            }
 
             @include media(s, m) {
                 font-size: toRem(24);
@@ -532,7 +607,7 @@
             height: 41px;
             overflow: hidden;
 
-            @include media(s, m) {
+            @include media(s, m, xl) {
                 font-size: toRem(20);
                 line-height: 30px;
                 height: 30px;
@@ -549,7 +624,7 @@
                 transform: translateY(0);
                 transition: all .3s ease .05s;
 
-                @include media(s, m) {
+                @include media(s, m, xl) {
                     font-size: toRem(20);
                     line-height: 30px;
                 }
@@ -561,7 +636,7 @@
                 .text__orange {
                     transform: translateY(-41px);
 
-                    @include media(s, m) {
+                    @include media(s, m, xl) {
                         transform: translateY(-30px);
                     }
                 }
@@ -582,7 +657,7 @@
                 overflow: hidden;
                 box-sizing: border-box;
 
-                @include media(s, m) {
+                @include media(s, m, xl) {
                     width: 28px;
                     height: 28px;
                 }
@@ -591,7 +666,7 @@
                     &::after {
                         transform: translateY(-48px) !important;
 
-                        @include media(s, m) {
+                        @include media(s, m, xl) {
                             transform: translateY(-28px) !important;
                         }
                     }
@@ -615,7 +690,7 @@
                     background-size: contain;
                     transition: all .3s ease .05s;
 
-                    @include media(s, m) {
+                    @include media(s, m, xl) {
                         width: 23px;
                         height: 23px;
                     }
@@ -630,7 +705,7 @@
                     background-image: url('/assets/icons/instagram-orange.svg');
                     transform: translateY(48px);
 
-                    @include media(s, m) {
+                    @include media(s, m, xl) {
                         transform: translateY(28px);
                     }
                 }
@@ -644,7 +719,7 @@
                     background-image: url('/assets/icons/tiktok-orange.svg');
                     transform: translateY(48px);
 
-                    @include media(s, m) {
+                    @include media(s, m, xl) {
                         transform: translateY(28px);
                     }
                 }
@@ -682,6 +757,10 @@
             padding: toRem(50);
             border: 2.684px solid #FFF;
 
+            @include media(s, m, xl) {
+                padding: toRem(22) toRem(15);
+            }
+
             @include media(s, m) {
                 flex: auto;
                 padding: toRem(22) toRem(30);
@@ -696,6 +775,12 @@
                     font-weight: 400;
                     line-height: 40px;
                     margin-bottom: toRem(40);
+
+                    @include media(s, m, xl) {
+                        font-size: toRem(16);
+                        line-height: 22px;
+                        margin-bottom: toRem(20);
+                    }
 
                     @include media(s, m) {
                         font-size: toRem(20);
@@ -727,6 +812,10 @@
                         width: fill-available;
                         padding: toRem(22);
                         resize: none;
+
+                        @include media(s, m, xl) {
+                            padding: toRem(12);
+                        }
                     }
 
                     &-input,
@@ -737,6 +826,13 @@
                         font-style: normal;
                         font-weight: 400;
                         line-height: 19.931px;
+
+                        @include media(s, m, xl) {
+                            font-size: toRem(12);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 14px;
+                        }
                     }
 
                     &:first-child {
