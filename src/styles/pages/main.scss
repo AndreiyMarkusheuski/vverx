@@ -38,7 +38,7 @@
 
             &-nav {
                 &-menu {
-                    top: 15vh;
+                    top: 12vh;
                 }
 
                 &-links::after {
@@ -119,8 +119,8 @@
             visibility: hidden;
             opacity: 0;
             transition: all .8s ease-in-out;
-            padding-top: 200px;
-            padding-bottom: 60px;
+            padding-top: 12vh;
+            padding-bottom: 30px;
 
             height: 100%;
             display: flex;
@@ -254,8 +254,8 @@
             visibility: hidden;
             transition: all .8s .3s ease;
             opacity: 0;
-            padding-bottom: 60px;
-            padding-top: 200px;
+            padding-top: 12vh;
+            padding-bottom: 30px;
 
             height: 100%;
             display: flex;
@@ -328,6 +328,7 @@
             align-items: center;
             position: relative;
             margin-top: toRem(64);
+            max-height: 40vh;
         }
 
         // Swiper style only for products section
@@ -378,8 +379,8 @@
             height: fit-content;
             position: relative;
             box-sizing: border-box;
-            padding-bottom: 60px;
-            padding-top: 200px;
+            padding-top: 12vh;
+            padding-bottom: 30px;
 
             height: 100%;
             display: flex;
@@ -453,7 +454,7 @@
         }
 
         &-cards {
-            margin-top: toRem(140);
+            margin-top: toRem(34);
 
             @include media(s, m) {
                 margin-top: toRem(70);
@@ -495,8 +496,8 @@
             height: fit-content;
             position: relative;
             box-sizing: border-box;
-            padding-bottom: 60px;
-            padding-top: 200px;
+            padding-top: 12vh;
+            padding-bottom: 30px;
 
             @include media(m) {
                 padding: 100px 0;

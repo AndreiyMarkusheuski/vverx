@@ -3,7 +3,8 @@
 @import 'src/styles/mixins/media.scss';
 
 .about_us-swiper {
-    padding: toRem(40) 0;
+    padding: toRem(50) 0;
+
     &-item {
         width: 332px;
         height: 310px;
@@ -13,6 +14,7 @@
         background-image: url('/assets/images/about-us-border.svg');
         background-repeat: no-repeat;
         background-size: contain;
+        max-height: 40vh;
     }
 
     div > &-img {
