@@ -1,7 +1,6 @@
 /* eslint-disable */
 const preloader = document.querySelector("#preloader");
 
-
 Pace.options = {
   ajax: false
 }

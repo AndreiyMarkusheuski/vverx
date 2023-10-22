@@ -3,22 +3,57 @@
 @import 'src/styles/mixins/z-index.scss';
 @import 'src/styles/mixins/media.scss';
 
-.fp-viewing-describe {
+.main {
+    .fp-tableCell {
+        vertical-align: top !important;
+    }
 
-    @include media(xl) {
-        .products {
-            max-width: 50% !important;
+    &.fp-viewing-describe {
 
-            &-content {
-                transition: all .3s ease !important;
+        @include media(xl) {
+            .products {
+                max-width: 50% !important;
+    
+                &-content {
+                    transition: all .3s ease !important;
+                }
             }
         }
     }
-}
 
-.main {
+    &.fp-viewing-products, &.fp-viewing-contacts_footer {
+        @include media(l, xl) {
+            .header-top_line-logo{
+                background-image: url('/assets/icons/logo-light.svg');
+            }
+        }
+    }
+
+    &:not(.fp-viewing-describe) {
+        .header {
+            &-top_line-logo{
+                max-width: toRem(108);
+                max-height: toRem(40);
+            }
+
+            &-nav {
+                &-menu {
+                    top: 15vh;
+                }
+
+                &-links::after {
+                    bottom: 40px;
+                }
+
+                &-link {
+                    margin-bottom: toRem(13);
+                    font-size: toRem(14);
+                }
+            }
+        }
+    }
+
     .describe {
-
         @include media(xl) {
             position: absolute;
             top: 0;
@@ -27,40 +62,28 @@
             height: fit-content;
             transform: translateX(-50%);
             transition: z-index .8s .8s ease, transform .8s ease-in-out;
-
             @include groupedZIndex('background');
         }
 
-        &.active {
-            transform: translateX(0);
+        @include media(s, m) {
             @include groupedZIndex('section', 1);
-
-            @include media(xl) {
-                transition: z-index 0s 0s ease, transform .8s ease-in-out;
-            }
-
-            .describe-content {
-                visibility: visible;
-                opacity: 1;
-            }
+            transform: translateX(0);
         }
 
-        &-content {
-            position: relative;
-            // padding: toRem(150) 0;
-            height: fit-content;
-            margin: auto 0;
-            box-sizing: border-box;
-            visibility: hidden;
-            opacity: 0;
-            transition: all .8s ease-in-out;
+        @include media(l, xl) {
+            &.active {
+                transform: translateX(0);
+                @include groupedZIndex('section', 1);
 
-            // @include media(l) {
-            //     padding: toRem(155) 0 toRem(100);
-            // }
+                @include media(xl) {
+                    transition: z-index 0s 0s ease, transform .8s ease-in-out;
+                }
 
-            padding: toRem(100) 0 toRem(60);
-            // }
+                .describe-content {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
         }
 
         &::before {
@@ -78,8 +101,37 @@
                 width: 70vw;
             }
 
-            @include media(s, m) {
+            @include media(m) {
                 width: 100vw;
+                bottom: 25vh;
+            }
+
+            @include media(s, xs ) {
+                bottom: 15vh;
+            }
+        }
+
+        &-content {
+            position: relative;
+            height: fit-content;
+            margin: 0;
+            box-sizing: border-box;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .8s ease-in-out;
+            padding-top: 200px;
+            padding-bottom: 60px;
+
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include media(s, m) {
+                padding: 150px 0 0;
+                min-height: 100vh;
+                visibility: visible;
+                opacity: 1;
             }
         }
 
@@ -137,36 +189,14 @@
             align-items: center;
             justify-content: flex-start;
 
-
-            // @include media(s, m, l) {
-            //     &::after {
-            //         content: '';
-            //         position: absolute;
-            //         top: 0;
-            //         bottom: 0;
-            //         right: 0;
-            //         width: 30vw;
-            //         background-image: url('/assets/images/gerold-hinzen.jpg');
-            //         @include groupedZIndex('background');
-            //     }
-            // }
-
-            @include media(s, m) {
-                height: toRem(164);
-
-                // position: absolute;
-                // bottom: - toRem(40);
-                // &::after {
-
-                //     @include media(s, m) {
-                //         top: unset;
-                //         width: 100%;
-                //         height: 20vh;
-                //     }
-                // }
-
+            @include media(m) {
+                margin-top: 100px;
+                height: 30vh;
             }
 
+            @include media(xxs, xs, s) {
+                margin-top: 30px;
+            }
 
             &-item {
                 margin-right: toRem(30);
@@ -176,13 +206,12 @@
                 transition: all .3s;
                 filter: grayscale(1);
 
-                &:hover {
-                    cursor: pointer;
+                &:nth-child(odd) {
                     filter: grayscale(0);
                 }
 
-                @include media(s, m) {
-                    width: toRem(165);
+                @include media(s, xs, xxs) {
+                    width: toRem(200);
                 }
             }
         }
@@ -193,36 +222,58 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
-        @include groupedZIndex('section');
-
-        float: right;
         height: fit-content;
         transition: all .8s ease-in-out;
         max-width: 100%;
+        @include groupedZIndex('section');
 
-        &.active {
-            max-width: 100%;
+        @include media(m) {
+            margin-top: -25vh;
+        }
 
-            .products-content {
-                visibility: visible;
-                opacity: 1;
+        @include media(s, xs ) {
+            margin-top: -100px;
+        }
+
+        @include media(l, xl) {
+            float: right;
+            &.active {
+                max-width: 100%;
+
+                .products-content {
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
         }
 
         &-content {
-            // padding: toRem(150) 0 0;
             height: fit-content;
             position: relative;
             box-sizing: border-box;
-
             visibility: hidden;
             transition: all .8s .3s ease;
             opacity: 0;
+            padding-bottom: 60px;
+            padding-top: 200px;
 
-            // @include media(s, m) {
-            padding: toRem(100) 0 toRem(60);
-            // }
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include media(m) {
+                visibility: visible;
+                opacity: 1;
+                padding: 100px 0;
+                padding-top: 25vh;
+            }
+
+            @include media(s, xs) {
+                visibility: visible;
+                opacity: 1;
+                padding: 160px 0 60px;
+            }
         }
 
         &-wrapper {
@@ -237,7 +288,7 @@
             color: $c-orange-text;
             font-size: toRem(40);
             font-weight: 700;
-            line-height: toRem(90);
+            line-height: toRem(42);
             text-transform: uppercase;
 
             @include media(s, m) {
@@ -324,14 +375,24 @@
         background-size: cover;
 
         &-content {
-            // padding: toRem(150) 0 0;
             height: fit-content;
             position: relative;
             box-sizing: border-box;
+            padding-bottom: 60px;
+            padding-top: 200px;
 
-            // @include media(s, m) {
-            padding: toRem(100) 0 toRem(60);
-            // }
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include media(m) {
+                padding: 100px 0;
+            }
+
+            @include media(s, xs) {
+                padding: 60px 0;
+            }
         }
 
         &-wrapper {
@@ -431,14 +492,19 @@
         background-size: cover;
 
         &-content {
-            // padding: toRem(150) 0;
             height: fit-content;
             position: relative;
             box-sizing: border-box;
+            padding-bottom: 60px;
+            padding-top: 200px;
 
-            // @include media(s, m) {
-            padding: toRem(100) 0 toRem(60);
-            // }
+            @include media(m) {
+                padding: 100px 0;
+            }
+
+            @include media(s, xs) {
+                padding: 60px 0;
+            }
         }
 
         &-headline {

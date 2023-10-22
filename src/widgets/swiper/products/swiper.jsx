@@ -24,7 +24,6 @@ export default function ProductsSwiper() {
         <Arrow />
       </button>
       <Swiper
-        slidesPerView={"auto"}
         pagination={{
           clickable: true,
         }}
@@ -37,10 +36,15 @@ export default function ProductsSwiper() {
         breakpoints={{
           200: {
             centeredSlides: true,
+            spaceBetween: 0,
+            slidesPerView: 'auto',
+            freeMode: false,
           },
-          876: {
-            centeredSlides: false,
+          1200: {
             freeMode: true,
+            centeredSlides: false,
+            slidesPerView: 4,
+            spaceBetween: 20
           },
         }}
       >

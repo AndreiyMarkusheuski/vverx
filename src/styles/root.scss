@@ -4,10 +4,6 @@
 @import 'src/styles/mixins/media.scss';
 @import 'src/styles/mixins/z-index.scss';
 
-html {
-    scroll-behavior: smooth;
-}
-
 :root {
     font-family: $f-main;
     color: $c-text;
@@ -73,14 +69,7 @@ input[type=number] {
     top: 0;
     width: 100%;
     background: transparent;
-    // transition: background .3s ease;
     @include groupedZIndex('header');
-
-    // @include media(xl) {
-    //     &.rent-section, &.contacts-section {
-    //         background: $c-base-background;
-    //     }
-    // }
 
     @include media(s, m, l) {
         background: transparent;
@@ -98,11 +87,20 @@ input[type=number] {
             justify-content: flex-start;
         }
 
-        &-logo img {
+        &-logo {
             width: toRem(165);
+            height: toRem(60);
+            max-width: toRem(165);
+            max-height: toRem(60);
+            background-image: url('/assets/icons/logo.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            transition: background-image .3s .3s ease, max-width .5s ease-in-out, max-height .5s ease-in-out;
 
             @include media(s, m, l) {
-                width: toRem(140);
+                max-width: toRem(108);
+                max-height: toRem(40);
             }
         }
 
@@ -211,7 +209,8 @@ input[type=number] {
                 justify-content: center;
                 align-items: flex-end;
                 position: absolute;
-                top: 40vh;
+                transition: all .8s ease;
+                top: 37vh;
             }
         }
 
@@ -233,6 +232,7 @@ input[type=number] {
             flex-direction: column;
             justify-content: center;
             position: relative;
+            transition: all .8s ease;
 
             @include media(xl) {
                 align-items: flex-end;
@@ -245,7 +245,7 @@ input[type=number] {
                     right: 6px;
                     width: 2px;
                     background: $c-base-background;
-                    transition: all .5s ease-in-out;
+                    transition: all .8s ease;
                 }
 
                 &.dark {
@@ -330,6 +330,7 @@ input[type=number] {
             position: relative;
             margin-bottom: toRem(18);
             padding-top: toRem(18);
+            transition: all .8s ease;
 
             &:hover {
                 cursor: pointer;
