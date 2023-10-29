@@ -3,36 +3,39 @@
 @import 'src/styles/mixins/media.scss';
 
 .about_us-swiper {
-    padding: toRem(50) 0;
+    padding: 4vh 0;
 
     @include media(xl) {
-        padding: toRem(50) 0 toRem(35); 
+        padding: 3vh 0 3.7vh; 
     }
 
     &-item {
-        width: 332px;
-        height: 310px;
-        padding: toRem(78) toRem(32) toRem(15);
+        width: 100%;
+        height: 40vh;
+        padding: 6vh 4vh 4vh;
         box-sizing: border-box;
         position: relative;
         background-image: url('/assets/images/about-us-border.svg');
         background-repeat: no-repeat;
-        background-size: contain;
-        max-height: 310px;
+        background-size: 100% 100%;
+        max-height: 40vh;
+        max-width: 30%;
 
-        @include media(xl) {
-            padding: toRem(25) toRem(10) toRem(8);
-            max-height: 250px;
-            width: 250px;
+        @include media(s, m, l) {
+            width: 332px;
+            height: 310px;
+            padding: toRem(48) toRem(15) toRem(15);
+            max-height: 100%x;
+            max-width: 100%;
         }
     }
 
     div > &-img {
         position: absolute;
-        top: -36.5px; // height/2 
-        left:  calc(50% - 36.5px);
-        width: 75px;
-        height: 75px;
+        top: -2.5vh; // height/2 
+        left:  calc(50% - 2.5vh);
+        width: 5vh;
+        height: 5vh;
 
         @include media(xl) {
             top: -14px; // height/2 
@@ -45,16 +48,16 @@
     &-title {
         color: $c-text;
         text-align: center;
-        font-size: toRem(20);
+        font-size: 2vh;
         font-style: normal;
         font-weight: 700;
-        line-height: toRem(20);
+        line-height: 130%;
         max-width: 180px;
-        margin: 0 auto toRem(45);
+        margin: 0 auto 3vh;
 
-        @include media(xl) {
-            font-size: toRem(14);
-            line-height: toRem(18);
+        @include media(s, m, l) {
+            font-size: toRem(20);
+            line-height: toRem(26);
             margin: 0 auto toRem(10);
             max-width: 130px;
         }
@@ -63,13 +66,13 @@
     &-text {
         color: $c-text;
         text-align: center;
-        font-size: toRem(16);
+        font-size: 2.3vh;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
 
-        @include media(xl) {
-            font-size: toRem(14);
+        @include media(s, m ,l) {
+            font-size: toRem(18);
         }
     }
 

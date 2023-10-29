@@ -84,6 +84,7 @@ input[type=number] {
         position: relative;
 
         @include media(s, m, l) {
+            position: fixed;
             justify-content: flex-start;
         }
 
@@ -247,22 +248,20 @@ input[type=number] {
 
         &-links {
             list-style: none;
-            padding: toRem(15) 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
             transition: all .8s ease;
-            
 
             @include media(xxl, xl) {
                 align-items: flex-end;
 
-                &::after {
+                &::before {
                     content: '';
                     position: absolute;
-                    top: 45px;
-                    bottom: 60px;
+                    top: 4vh;
+                    bottom: 4vh;
                     right: 6px;
                     width: 2px;
                     background: $c-base-background;
@@ -274,7 +273,7 @@ input[type=number] {
                 }
 
                 &.dark {
-                    &::after {
+                    &::before {
                         background: $c-base-background;
                     }
 
@@ -289,7 +288,7 @@ input[type=number] {
                     & .active {
                         .header-nav-link {
                             color: $c-orange-text;
-                            font-size: toRem(20);
+                            font-size: 2.5vh;
                             font-weight: 700;
                             text-transform: uppercase;
 
@@ -305,7 +304,7 @@ input[type=number] {
                 }
 
                 &.light {
-                    &::after {
+                    &::before {
                         background: $c-black-background;
                     }
 
@@ -320,7 +319,7 @@ input[type=number] {
                     & .active {
                         .header-nav-link {
                             color: $c-orange-text;
-                            font-size: toRem(20);
+                            font-size: 2.5vh;
                             font-weight: 700;
                             text-transform: uppercase;
 
@@ -338,6 +337,7 @@ input[type=number] {
 
             @include media(s, m, l) {
                 align-items: center;
+                padding: toRem(15) 0;
 
                 & li:last-child {
                     a::after {
@@ -354,15 +354,14 @@ input[type=number] {
             color: $c-text;
             display: flex;
             text-align: center;
-            font-size: toRem(16);
+            font-size: 2vh;
             font-style: normal;
             font-weight: 700;
             line-height: 26.4px;
             text-transform: uppercase;
             transition: all .5s ease-in-out;
             position: relative;
-            margin-bottom: toRem(18);
-            padding-top: toRem(18);
+            padding: .5vh 0;
             transition: all .8s ease;
 
             &:hover {
@@ -374,7 +373,7 @@ input[type=number] {
                 flex-direction: row;
                 align-items: baseline;
                 @include groupedZIndex('overlay');
-                margin-bottom: toRem(30);
+                margin: 1.5vh 0;
                 font-weight: 500;
 
                 &::after {
@@ -411,7 +410,7 @@ input[type=number] {
                     background-repeat: no-repeat;
                     width: toRem(230);
                     height: 1px;
-                    margin-top: toRem(18);
+                    margin: toRem(18) 0;
                 }
             }
         }
