@@ -21,8 +21,31 @@
         }
     }
 
+
+    // &.fp-viewing-products, &.fp-viewing-contacts_footer {
+    //     .header {
+    //         &-top_line {
+    //             &-logo {
+    //                 background-image: url('/assets/icons/logo-light.svg') !important;
+    //             }
+    //         }
+    //     }
+    // }
+
     &:not(.fp-viewing-describe) {
         .header {
+            &-top_line {
+                &-call_us {
+                    font-size: 2vh;
+                    padding: 1.5vh 2vh;
+
+                    &::before {
+                        max-width: 2vh;
+                        max-height: 2vh;
+                    }
+                }
+            }
+
             &-nav {
                 &-menu {
                     top: 12vh;
@@ -587,7 +610,6 @@
             }
         }
 
-
         &-link {
             padding: 0;
             margin: 0;
@@ -766,7 +788,7 @@
             .form {
                 &-headline {
                     color: $c-secondary-text;
-                    font-size: 3vh;
+                    font-size: 2vh;
                     font-style: normal;
                     font-weight: 400;
                     line-height: 140%;
@@ -806,7 +828,7 @@
                         width: -webkit-fill-available;
                         width: -moz-available;
                         width: fill-available;
-                        padding: 2.5vh;
+                        padding: 2vh;
                         resize: none;
 
                         @include media(s, m, xl) {
@@ -818,7 +840,7 @@
                     &-input::placeholder {
                         font-family: $f-main;
                         color: rgba(255, 255, 255, 0.60);
-                        font-size: 2.5vh;
+                        font-size: 2vh;
                         font-style: normal;
                         font-weight: 400;
                         line-height: 120%;

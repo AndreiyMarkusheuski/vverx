@@ -20,7 +20,7 @@ $className: 'styled-button';
   max-width: 310px;
   width: 100%;
 
-  transition: all .3s ease;
+  transition: all .5s ease;
 
   font-size: toRem(16);
   font-style: normal;
@@ -47,12 +47,6 @@ $className: 'styled-button';
   &:hover {
     background: $c-button-background;
     border: 2px solid $c-button-background;
-    color: $c-text-contrast;
-  }
-
-  &:focus {
-    background: $c-button-pressed-background;
-    border: 2px solid $c-button-pressed-background;
     color: $c-text-contrast;
   }
 
