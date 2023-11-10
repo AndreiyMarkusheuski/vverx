@@ -15,33 +15,46 @@
                 max-width: 50% !important;
     
                 &-content {
-                    transition: all .3s ease !important;
+                    transition: all .5s ease !important;
                 }
             }
         }
     }
 
 
-    // &.fp-viewing-products, &.fp-viewing-contacts_footer {
-    //     .header {
-    //         &-top_line {
-    //             &-logo {
-    //                 background-image: url('/assets/icons/logo-light.svg') !important;
-    //             }
-    //         }
-    //     }
-    // }
+    &.fp-viewing-products, &.fp-viewing-contacts_footer {
+        .header {
+            &-top_line {
+                &-logo {
+                    background-image: url('/assets/icons/logo-light.svg') !important;
+                }
+            }
+        }
+    }
 
     &:not(.fp-viewing-describe) {
         .header {
             &-top_line {
                 &-call_us {
-                    font-size: 2vh;
+                    font-size: 1.7vh;
                     padding: 1.5vh 2vh;
 
+                    @include media(s, m, l) {
+                        padding: 1.7vh;
+                    }
+
                     &::before {
-                        max-width: 2vh;
-                        max-height: 2vh;
+                        max-width: 1.7vh;
+                        max-height: 1.7vh;
+                    }
+                }
+
+                &-logo {
+                    max-width: toRem(90);
+                    max-height: toRem(30);
+
+                    @include media(s, m, l) {
+                        background-image: url('/assets/icons/logo.svg') !important;
                     }
                 }
             }
@@ -268,7 +281,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: fit-content;
-        transition: all .8s ease-in-out;
+        transition: all .7s ease;
         max-width: 100%;
         @include groupedZIndex('section');
 
@@ -297,7 +310,7 @@
             position: relative;
             box-sizing: border-box;
             visibility: hidden;
-            transition: all .8s .3s ease;
+            transition: all .5s .5s ease;
             opacity: 0;
             padding-top: 100px;
             padding-bottom: 30px;
@@ -627,8 +640,8 @@
             overflow: hidden;
 
             @include media(s, m, xl) {
-                line-height: 30px;
-                height: 30px;
+                line-height: 3vh;
+                height: 3vh;
             }
 
             .text,
@@ -644,7 +657,7 @@
 
                 @include media(s, m, xl) {
                     font-size: toRem(20);
-                    line-height: 30px;
+                    line-height: 3vh;
                 }
             }
 
@@ -662,6 +675,7 @@
         }
 
         &-social {
+            max-height: 30vh;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -747,7 +761,7 @@
         &-wrapper {
             display: flex;
             flex-direction: row-reverse;
-            margin-top: toRem(50);
+            margin-top: toRem(30);
 
             @include media(s, m) {
                 flex-direction: column;
@@ -772,12 +786,8 @@
         &-form {
             flex: 6;
             box-sizing: border-box;
-            padding: 3vh;
             border: 2.684px solid #FFF;
-
-            @include media(s, m, xl) {
-                padding: toRem(22) toRem(15);
-            }
+            padding: toRem(22) toRem(15);
 
             @include media(s, m) {
                 flex: auto;
@@ -788,17 +798,11 @@
             .form {
                 &-headline {
                     color: $c-secondary-text;
-                    font-size: 2vh;
                     font-style: normal;
                     font-weight: 400;
-                    line-height: 140%;
-                    margin-bottom: toRem(40);
-
-                    @include media(s, m, xl) {
-                        font-size: toRem(16);
-                        line-height: 22px;
-                        margin-bottom: toRem(20);
-                    }
+                    font-size: toRem(16);
+                    line-height: 22px;
+                    margin-bottom: toRem(20);
 
                     @include media(s, m) {
                         font-size: toRem(20);
@@ -828,29 +832,18 @@
                         width: -webkit-fill-available;
                         width: -moz-available;
                         width: fill-available;
-                        padding: 2vh;
+                        padding: toRem(12);
                         resize: none;
-
-                        @include media(s, m, xl) {
-                            padding: toRem(12);
-                        }
                     }
 
                     &-input,
                     &-input::placeholder {
                         font-family: $f-main;
                         color: rgba(255, 255, 255, 0.60);
-                        font-size: 2vh;
+                        font-size: toRem(14);
                         font-style: normal;
                         font-weight: 400;
-                        line-height: 120%;
-
-                        @include media(s, m, xl) {
-                            font-size: toRem(12);
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 14px;
-                        }
+                        line-height: 14px;
                     }
 
                     &:first-child {
@@ -900,12 +893,10 @@
 
                 &_button {
                     width: 100%;
-                    max-width: toRem(205);
-                    margin-top: toRem(40);
-
-                    @include media(s, m) {
-                        margin-top: toRem(34);
-                    }
+                    max-width: toRem(186);
+                    margin-top: toRem(18);
+                    font-size: 1.7vh;
+                    padding: 1.5vh 2vh;
                 }
             }
         }
