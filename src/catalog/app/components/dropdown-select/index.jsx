@@ -16,8 +16,8 @@ const SelectDropdown = ({ values, onChange, defaultValue }) => {
 
   return (
     <Select
-      defaultValue={
-        defaultValue ? parseValue(defaultValue) : defaultValue(values[0])
+      value={
+        defaultValue ? parseValue(defaultValue) : parseValue(values[0])
       }
       className="dropdown_select"
       classNamePrefix="dropdown_select-item"

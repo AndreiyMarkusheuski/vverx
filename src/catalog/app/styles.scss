@@ -2,7 +2,7 @@
 @import 'src/styles/tools/to-rem.scss';
 @import 'src/styles/mixins/media.scss';
 
-.products {
+.catalog_section {
     &-headline {
         color: $c-text-additional;
         font-size: toRem(40);
@@ -26,7 +26,6 @@
         font-style: normal;
         font-weight: 500;
         line-height: toRem(34); /* 140.833% */
-        max-width: 850px;
         padding: 0;
         margin: 0;
 
@@ -40,7 +39,7 @@
     }
 }
 
-.top_level {
+.type {
     padding: toRem(88) 0;
     background-image: url('/assets/images/type.jpg');
     background-repeat: no-repeat;
@@ -51,7 +50,7 @@
     }
 }
 
-.item_level {
+.equipment {
     padding: toRem(66) 0 toRem(88);
     
     @include media(s, m, l) {

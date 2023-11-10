@@ -8,79 +8,75 @@ import Title from "./components/title";
 import Picker from "./components/picker";
 import Container from "./components/container";
 import List from "./components/list";
+import { SEARCH_PARAMS, HEADER_HEIGTH } from "./tools/consts";
+import setToUrlParams, { getParamFromUrl } from './tools/url-push'
 
 const Catalog = () => {
-  const ref = useRef(null);
-  const topLevelTypes = jsonData.items;
   const getTopType = useMemo(() => {
-    const searchParams = new URLSearchParams(document.location.search);
-    const topType = searchParams.get("type");
-    const topLevelTypes = jsonData.items;
-    const [defaulActiveItem] = topLevelTypes;
-    const { id: defaultActiveTopType } = defaulActiveItem;
+    const typeFromUrl = getParamFromUrl(SEARCH_PARAMS.type)
+    const [defaulActiveItem] = jsonData.items;
+    const { id: defaultActiveType } = defaulActiveItem;
 
-    return isDefined(topType) ? topType : defaultActiveTopType;
+    return isDefined(typeFromUrl) ? typeFromUrl : defaultActiveType;
   }, []);
 
   const getItemType = useMemo(() => {
-    const searchParams = new URLSearchParams(document.location.search);
-    const itemType = searchParams.get("equipment");
-    const topLevelTypes = jsonData.items;
-    const [defaulActiveItem] = topLevelTypes;
+    const equipmentFromUrl = getParamFromUrl(SEARCH_PARAMS.equipment)
+    const [defaulActiveItem] = jsonData.items;
     const { items } = defaulActiveItem;
 
-    return isDefined(itemType) ? itemType : items[0].id;
+    return isDefined(equipmentFromUrl) ? equipmentFromUrl : items[0].id;
   }, []);
 
-  const [activeTopType, setActiveTopType] = useState(getTopType);
-  const [activeItemType, setActiveItemType] = useState(getItemType);
-  const [activeItems, setActiveItems] = useState([]);
-
-  const itemLevelTypes = useMemo(
-    () =>
-      topLevelTypes
-        .filter(({ id }) => id === activeTopType)
-        .map(({ items }) => items)[0],
-    [activeTopType, topLevelTypes]
+  const ref = useRef(null);
+  const types = jsonData.items.filter(
+    (type) => type.items.length > 0
   );
+  const [activeType, setActiveType] = useState(getTopType);
+  const [activeProducts, setActiveProduct] = useState(getItemType);
+  const [equipmentList, setEquipmentList] = useState([]);
+  const [activeEquipmentDesc, setEquipmentDesc] = useState("");
 
-  const setToUrlParams = useCallback((activeTopType, activeItemType) => {
-    let queryParam = { type: activeTopType, equipment: activeItemType };
-    let preparedQueryParams = new URLSearchParams(queryParam).toString();
-    updateURL(preparedQueryParams);
-  }, []);
+  const equipment = useMemo(() => {
+    if (types.length < 1) return [];
+
+    const [avalibleItemLevelTypes] = types.filter(
+      ({ id }) => id === activeType
+    );
+
+    const { items: avalibleItemLevelItems } = avalibleItemLevelTypes;
+
+    return avalibleItemLevelItems.filter(({ items }) => items.length > 0);
+  }, [activeType, types]);
+
+  const getNotNullList = useCallback(() => {
+    const [activeItem] = equipment
+      .filter(({ id }) => id === activeProducts)
+
+      return activeItem ? activeItem : equipment[0]
+
+  }, [activeProducts, equipment]);
+  
+  const setCatalogData = useCallback(() => {
+    const { items, describtion, id } = getNotNullList();
+
+    setEquipmentList(items);
+    setActiveProduct(id);
+    setEquipmentDesc(describtion);
+    setToUrlParams(activeType, activeProducts);
+  }, [activeProducts, activeType, getNotNullList, setActiveProduct]);
 
   useEffect(() => {
-    setToUrlParams(activeTopType, activeItemType);
-  }, [activeTopType, activeItemType, setToUrlParams]);
+    setCatalogData();
+  }, [setCatalogData, types]);
 
-  const updateURL = (query) => {
-    if (history.pushState) {
-      var baseUrl =
-        window.location.protocol +
-        "//" +
-        window.location.host +
-        window.location.pathname;
-      var newUrl = `${baseUrl}?${query}`;
-      history.pushState(null, null, newUrl);
-    } else {
-      console.warn("History API не поддерживается");
-    }
-  };
-
-  useEffect(() => {
-    const [itemList] = itemLevelTypes
-      .filter(({ id }) => id === activeItemType)
-      .map(({ items }) => items);
-    setActiveItems(isDefined(itemList) ? itemList : []);
-  }, [activeTopType, activeItemType, itemLevelTypes]);
-
-  const handleTopLevelTypeChange = useCallback((selectedId) => {
-    setActiveTopType(selectedId);
+  const handleTypeChange = useCallback((selectedId) => {
+    setActiveType(selectedId);
+    scrollToContainer();
   }, []);
 
-  const handleItemLevelTypeChange = useCallback((selectedId) => {
-    setActiveItemType(selectedId);
+  const handleProductChange = useCallback((selectedId) => {
+    setActiveProduct(selectedId);
     scrollToContainer();
   }, []);
 
@@ -88,7 +84,7 @@ const Catalog = () => {
     const scrollEl = ref.current;
     const { top } = scrollEl.getBoundingClientRect();
     window.scrollTo({
-      top: top + window.pageYOffset,
+      top: top + window.pageYOffset - HEADER_HEIGTH,
       behavior: "smooth",
     });
   };
@@ -96,30 +92,28 @@ const Catalog = () => {
   return (
     <>
       <Container>
-        <Title className="products-headline">Каталог техники</Title>
+        <Title className="catalog_section-headline">Каталог техники</Title>
       </Container>
       <Picker
-        onChange={handleTopLevelTypeChange}
-        values={topLevelTypes}
-        activeId={activeTopType}
+        onChange={handleTypeChange}
+        values={types}
+        activeId={activeType}
         isCommon={true}
-        className={"top_level"}
+        className={SEARCH_PARAMS.type}
       />
       <Picker
-        onChange={handleItemLevelTypeChange}
-        values={itemLevelTypes}
-        activeId={activeItemType}
-        isCommon={false}
-        className={"item_level"}
+        onChange={handleProductChange}
+        values={equipment}
+        activeId={activeProducts}
+        className={SEARCH_PARAMS.equipment}
       />
       <Container>
-        <p ref={ref} className="products-describe">
-          В нашем парке подъемников представлены лидеры своего рынка, это
-          компании JLG и Haulotte. Мы предлагаем Вам{" "}
-          <span className="text__orange">коленчатые и ножничные </span>
-          подъемники.
-        </p>
-        <List items={activeItems} />
+        <p
+          ref={ref}
+          className="catalog_section-describe"
+          dangerouslySetInnerHTML={{ __html: activeEquipmentDesc }}
+        ></p>
+        <List items={equipmentList} />
       </Container>
     </>
   );

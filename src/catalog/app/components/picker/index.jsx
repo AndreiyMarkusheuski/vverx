@@ -23,9 +23,10 @@ const Picker = ({ onChange, values, className, activeId, isCommon }) => {
     </Button>
   );
 
-  const getActiveValue = useMemo(() => {
-    return values.filter(({ id }) => id === activeId)[0];
-  }, [activeId, values]);
+  const getActiveValue = useMemo(
+    () => values.filter(({ id }) => id === activeId)[0],
+    [activeId, values]
+  );
 
   const getSecondaryPicker = () =>
     width > 1199 ? (
@@ -39,13 +40,15 @@ const Picker = ({ onChange, values, className, activeId, isCommon }) => {
     );
 
   return (
-    <div className={classnames("picker", className)}>
-      <Container>
-        <div className="picker-wrapper">
-          {isCommon ? values.map(renderButton) : getSecondaryPicker()}
-        </div>
-      </Container>
-    </div>
+    values.length > 0 && (
+      <div className={classnames("picker", className)}>
+        <Container>
+          <div className="picker-wrapper">
+            {isCommon ? values.map(renderButton) : getSecondaryPicker()}
+          </div>
+        </Container>
+      </div>
+    )
   );
 };
 
