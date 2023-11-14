@@ -12,7 +12,7 @@
             {
               "title": "Caterpillar 444",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["сaterpillar_444_1", "caterpillar_444_2"],
+              "imgUrls": ["lifts", "telehandlers"],
               "describtionList": [
                 "Глубина копания  : 6,2 м",
                 "Грузопод. ковша : 4699 кг",
@@ -28,7 +28,7 @@
             {
               "title": "JCB 5CX",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JCB_5CX_1", "JCB_5CX_2", "JCB_5CX_3"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Глубина копания  : 6,5 м",
                 "Грузопод. ковша : 4378 кг",
@@ -52,7 +52,7 @@
             {
               "title": "Коленчатый подъемник JLG 800AJ",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_800AJ_1"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 26.46 м",
                 "Горизонтальный вылет: 15,74 м",
@@ -66,7 +66,7 @@
             {
               "title": "Коленчатый подъемник JLG 600AJ",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_600AJ_1"],
+              "imgUrls": ["backhoe_loaders"],
               "describtionList": [
                 "Рабочая высота: 20,5 м",
                 "Грузоподъёмность:230 кг",
@@ -79,7 +79,7 @@
             {
               "title": "Коленчатый подъемник JLG 510AJ",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_510AJ_1"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 17,8 м",
                 "Горизонтальный вылет: 9,5 м",
@@ -93,7 +93,7 @@
             {
               "title": "Коленчатый подъемник JLG 450AJ",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_450AJ_1"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 15,5 м",
                 "Грузоподъёмность: 230 кг",
@@ -106,7 +106,7 @@
             {
               "title": "Ножничные подъемник JLG 500RTS",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_500RTS_1", "JLG_500RTS_2"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 17 м",
                 "Грузоподъёмность: 900 кг",
@@ -119,7 +119,7 @@
             {
               "title": "Ножничные подъемник JLG 4394RT",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_4394RT_1"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 15,1 м",
                 "Грузоподъёмность: 567 кг",
@@ -132,7 +132,7 @@
             {
               "title": "Ножничные подъемник JLG 3394RT",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_3394RT_1"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 12 м",
                 "Грузоподъёмность: 907 кг",
@@ -145,7 +145,7 @@
             {
               "title": "Ножничные подъемник JLG 33RTS",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_33RTS_1", "JLG_33RTS_2", "JLG_33RTS_3"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 12,6 м",
                 "Грузоподъёмность: 560 кг",
@@ -158,7 +158,7 @@
             {
               "title": "Ножничные подъемник HAULOTTE COMPACT 12",
               "shortDescribtion": "Электрический, самоходный",
-              "imgUrls": ["HAULOTTE_COMPACT_12_1", "HAULOTTE_COMPACT_12_2", "HAULOTTE_COMPACT_12_3"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 11,75 м",
                 "Грузоподъёмность: 300 кг",
@@ -171,7 +171,7 @@
             {
               "title": "Ножничные подъемник HAULOTTE COMPACT 10",
               "shortDescribtion": "Электрический, самоходный",
-              "imgUrls": ["HAULOTTE_COMPACT_10_1", "HAULOTTE_COMPACT_10_2"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 10 м",
                 "Грузоподъёмность: 300 кг",
@@ -184,7 +184,7 @@
             {
               "title": "Ножничные подъемник HAULOTTE COMPACT 10N",
               "shortDescribtion": "Электрический, самоходный",
-              "imgUrls": ["HAULOTTE_COMPACT_10N_3", "HAULOTTE_COMPACT_10N_1", "HAULOTTE_COMPACT_10N_2"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 9,8 м",
                 "Грузоподъёмность: 250 кг",
@@ -204,7 +204,7 @@
             {
               "title": "AMMANN APR 22/40",
               "shortDescribtion": "Реверсивная, дизельная",
-              "imgUrls": ["AMMANN_APR_2240_1", "AMMANN_APR_2240_2", "AMMANN_APR_2240_3"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Вес 130кг",
                 "Ширина плиты 400мм",
@@ -218,7 +218,7 @@
             {
               "title": "AMMANN APR 40/60",
               "shortDescribtion": "Реверсивная, бензиновая",
-              "imgUrls": ["AMMANN_APR_4060_1", "AMMANN_APR_4060_2", "AMMANN_APR_4060_3"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Вес 269кг",
                 "Ширина плиты 600мм",
@@ -232,7 +232,7 @@
             {
               "title": "AMMANN APR 3520",
               "shortDescribtion": "Реверсивная, бензиновая",
-              "imgUrls": ["AMMANN_APR_3520_2", "AMMANN_APR_3520_1"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Вес 257кг",
                 "Ширина плиты 600мм",
@@ -246,7 +246,7 @@
             {
               "title": "AMMANN APR 4920",
               "shortDescribtion": "Реверсивная, бензиновая",
-              "imgUrls": ["AMMANN_APR_4920_1", "AMMANN_APR_4920_2", "AMMANN_APR_4920_3", "AMMANN_APR_4920_4", "AMMANN_APR_4920_5"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Вес 413кг",
                 "Ширина плиты 600мм",
@@ -266,7 +266,7 @@
             {
               "title": "Manitou MT 1840",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["Manitou_MT_1840_4", "Manitou_MT_1840_2", "Manitou_MT_1840_3", "Manitou_MT_1840_1"],
+              "imgUrls": ["lifts"],
               "describtionList": [
                 "Рабочая высота: 17,5 м",
                 "Грузоподъёмность: 4000 кг",
@@ -289,7 +289,47 @@
     {
       "id": "sell",
       "title": "Техника в продажу",
-      "items": []
+      "items": [
+        {
+          "id": "backhoe_loaders",
+          "title": "Экскаваторы-погрузчики",
+          "items": []
+        },
+        {
+          "id": "lifts",
+          "title": "Подъёмники",
+          "items": []
+        },
+        {
+          "id": "plits",
+          "title": "Виброплиты",
+          "items": []
+        },
+        {
+          "id": "telehandlers",
+          "title": "Телескопические погрузчики",
+          "items": []
+        },
+        {
+          "id": "containers",
+          "title": "Контейнеры",
+          "describtion": "Мы предлагаем Вам самые лучшие экскаваторы-погрузчики. Мощный двигатель, различное навесное оборудование, наличие ковшей разных размеров и назначений позволяют нашей технике справляться с большим набором задач. Маневрировать в самых стесненных условиях помогает опция «крабовый ход». Вся техника оснащается стропами, чалками и вилами для погрузо-разгрузочных работ. Опытные операторы выполнят работу любой сложности.",
+          "items": [
+            {
+              "title": "Коленчатый подъемник JLG 800AJ",
+              "shortDescribtion": "дизельный, самоходный",
+              "imgUrls": ["lifts"],
+              "describtionList": [
+                "Рабочая высота: 26.46 м",
+                "Горизонтальный вылет: 15,74 м",
+                "Грузоподъёмность: 230 кг",
+                "Вес: 15600 кг",
+                "Габариты ШхДхВ: 2,43 х 11,12 х 3,0 м"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

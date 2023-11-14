@@ -9,6 +9,8 @@
         background-color: $c-light-dark-background;
         &-top_line {
             padding: toRem(20) 0;
+            max-height: 110px;
+            box-sizing: border-box;
         }
 
         &-nav {

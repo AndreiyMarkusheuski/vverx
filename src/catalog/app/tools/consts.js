@@ -3,4 +3,4 @@ export const SEARCH_PARAMS = {
     equipment: 'equipment'
 }
 
-export const HEADER_HEIGTH = 100;
+export const HEADER_HEIGTH = 110;
