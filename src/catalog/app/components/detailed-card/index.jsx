@@ -16,7 +16,7 @@ const DetailedCard = ({ item }) => {
   const getDescribeList = useMemo(
     () => (
       <div className="detailed_card-describe">
-        <Title className="detailed_card-describe-text" level={7}>
+        <Title className="detailed_card-describe-text" level={6}>
           Технические характеристики:
         </Title>
         <ul className="detailed_card-describe-list">
