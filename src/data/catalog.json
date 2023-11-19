@@ -12,7 +12,7 @@
             {
               "title": "Caterpillar 444",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["caterpillar_444_1", "caterpillar_444_2", "сaterpillar_444_3"],
+              "imgUrls": ["caterpillar_444_1", "caterpillar_444_2", "caterpillar_444_4"],
               "describtionList": [
                 "Глубина копания  : 6,2 м",
                 "Грузопод. ковша : 4699 кг",
@@ -28,7 +28,7 @@
             {
               "title": "JCB 5CX",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JCB_5CX_1", "JCB_5CX_2", "JCB_5CX_3"],
+              "imgUrls": ["JCB_5CX_1", "JCB_5CX_4", "JCB_5CX_3"],
               "describtionList": [
                 "Глубина копания  : 6,5 м",
                 "Грузопод. ковша : 4378 кг",

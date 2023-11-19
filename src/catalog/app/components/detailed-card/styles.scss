@@ -23,6 +23,7 @@
         top: 20%;
 
         @include media(s, m) {
+            top: unset;
             position: relative;
         }
     }

@@ -641,6 +641,7 @@ input[type=number] {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        box-sizing: border-box;
 
         &-bullet {
             width: 18px;
