@@ -11,8 +11,8 @@
           "items": [
             {
               "title": "Caterpillar 444",
-              "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["caterpillar_444_1", "caterpillar_444_2", "caterpillar_444_4"],
+              "shortDescribtion": "",
+              "imgUrls": ["caterpillar_444", "caterpillar_444_2", "caterpillar_444_4"],
               "describtionList": [
                 "Глубина копания  : 6,2 м",
                 "Грузопод. ковша : 4699 кг",
@@ -27,7 +27,7 @@
             },
             {
               "title": "JCB 5CX",
-              "shortDescribtion": "дизельный, самоходный",
+              "shortDescribtion": "",
               "imgUrls": ["JCB_5CX_1", "JCB_5CX_4", "JCB_5CX_3"],
               "describtionList": [
                 "Глубина копания  : 6,5 м",
@@ -104,7 +104,7 @@
               ]
             },
             {
-              "title": "Ножничные подъемник JLG 500RTS",
+              "title": "Ножничный подъемник JLG 500RTS",
               "shortDescribtion": "дизельный, самоходный",
               "imgUrls": ["JLG_500RTS_1", "JLG_500RTS_2"],
               "describtionList": [
@@ -117,9 +117,9 @@
               ]
             },
             {
-              "title": "Ножничные подъемник JLG 4394RT",
+              "title": "Ножничный подъемник JLG 4394RT",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_4394RT_1"],
+              "imgUrls": ["JLG_4394RT_2"],
               "describtionList": [
                 "Рабочая высота: 15,1 м",
                 "Грузоподъёмность: 567 кг",
@@ -130,7 +130,7 @@
               ]
             },
             {
-              "title": "Ножничные подъемник JLG 3394RT",
+              "title": "Ножничный подъемник JLG 3394RT",
               "shortDescribtion": "дизельный, самоходный",
               "imgUrls": ["JLG_3394RT_1"],
               "describtionList": [
@@ -143,9 +143,9 @@
               ]
             },
             {
-              "title": "Ножничные подъемник JLG 33RTS",
+              "title": "Ножничный подъемник JLG 33RTS",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["JLG_33RTS_1", "JLG_33RTS_2", "JLG_33RTS_3"],
+              "imgUrls": ["JLG_33RTS_1"],
               "describtionList": [
                 "Рабочая высота: 12,6 м",
                 "Грузоподъёмность: 560 кг",
@@ -156,7 +156,7 @@
               ]
             },
             {
-              "title": "Ножничные подъемник HAULOTTE COMPACT 12",
+              "title": "Ножничный подъемник HAULOTTE COMPACT 12",
               "shortDescribtion": "Электрический, самоходный",
               "imgUrls": ["HAULOTTE_COMPACT_12_1", "HAULOTTE_COMPACT_12_2", "HAULOTTE_COMPACT_12_3"],
               "describtionList": [
@@ -169,7 +169,7 @@
               ]
             },
             {
-              "title": "Ножничные подъемник HAULOTTE COMPACT 10",
+              "title": "Ножничный подъемник HAULOTTE COMPACT 10",
               "shortDescribtion": "Электрический, самоходный",
               "imgUrls": ["HAULOTTE_COMPACT_10_1", "HAULOTTE_COMPACT_10_2"],
               "describtionList": [
@@ -182,7 +182,7 @@
               ]
             },
             {
-              "title": "Ножничные подъемник HAULOTTE COMPACT 10N",
+              "title": "Ножничный подъемник HAULOTTE COMPACT 10N",
               "shortDescribtion": "Электрический, самоходный",
               "imgUrls": ["HAULOTTE_COMPACT_10N_3", "HAULOTTE_COMPACT_10N_1", "HAULOTTE_COMPACT_10N_2"],
               "describtionList": [
@@ -232,7 +232,7 @@
             {
               "title": "AMMANN APR 3520",
               "shortDescribtion": "Реверсивная, бензиновая",
-              "imgUrls": ["AMMANN_APR_3520_2", "AMMANN_APR_3520_1"],
+              "imgUrls": ["AMMANN_APR_3520_2", "AMMANN_APR_3520_1", "AMMANN_APR_3520_3"],
               "describtionList": [
                 "Вес 257кг",
                 "Ширина плиты 600мм",
@@ -266,7 +266,7 @@
             {
               "title": "Manitou MT 1840",
               "shortDescribtion": "дизельный, самоходный",
-              "imgUrls": ["Manitou_MT_1840_4", "Manitou_MT_1840_2", "Manitou_MT_1840_3", "Manitou_MT_1840_1"],
+              "imgUrls": ["Manitou_MT_1840_1", "Manitou_MT_1840_2", "Manitou_MT_1840_3", "Manitou_MT_1840_4", "Manitou_MT_1840_5"],
               "describtionList": [
                 "Рабочая высота: 17,5 м",
                 "Грузоподъёмность: 4000 кг",

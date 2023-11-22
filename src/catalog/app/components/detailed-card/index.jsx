@@ -43,15 +43,16 @@ const DetailedCard = ({ item }) => {
         modules={[Pagination]}
         className="detailed_card-swiper"
       >
-        {imgUrls.map((image) => (
-          <SwiperSlide key={image}>
-            <img
-              className="detailed_card-img"
-              src={getImageURL(image)}
-              alt={image}
-            />
-          </SwiperSlide>
-        ))}
+        {imgUrls.map((image) => {
+    console.log('image', image, getImageURL(image))
+          return<SwiperSlide key={image}>
+          <img
+            className="detailed_card-img"
+            src={getImageURL(image)}
+            alt={image}
+          />
+        </SwiperSlide>
+        })}
       </Swiper>
     );
   };
@@ -70,7 +71,7 @@ const DetailedCard = ({ item }) => {
         <CallButton className="detailed_card-button" />
         <p className="detailed_card-short_describe">
           Или напишите нам на почту{" "}
-          <a href="mailto:info@vverx.by">director@vverx.b</a>
+          <a href="mailto:info@vverx.by">director@vverx.by</a>
         </p>
       </div>
     </div>
