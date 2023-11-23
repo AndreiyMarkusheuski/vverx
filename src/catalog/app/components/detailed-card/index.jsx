@@ -71,7 +71,7 @@ const DetailedCard = ({ item }) => {
         <CallButton className="detailed_card-button" />
         <p className="detailed_card-short_describe">
           Или напишите нам на почту{" "}
-          <a href="mailto:info@vverx.by">director@vverx.by</a>
+          <a href="mailto:info@vverx.by">info@vverx.by</a>
         </p>
       </div>
     </div>
