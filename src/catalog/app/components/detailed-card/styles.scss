@@ -1,0 +1,172 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/fonts/index.scss';
+@import 'src/styles/mixins/media.scss';
+
+.detailed_card {
+    background: $c-white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+
+    @include media(s, m) {
+        flex-direction: column;
+    }
+
+    &-swiper {
+        flex: 1;
+        position: sticky;
+        top: 20%;
+        max-width: 50%;
+
+        @include media(s, m, l) {
+            max-width: unset;
+        }
+
+        @include media(s, m) {
+            top: unset;
+            position: relative;
+        }
+    }
+
+    &-info {
+        flex: 1;
+        margin-left: 2.5rem;
+
+        @include media(s, m) {
+            margin-left: 0;
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
+
+    &-img {
+        max-height: 50vh;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &-headline {
+        margin: 0;
+        color: $c-dark-olive;
+        font-size: toRem(32);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        @include media(s, m) {
+            font-size: toRem(24);
+        }
+    }
+
+    &-short_describe {
+        margin: 11px 0 0;
+        color: $c-dark-olive;
+        font-size: toRem(20);
+        font-style: normal;
+        font-weight: 500;
+        line-height: toRem(30);
+
+        @include media(s, m) {
+            font-size: toRem(16);
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+        }
+    }
+
+    &-describe {
+        margin-top: toRem(30);
+
+        @include media(s, m) {
+            margin-top: toRem(22);
+        }
+
+        &-text {
+            color: $c-dark-olive;
+            font-size: toRem(16);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            @include media(s, m) {
+                font-size: toRem(12);
+            }
+        }
+
+        &-list {
+            list-style: none;
+            margin-top: toRem(13);
+
+            &-item {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                color: $c-dark-olive;
+                font-size: toRem(18);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                background: $c-list-background;
+                margin: 0 0 2px;
+                padding: toRem(18) toRem(25);
+
+                @include media(s, m) {
+                    font-size: toRem(13);
+                    padding: toRem(10) toRem(15);
+                }
+
+                &::before {
+                    content: '';
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 33px;
+                    background: $c-dark-olive;
+                    margin-right: toRem(10);
+                }
+            }
+        }
+    }
+
+    &-button {
+        margin: toRem(42) 0 0;
+
+        @include media(s, m) {
+            margin: toRem(30) 0 0;
+            padding: toRem(15) toRem(15);
+
+            &::before {
+                max-width: 16px;
+                max-height: 16px;
+            }
+
+            span {
+                font-size: toRem(16);
+                margin-left: toRem(10) !important;
+            }
+        }
+    }
+
+    .swiper {
+        padding-bottom: 40px;
+        @include media(s, m) {
+            max-height: 320px;
+            min-height: 30vh;
+        }
+
+        &-pagination {
+            justify-content: center;
+            // &-bullet {
+                
+            //     display: flex !important;
+            // }
+        }
+    }
+}

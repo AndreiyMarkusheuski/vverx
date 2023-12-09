@@ -1,0 +1,56 @@
+$sizes: (
+  s:  (              max: 399px ),
+  xs:  (  min: 400px,   max: 499px ),
+  xxs:  ( min: 500px, max: 600px ),
+  m:  ( min: 400px, max: 875px ),
+  l:  ( min: 876px, max: 999px ),
+  xl:  ( min: 1000px, max: 1199px ),
+  xxl: ( min: 1200px              ),
+);
+
+@function joinQueryString($queryParts, $separator) {
+  $query: "";
+  @each $part in $queryParts {
+    @if ($query != "") {
+      $query: $query + $separator;
+    }
+
+    $query: $query + $part ;
+  }
+
+  @return $query;
+}
+
+@mixin media($sizeNames...) {
+  $conditions: ();
+  @each $sizeName in $sizeNames {
+    $rangeCondition: ();
+
+    @each $rangeName, $range in $sizes {
+      @if ($rangeName == $sizeName) {
+        $min: map-get($range, 'min');
+        $max: map-get($range, 'max');
+
+        @if ($min != null) {
+          $rangeCondition: append($rangeCondition, "(min-width: " + $min + ")");
+        }
+        @if ($max != null) {
+          $rangeCondition: append($rangeCondition, "(max-width: " + $max + ")");
+        }
+      }
+    }
+
+    @if (length($rangeCondition) > 0) {
+      $conditions: append($conditions, joinQueryString($rangeCondition, " and "));
+    }
+  }
+
+  @if (length($conditions) > 0) {
+    $query: "all and " + joinQueryString($conditions, ", all and ");
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

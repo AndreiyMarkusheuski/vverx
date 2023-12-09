@@ -1,0 +1,75 @@
+@import 'src/styles/colors.scss';
+
+@mixin button() {
+  display: block;
+  width: fit-content;
+  padding: 2.2vh 3vh;
+
+  background-color: $c-button-background;
+
+  color: $c-text-button;
+  font-weight: 700;
+  font-size: 2.5vh;
+  
+  text-decoration: none !important;
+  outline: none !important;
+
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+
+  @include media(xl) {
+    padding: toRem(15) toRem(20);
+    font-size: toRem(16);
+  }
+
+  &.--phone {
+    display: flex;
+    flex-direction: row;
+
+    span {
+      margin-left: toRem(20);
+    }
+
+    @include media(s, m, l) {
+      padding: 2.2vh;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 22px;
+      max-width: 22px;
+      max-height: 22px;
+      background-image: url('/assets/icons/phone.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all .5s ease;
+
+      @include media(xl) {
+        max-width: 18px;
+        max-height: 18px;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $c-button-hover-background;
+    text-decoration: none;
+  }
+
+  &:focus {
+    background-color: $c-button-hover-background;
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: $c-button-pressed-background;
+    text-decoration: none;
+  }
+
+  @content;
+}

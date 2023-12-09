@@ -1,0 +1,20 @@
+$ZIndexGroups: (
+  overlay: 9000,
+  dropdown: 8000,
+  dialog: 7000,
+  dialog-overlay: 6000,
+  disabled-dialog: 5000,
+  header: 4000,
+  before-section: 3501,
+  section: 3500,
+  layout: 3000,
+  background: -1,
+);
+
+@mixin groupedZIndex($groupName, $value: 0) {
+  z-index: map-get($ZIndexGroups, $groupName) + $value;
+}
+
+@mixin containerZIndex($groupName, $value: 0) {
+  z-index: map-get($ZIndexGroups, $groupName) + $value;
+}

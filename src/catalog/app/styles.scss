@@ -1,0 +1,59 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/mixins/media.scss';
+
+.catalog_section {
+    &-headline {
+        color: $c-text-additional;
+        font-size: toRem(40);
+        font-style: normal;
+        font-weight: 700;
+        line-height: toRem(50);
+        
+        @include media(m, l) {
+            text-align: center;
+        }
+
+        @include media(m, s) {
+            text-align: left;
+            font-size: toRem(40);
+        }
+    }
+
+    &-describe {
+        color: $c-text-additional;
+        font-size: toRem(24);
+        font-style: normal;
+        font-weight: 500;
+        line-height: toRem(34); /* 140.833% */
+        padding: 0;
+        margin: 0;
+
+        span {
+            text-transform: uppercase;
+        }
+
+        @include media(s, m, l) {
+            font-size: toRem(20);
+        }
+    }
+}
+
+.type {
+    padding: toRem(88) 0;
+    background-image: url('/assets/images/type.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include media(s, m, l) {
+        padding: toRem(50) 0;
+    }
+}
+
+.equipment {
+    padding: toRem(66) 0 toRem(88);
+    
+    @include media(s, m, l) {
+        padding: toRem(50) 0;
+    }
+}

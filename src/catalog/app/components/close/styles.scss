@@ -1,0 +1,15 @@
+@import 'src/styles/tools/to-rem.scss';
+
+.close_icon {
+  &-image {
+    width: 25px;
+    height: 25px;
+    // padding: 0.5rem;
+    transition: all .3s ease;
+
+    &:hover {
+      cursor: pointer;
+      filter: contrast(1);
+    }
+  }
+}

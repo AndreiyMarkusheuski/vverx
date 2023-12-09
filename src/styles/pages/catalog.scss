@@ -1,0 +1,226 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/mixins/media.scss';
+
+.catalog {
+    overflow: hidden;
+    background-color: $c-light-dark-background;
+
+    .header {
+        background-color: $c-light-dark-background;
+        &-top_line {
+            padding: toRem(20) 0;
+            max-height: 110px;
+            box-sizing: border-box;
+        }
+
+        &-nav {
+            @include media(xxl, xl) {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+
+    &-products {
+        padding: toRem(160) 0 toRem(54);
+
+        @include media(s, m, l) {
+            padding: toRem(120) 0 toRem(50);
+        }
+    }
+
+    .footer_contacts {
+        padding: toRem(60) 0;
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+        background-color: $c-white;
+
+        @include media(s, m) {
+            padding: toRem(20) 0;
+        }
+
+        &::before {
+            content: '';
+            background-image: url('/assets/images/contacts.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0%;
+            right: 0;
+            z-index: 0;
+        }
+
+        &-headline {
+            position: relative;
+            color: $c-orange-text;
+            font-size: toRem(36);
+            font-style: normal;
+            font-weight: 700;
+            line-height: toRem(82);
+            max-width: 60%;
+            margin: 0;
+
+            @include media(s, m) {
+                max-width: 100%;
+                font-size: toRem(24);
+            }
+        }
+
+        &-text {
+            margin: toRem(6) 0 toRem(33);
+            position: relative;
+            max-width: 60%;
+            font-size: toRem(18);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32.3px;
+
+            @include media(s, m) {
+                max-width: 100%;
+            }
+        }
+
+        &-link {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: fit-content;
+            margin: toRem(10) 0 0;
+            color: $c-text;
+            font-size: toRem(24);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 41px;
+            outline: none;
+            text-decoration: none;
+            height: 41px;
+            overflow: hidden;
+
+            @include media(s, m) {
+                font-size: toRem(20);
+                line-height: 30px;
+                height: 30px;
+            }
+
+            .text,
+            .text__orange {
+                position: relative;
+                font-size: toRem(24);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 41px;
+                padding: 0;
+                margin: 0;
+                transform: translateY(0);
+                transition: all .3s ease .05s;
+
+                @include media(s, m) {
+                    font-size: toRem(20);
+                    line-height: 30px;
+                }
+            }
+
+            &:hover {
+
+                .text,
+                .text__orange {
+                    transform: translateY(-41px);
+
+                    @include media(s, m) {
+                        transform: translateY(-30px);
+                    }
+                }
+            }
+        }
+
+        &-social {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &-link {
+                position: relative;
+                width: 48px;
+                height: 48px;
+                padding: 5px;
+                margin: toRem(20) 0;
+                overflow: hidden;
+                box-sizing: border-box;
+
+                @include media(s, m) {
+                    width: 28px;
+                    height: 28px;
+                }
+
+                &:hover {
+                    &::after {
+                        transform: translateY(-48px) !important;
+
+                        @include media(s, m) {
+                            transform: translateY(-28px) !important;
+                        }
+                    }
+
+                    &::before {
+                        transform: translateY(0) !important;
+                    }
+                }
+
+                &.-instagram::after,
+                &.-instagram::before,
+                &.-tiktok::after,
+                &.-tiktok::before {
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    width: 38px;
+                    height: 38px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    transition: all .3s ease .05s;
+
+                    @include media(s, m) {
+                        width: 23px;
+                        height: 23px;
+                    }
+                }
+
+                &.-instagram::after {
+                    background-image: url('/assets/icons/instagram-black.svg');
+                    transform: translateY(0);
+                }
+
+                &.-instagram::before {
+                    background-image: url('/assets/icons/instagram-orange.svg');
+                    transform: translateY(48px);
+
+                    @include media(s, m) {
+                        transform: translateY(28px);
+                    }
+                }
+
+                &.-tiktok::after {
+                    background-image: url('/assets/icons/tiktok-black.svg');
+                    transform: translateY(0);
+                }
+
+                &.-tiktok::before {
+                    background-image: url('/assets/icons/tiktok-orange.svg');
+                    transform: translateY(48px);
+
+                    @include media(s, m) {
+                        transform: translateY(28px);
+                    }
+                }
+            }
+        }
+    }
+}
