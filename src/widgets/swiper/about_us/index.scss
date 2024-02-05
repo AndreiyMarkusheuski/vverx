@@ -71,6 +71,10 @@
         font-weight: 400;
         line-height: normal;
 
+        @include media(xl) {
+            font-size: 2vh;
+        }
+
         @include media(s, m ,l) {
             font-size: toRem(18);
         }
