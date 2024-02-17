@@ -18,7 +18,7 @@ export default defineConfig(({command, mode}) => ({
     rollupOptions: {
       input: {
         home: resolve(root, 'index.html'),
-        catalog: resolve(root, 'catalog', 'index.html')
+        catalog: resolve(root, 'catalog', 'index.html'),
       },
       output: {
         manualChunks(id: string) {
@@ -32,7 +32,7 @@ export default defineConfig(({command, mode}) => ({
   },
   resolve: {
     alias: {
-      "@assets": resolve(__dirname, "src/assets/images"),
+      "@assets": resolve(root, "public/assets/images"),
     },
   },
 }))

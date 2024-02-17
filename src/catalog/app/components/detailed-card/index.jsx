@@ -43,16 +43,15 @@ const DetailedCard = ({ item }) => {
         modules={[Pagination]}
         className="detailed_card-swiper"
       >
-        {imgUrls.map((image) => {
-    console.log('image', image, getImageURL(image))
-          return<SwiperSlide key={image}>
-          <img
-            className="detailed_card-img"
-            src={getImageURL(image)}
-            alt={image}
-          />
-        </SwiperSlide>
-        })}
+        {imgUrls.map((image) => (
+          <SwiperSlide key={image}>
+            <img
+              className="detailed_card-img"
+              src={getImageURL(image)}
+              alt={image}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     );
   };
