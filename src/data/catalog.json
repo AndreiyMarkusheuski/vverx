@@ -1,15 +1,16 @@
 {
   "items": [
     {
-      "id": "rent",
+      "type": "rent",
       "title": "Техника в аренду",
       "items": [
         {
-          "id": "backhoe_loaders",
+          "product": "backhoe_loaders",
           "title": "Экскаваторы-погрузчики",
           "describtion": "Мы предлагаем Вам самые лучшие <span class='text__orange'>экскаваторы-погрузчики</span>. Мощный двигатель, различное навесное оборудование, наличие ковшей разных размеров и назначений позволяют нашей технике справляться с большим набором задач. Маневрировать в самых стесненных условиях помогает опция «крабовый ход». Вся техника оснащается стропами, чалками и вилами для погрузо-разгрузочных работ. <span class='text__orange'>Опытные операторы</span> выполнят работу любой сложности.",
           "items": [
             {
+              "id": "caterpillar-444",
               "title": "Caterpillar 444",
               "shortDescribtion": "",
               "imgUrls": ["caterpillar_444", "caterpillar_444_2", "caterpillar_444_4"],
@@ -26,6 +27,7 @@
               ]
             },
             {
+              "id": "jcb-5cx",
               "title": "JCB 5CX",
               "shortDescribtion": "",
               "imgUrls": ["JCB_5CX_1", "JCB_5CX_4", "JCB_5CX_3"],
@@ -45,11 +47,12 @@
           ]
         },
         {
-          "id": "lifts",
+          "product": "lifts",
           "title": "Подъёмники",
           "describtion": "В нашем парке подъемников представлены лидеры своего рынка, это компании <span class='text__orange'>JLG</span> и <span class='text__orange'>Haulotte</span>. Мы предлагаем Вам <span class='text__orange'>коленчатые</span> и <span class='text__orange'>ножничные</span> подъемники.",
           "items": [
             {
+              "id": "jlg-800aj",
               "title": "Коленчатый подъемник JLG 800AJ",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["JLG_800AJ_1"],
@@ -64,6 +67,7 @@
               ]
             },
             {
+              "id": "jlg-600aj",
               "title": "Коленчатый подъемник JLG 600AJ",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["JLG_600AJ_1"],
@@ -77,6 +81,7 @@
               ]
             },
             {
+              "id": "jlg-510aj",
               "title": "Коленчатый подъемник JLG 510AJ",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["JLG_510AJ_1"],
@@ -91,6 +96,7 @@
               ]
             },
             {
+              "id": "jlg-450aj",
               "title": "Коленчатый подъемник JLG 450AJ",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["JLG_450AJ_1"],
@@ -104,6 +110,7 @@
               ]
             },
             {
+              "id": "jlg-500rts",
               "title": "Ножничный подъемник JLG 500RTS",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["JLG_500RTS_1", "JLG_500RTS_2"],
@@ -117,6 +124,7 @@
               ]
             },
             {
+              "id": "jlg-4394rt",
               "title": "Ножничный подъемник JLG 4394RT",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["JLG_4394RT_2"],
@@ -130,6 +138,7 @@
               ]
             },
             {
+              "id": "jlg-3394rt",
               "title": "Ножничный подъемник JLG 3394RT",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["JLG_3394RT_1"],
@@ -143,6 +152,7 @@
               ]
             },
             {
+              "id": "jlg-33rts",
               "title": "Ножничный подъемник JLG 33RTS",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["JLG_33RTS_1"],
@@ -156,6 +166,7 @@
               ]
             },
             {
+              "id": "haulotte-compact-12",
               "title": "Ножничный подъемник HAULOTTE COMPACT 12",
               "shortDescribtion": "Электрический, самоходный",
               "imgUrls": ["HAULOTTE_COMPACT_12_1", "HAULOTTE_COMPACT_12_2", "HAULOTTE_COMPACT_12_3"],
@@ -169,6 +180,7 @@
               ]
             },
             {
+              "id": "haulotte-compact-10",
               "title": "Ножничный подъемник HAULOTTE COMPACT 10",
               "shortDescribtion": "Электрический, самоходный",
               "imgUrls": ["HAULOTTE_COMPACT_10_1", "HAULOTTE_COMPACT_10_2"],
@@ -182,6 +194,7 @@
               ]
             },
             {
+              "id": "haulotte-compact-10n",
               "title": "Ножничный подъемник HAULOTTE COMPACT 10N",
               "shortDescribtion": "Электрический, самоходный",
               "imgUrls": ["HAULOTTE_COMPACT_10N_3", "HAULOTTE_COMPACT_10N_1", "HAULOTTE_COMPACT_10N_2"],
@@ -197,11 +210,12 @@
           ]
         },
         {
-          "id": "plits",
+          "product": "plits",
           "title": "Виброплиты",
           "describtion": "150-и летняя история компании <span class='text__orange'>AMMANN</span> воплотилась во всей линейке продукции. Инновации, внимательное отношение к Клиенту позволяют компании быть лидером в своем сегменте. Большой спектр техники позволяет выполнить все работы, которые Вам предстоит выполнить.",
           "items": [
             {
+              "id": "ammann-apr-22-40",
               "title": "AMMANN APR 22/40",
               "shortDescribtion": "Реверсивная, дизельная",
               "imgUrls": ["AMMANN_APR_2240_1", "AMMANN_APR_2240_2", "AMMANN_APR_2240_3"],
@@ -214,8 +228,8 @@
                 "Реверсивная"
               ]
             },
-
             {
+              "id": "ammann-apr-40-60",
               "title": "AMMANN APR 40/60",
               "shortDescribtion": "Реверсивная, бензиновая",
               "imgUrls": ["AMMANN_APR_4060_1", "AMMANN_APR_4060_2", "AMMANN_APR_4060_3"],
@@ -228,8 +242,8 @@
                 "Реверсивная"
               ]
             },
-
             {
+              "id": "ammann-apr-3520",
               "title": "AMMANN APR 3520",
               "shortDescribtion": "Реверсивная, бензиновая",
               "imgUrls": ["AMMANN_APR_3520_2", "AMMANN_APR_3520_1", "AMMANN_APR_3520_3"],
@@ -242,8 +256,8 @@
                 "Реверсивная"
               ]
             },
-
             {
+              "id": "ammann-apr-4920",
               "title": "AMMANN APR 4920",
               "shortDescribtion": "Реверсивная, бензиновая",
               "imgUrls": ["AMMANN_APR_4920_1", "AMMANN_APR_4920_2", "AMMANN_APR_4920_3", "AMMANN_APR_4920_4", "AMMANN_APR_4920_5"],
@@ -259,11 +273,12 @@
           ]
         },
         {
-          "id": "telehandlers",
+          "product": "telehandlers",
           "title": "Телескопические погрузчики",
           "describtion": "Телескопический погрузчик <span class='text__orange'>Manitou MT 1840</span> – это настоящая «рабочая лошадка». В руках умелого оператора он может быть и краном, и вышкой для подъема людей, и погрузчиком, и планировщиком грунта. Наличие полного перечня навесного оборудования позволяет ему выполнять большое количество операций, крабовый ход поможет в самых стесненных условиях, а <span class='text__orange'>опытный оператор</span> удивит Вас возможностями универсальной техники и своего опыта.",
           "items": [
             {
+              "id": "manitou-mt-1840",
               "title": "Manitou MT 1840",
               "shortDescribtion": "Дизельный, самоходный",
               "imgUrls": ["Manitou_MT_1840_1", "Manitou_MT_1840_2", "Manitou_MT_1840_3", "Manitou_MT_1840_4", "Manitou_MT_1840_5"],
@@ -287,7 +302,7 @@
       ]
     },
     {
-      "id": "sell",
+      "type": "sell",
       "title": "Техника в продажу",
       "items": []
     }

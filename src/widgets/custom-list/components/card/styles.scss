@@ -1,0 +1,201 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/mixins/media.scss';
+@import 'src/styles/mixins/link.scss';
+
+.card {
+    background: $c-white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: toRem(20) toRem(10);
+    height: 100%;
+    box-sizing: border-box;
+    min-width: 170px;
+    width: 100%;
+    max-width: 320px;
+
+    @include media(s, m, l) {
+        padding: toRem(10) toRem(20);
+    }
+
+    @include media(s, xs) {
+        padding: toRem(10);
+    }
+
+    &-img {
+        max-height: 230px;
+        min-height: 230px;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &.--block {
+        .card {
+            &-img {
+                @include media(xxs) {
+                    min-height: 190px;
+                    max-height: 190px;
+                }
+
+                @include media(s, xs) {
+                    min-height: 150px;
+                    max-height: 150px;
+                }
+            }
+
+            &-headline {
+                @include media(s, xs) {
+                    margin-top: toRem(12);
+                    font-size: toRem(12);
+
+                    &:after {
+                        top: - toRem(6);
+                    }
+                }
+            }
+
+            &-describe {
+                @include media(s, xs, xxs) {
+                    margin: toRem(10) 0 toRem(12);
+                }
+
+                @include media(s, xs) {
+                    font-size: toRem(9);
+                    line-height: toRem(18);
+                }
+            }
+
+            &-button {
+                @include media(s, xs) {
+                    font-size: toRem(9);
+                    max-height: 28px;
+                    min-height: 28px;
+                    padding: toRem(9) toRem(20);
+                }
+            }
+        }
+    }
+
+    &.--row {
+        .card {
+            &-img {
+                @include media(s, xs, xxs) {
+                    max-height: 230px;
+                    min-height: 230px;
+                }
+            }
+
+            &-headline {
+                @include media(s, xs) {
+                    margin-top: toRem(30);
+                    font-size: toRem(18);
+
+                    &:after {
+                        top: - toRem(15)
+                    }
+                }
+            }
+
+            &-describe {
+                @include media(s, xs) {
+                    margin: toRem(10) 0 toRem(12);
+                    font-size: toRem(14);
+                    line-height: toRem(18);
+                }
+            }
+
+            &-button {
+                @include media(s, xs) {
+                    font-size: toRem(14);
+                    max-height: 38px;
+                    min-height: 38px;
+                    padding: toRem(15) toRem(20);
+                }
+            }
+        }
+    }
+
+    &-headline {
+        margin: 0;
+        margin-top: toRem(40);
+        color: $c-text-additional;
+        font-size: toRem(20);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 100%;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: - toRem(20);
+            left: 0;
+            right: 0;
+            background-image: url('/assets/icons/nav_border.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 1px;
+        }
+    }
+
+    &-describe {
+        margin: toRem(10) 0 toRem(40);
+        color: $c-text-additional;
+        font-size: toRem(16);
+        font-style: normal;
+        font-weight: 500;
+        line-height: toRem(30);
+    }
+
+    &-button {
+        align-self: center;
+        max-height: 50px;
+        min-height: 50px;
+        margin-top: auto;
+    }
+
+    &-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        background: $c-base-background;
+        border: 2px solid $c-button-background;
+        color: $c-button-background;
+        padding: 22px 40px;
+        margin: toRem(10);
+        box-sizing: border-box;
+
+        max-width: 310px;
+        min-height: toRem(70);
+        width: 100%;
+
+        transition: all .5s ease;
+
+        font-size: toRem(16);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+
+        text-decoration: none !important;
+        text-align: center;
+        outline: none !important;
+
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+
+        &:hover {
+            background: $c-button-background;
+            border: 2px solid $c-button-background;
+            color: $c-text-contrast;
+        }
+    }
+}
