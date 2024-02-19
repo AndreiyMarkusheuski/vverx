@@ -1,52 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-  <title>ВВЕРХ ТЕХНО</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAKE/YAAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA8UExURf/////FrH5+fuHh4f349v+ETPzv6v9MADc3N0lJSf9mH5SUlP9yMf+ui9TU1Kqqqmlpaf+dcv/dz8LCwuhxT2QAAATsSURBVHja7ZqLkqsqEEV9IBlfQeH///UotPIQiMmQW+fU3WtmqrRF3O40DaSmqgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8EsnaRPB8O4jthVEqmWzJzetwZnP6O7uExrTIXZkF8u7LLmN3IMM3SNu3MK1S1ufYV0Vu/dSZ8R/TeeN6kykEf6/sqPumTufqO6Mcg0+Gboo261Tag48P28qIfazp8W/RDeu6S67IqKXqaN9bO6qCE9MLMJup8UjMretoYSHRn81get61VUdGmO7aeoyURpqeHqWlEd5wxxushbN2xoqMwEO0M8UQ4L5o5rXUqUFbMRUdhXPTEk+E7orlTNVYny0uNQl80410wEC/hQzQ7yYumsVh0FNqB2K1d15mnTTIe5lb00E3mZ1pZLj3Ok5KjMFbbOpkJX0re5Iie+IZ0BqJ7wyS/KHqYeSacFb2XvGEIjK2/YHRkFplkOpwXHUwu3luWq3c2edcdyt59wo6Ed9VnTh+sCdFzYHTJghfUNnmeJcLZkueurqi8OdWjpNVdJAO3QpEI3xE9dLOMXZi/JVoe+ZEIZ0VPZg/A7SRCM2JX2uqYpRfR8y3R1ymPFi2y+840vk9u3FnsJMLXGZFlRNdHXnxnwTRMwbIyEWZuXNOxpGhqnB4KJTcB+7IhEc5uAkLR9XlbaatjWxSWDL8jmsqdjha2+rqD3TelqfA7oueHs7Eta/U6OGyrOrPGuITpCwvmxXe00lofrp5oKncULGs14y4sFT4u8AtOaz87/G9namdr/s9QuoD8N/yPrG5jbNl6ifG/yOo+Rlu1l9hYPZudkfrnoz5t92OhD9XRpzIN3bLBWiWEeLasiNU/EfrnJjoMjhVf9IEwNwp90mgVDbWo3EuLFcjFovvr+0axAla/IbpS5snaXNNga/laNFOL07f5bH5n9TuiHXFsdF3Pimaj31evfm01ZezRoc1p8+DmRHj2GtMX/lo0vV5a9QdWU20wj23O6nHKY+ePm8iU3sfTc6LFjzWEjpa2TK02djT2XdyUdWZhGovuKDxFN09idETTR9aPquXtkdwNKzIt3hR9jMXgauMlFxlqRNMLUFMmYv1+anVc9M9FNGtsbooqEO2jRYcvz4SfSa7VdSHRzXig/At+ZqZFq+D16K0XXsLqhGi/4vkDy6kBjV9qFita2Mp+JFgkPz60+r7odvkJJzwSrf1kfvVo/G7PnlWBFcgbop/9OQPFRFcR0V4G85joz6xOiO77hX7FZSQ6devXoj+zOlHyFG+5+WVuSoYTG9VpQTRW9BhmEn1Sqipg9d06bTK6D7I6XT2uA/Ea+djqu6KpzAb5kBb9DMuymVOX1Lq6/oJoE15aWi+1L0UbjTaTaPk0FtnC3JsRzwUp862mJI7kNH00vTDW0sLsmh0fWZ2cEc8fdQ6ifTp79u7DM6s8fpR1oZ7qWFmPZXaLL+v0/iDyVzk3sJdLU9VfEycqjL9t9S3RyhF6f7slwq6WNrcx73hR0a03qFxl+T1i4HVK8/tZPeqNhSd6D9i/TZLQa+VjItxeYT9XN3bjbWNl94K/+A7kvtWt3nJYD9gzpKU2PHKL8lav1VOfCub0Ni761RfRZkTwD9fV3/v+a3/H9sX/SZh/ipMVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgL+MPLiaCKw9o65EAAAAASUVORK5CYII=">
-  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACHUExURUdwTP/////////////////////////////////////////////////////////z7/79/F9fX/+8nv9jHPf39/9+Q//TwI2Ojq+vsP/Hrf9XCf+mgG1tbf90NLq7u1FRUf/e0IKCgpycnf+Ya6ampsjJydvc3PDw8P9sKujo6P+GUP/r4jw8PIiZ2eEAAAAOdFJOUwBsSWP7wUvtxhluZm9whE8wDwAAAXVJREFUOMuFkwtzoyAUhck2iUm7e3moPERR8Bnt//99vZik7ey0egYvjHwcneEeQlDXwymB/5ScDlfy0J/LEX7Q8XK+778k8IuSl/X8r/tIoMf1Ahu6XMnhuAUcX8kJNnUiyTaQENjRCjBKKfsslN0fwPEAmqqqrIxlyauqjSth56W1T0AWwqaiEG0qUysbua6mfGq+gHzKTSxNOuVCFu08UVtY+OYgUhsLTs2CfCtpXsz0m0OOABaTVrOVBXpH2DwBaoRoFiNME1dyMRSYMazN0YIolNNKhV5nvRv1AK6H0eEMTbQgoXxXjpedHnjg7laHgfvR85L3sFoQ0PWYcR4c697L7FaXvsYDQ6Y8Wy0eQNk9Ad/VSpcZdPiwdqYRuCGgXfyERkDXfuBK8w7WvyDQqzEL3isXMtfdfA+hg77kYYyXZNuv22Q42GNAlrH1JaX7173bMLstt9O0//bbnpx3grMZvbd7OM874cX4vf4U/79r/D8AZS9EJ3ax6JAAAAAASUVORK5CYII=">
-  <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABaUExURUdwTP/////////18f////////////////////////v7+/+ngP/s45STk/7Apf6bcP+MWfT09MHAwKKiov2vjbGxsbq6uqyrq3t7e/9/SdTU1Pelgf7Ks83NzTpiQcwAAAAKdFJOUwC+//+dvbzsI55QlpdNAAAAk0lEQVQY02WP2w7DIAxDM6CDEgj3S6v2/39ztJu0djuRLMXygw2ghGQfpFAA6skuTAoEuyFA3g0JjHEz7i2cs2Fkj96ho0PMYTjvF+8dLZiXkQiBXMaccSNOuDGwNtnaao1tT9Egh5haX3tLvdvdBiJYYxyJUkqqtmiDoLUOQZ8EPTr8F/upPoOarv/jmDt/588KXlNACHx5EUfcAAAAAElFTkSuQmCC">
-  <link rel="manifest" href="data:application/manifest+json;base64,ewogICAgIm5hbWUiOiAiIiwKICAgICJzaG9ydF9uYW1lIjogIiIsCiAgICAiaWNvbnMiOiBbCiAgICAgICAgewogICAgICAgICAgICAic3JjIjogIi9zcmMvYXNzZXRzL2Zhdmljb24vYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLAogICAgICAgICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICIvc3JjL2Fzc2V0cy9mYXZpY29uL2FhbmRyb2lkLWNocm9tZS01MTJ4NTEyLnBuZyIsCiAgICAgICAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgICAgIH0KICAgIF0sCiAgICAidGhlbWVfY29sb3IiOiAiI2ZmZmZmZiIsCiAgICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmZmZmIiwKICAgICJkaXNwbGF5IjogInN0YW5kYWxvbmUiCn0K">
-  <link rel="mask-icon" href="./assets/safari-pinned-tab-e7e58feb.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="ВВЕРХ ТЕХНО - аренда строительной техники в Беларуси. Обеспечиваем надежное партнерство, производительность и современное оборудование. Ваш успех - наш приоритет.">
+    content="ВВЕРХ ТЕХНО - аренда строительной техники в Беларуси. Обеспечиваем надежное партнерство, производительность и современное оборудование.">
+  <meta name="keywords"
+    content="ВВЕРХ ТЕХНО, аренда, строительная техника, Беларусь, партнерство, производительность, современное оборудование, успех, приоритет, аренда оборудования, строительные услуги, виброплиты, экскаваторы, подъемники">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="index, follow">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="data:application/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHVybHNldCB4bWxucz0iaHR0cDovL3d3dy5zaXRlbWFwcy5vcmcvc2NoZW1hcy9zaXRlbWFwLzAuOSI+CiAgICA8dXJsPgogICAgICAgIDxsb2M+aHR0cHM6Ly92dmVyeC5ieS88L2xvYz4KICAgICAgICA8bGFzdG1vZD4yMDIyLTEwLTEwPC9sYXN0bW9kPgogICAgICAgIDxjaGFuZ2VmcmVxPndlZWtseTwvY2hhbmdlZnJlcT4KICAgICAgICA8cHJpb3JpdHk+MS4wPC9wcmlvcml0eT4KICAgIDwvdXJsPgogICAgPHVybD4KICAgICAgICA8bG9jPmh0dHBzOi8vdnZlcnguYnkvY2F0YWxvZy88L2xvYz4KICAgICAgICA8bGFzdG1vZD4yMDIyLTEwLTEwPC9sYXN0bW9kPgogICAgICAgIDxjaGFuZ2VmcmVxPndlZWtseTwvY2hhbmdlZnJlcT4KICAgICAgICA8cHJpb3JpdHk+MC44PC9wcmlvcml0eT4KICAgIDwvdXJsPgo8L3VybHNldD4=">
+  <link rel="canonical" href="https://vverx.by">
+
+  <title>ВВЕРХ ТЕХНО - Аренда строительной техники | Минск</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta property="og:title" content="ВВЕРХ ТЕХНО - Аренда строительной техники | Минск | Беларусь" />
+  <meta property="og:description"
+    content="ВВЕРХ ТЕХНО - аренда строительной техники в Минске и Беларуси. Обеспечиваем надежное партнерство, производительность и современное оборудование." />
+  <meta property="og:image" content="https://vverx.by/assets/backhoe_loaders-3b408a5c.png" />
+  <meta property="og:url" content="https://vverx.by" />
+  <meta property="og:site_name" content="ВВЕРХ ТЕХНО" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_BY" />
 
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="data:application/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHVybHNldCB4bWxucz0iaHR0cDovL3d3dy5zaXRlbWFwcy5vcmcvc2NoZW1hcy9zaXRlbWFwLzAuOSI+CiAgPHVybD4KICAgIDxsb2M+aHR0cHM6Ly92dmVyeC5ieS88L2xvYz4KICAgIDxsYXN0bW9kPjIwMjMtMTAtMjk8L2xhc3Rtb2Q+CiAgICA8Y2hhbmdlZnJlcT5tb250aGx5PC9jaGFuZ2VmcmVxPgogICAgPHByaW9yaXR5PjEuMDwvcHJpb3JpdHk+CiAgPC91cmw+CiAgPHVybD4KICAgIDxsb2M+aHR0cHM6Ly92dmVyeC5ieS9jYXRhbG9nPC9sb2M+CiAgICA8bGFzdG1vZD4yMDIzLTEwLTI5PC9sYXN0bW9kPgogICAgPGNoYW5nZWZyZXE+bW9udGhseTwvY2hhbmdlZnJlcT4KICAgIDxwcmlvcml0eT4wLjk8L3ByaW9yaXR5PgogIDwvdXJsPgo8L3VybHNldD4=" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"
     integrity="sha512-pYyQWhzi2lV+RM4GmaUA56VPL48oLVvsHmP9tuQ8MaZMDHomVEDjXXnfSVKXayy+wLclKPte0KbsuVoFImtE7w=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
   <script data-pace-options='{"eventLag": false,"restartOnRequestAfter": false}'
     src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js">
     </script>
-  <script type="module" crossorigin src="./assets/home-717968ee.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/onload-94eba061.js">
-  <link rel="modulepreload" crossorigin href="./assets/vendor-70189449.js">
-  <link rel="stylesheet" href="./assets/onload-7a1c879e.css">
-  <link rel="stylesheet" href="./assets/index-77b63caa.css">
+  <script type="module" crossorigin src="./assets/index-8344a4ce.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/onload-7aa2bed3.js">
+  <link rel="modulepreload" crossorigin href="./assets/vendor-e379e527.js">
+  <link rel="stylesheet" href="./assets/onload-56bcd2f3.css">
+  <link rel="stylesheet" href="./assets/index-b4073ee7.css">
+  <link rel="stylesheet" href="./assets/swiper-0705b292.css">
 </head>
 
 <body class="main">
   <div id="preloader">
     <img alt="Вверх Техно" width="100" height="40" decoding="async" data-nimg="1" style="color:transparent; position: fixed;
       top: calc(50vh - 20px);
-      left: calc(50vw - 50px)" src="./assets/logo-c6db66ab.svg" alt="ВВЕРХ ТЕХНО логотип" />
+      left: calc(50vw - 50px)" src="./assets/icons/logo.svg">
   </div>
   <header class="header" id="header">
 
     <div class="container">
       <div class="header-top_line">
-        <a href="./" class="header-top_line-logo"></a>
+        <a href="/" class="header-top_line-logo"></a>
         <a href="tel:+375447262626" class="header-top_line-call_us button --phone"><span>+375 (44)
             726-26-26</span></a>
       </div>
@@ -57,7 +72,7 @@
       <div class="header-nav">
 
         <nav class="header-nav-menu">
-          <a href="./" class="header-nav-logo"><img src="./assets/logo-c6db66ab.svg" alt="ВВЕРХ ТЕХНО логотип"></a>
+          <a href="/" class="header-nav-logo"><img loading="lazy" src="./assets/icons/logo.svg" alt="ВВЕРХ ТЕХНО главный логотип"></a>
           <ul class="header-nav-links" id="menu">
             <li data-menuanchor="describe"><a id="main-section-link" class="header-nav-link"
                 href="#describe">главная</a></li>
@@ -104,17 +119,17 @@
             <h1 class="describe-headline">Аренда строительной техники</h1>
             <p class="describe-text">Обеспечиваем надежное партнерство с фокусом на производительность и современное
               оборудование. Ваш успех - наш приоритет.</p>
-            <a href="./catalog/" class="describe-link button">Каталог техники</a>
+            <a href="/catalog/rent/backhoe_loaders/" class="describe-link button">Каталог техники</a>
           </div>
         </div>
         <div class="describe-carusel swiper">
           <div class="swiper-wrapper">
-            <img class="describe-carusel-item swiper-slide" src="./assets/plits-d7b92a0d.png" alt="Виброплиты" />
-            <img class="describe-carusel-item swiper-slide" src="./assets/telehandlers-8b166236.png"
+            <img loading="lazy" class="describe-carusel-item swiper-slide" src="./assets/images/plits.png" alt="Виброплиты">
+            <img loading="lazy" class="describe-carusel-item swiper-slide" src="./assets/images/telehandlers.png"
               alt="Телескопические погрузчики">
-            <img class="describe-carusel-item swiper-slide" src="./assets/backhoe_loaders-3b408a5c.png"
-              alt="Экскаваторы-погрузчики" />
-            <img class="describe-carusel-item swiper-slide" src="./assets/lifts-b57e757c.png" alt="Подъемники" />
+            <img loading="lazy" class="describe-carusel-item swiper-slide" src="./assets/images/backhoe_loaders.png"
+              alt="Экскаваторы-погрузчики">
+            <img loading="lazy" class="describe-carusel-item swiper-slide" src="./assets/images/lifts.png" alt="Подъемники">
           </div>
         </div>
       </div>
@@ -187,12 +202,12 @@
             <div class="contacts_footer-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55166.09298577327!2d27.467500381867662!3d53.88302667404664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdaac28a85ce9%3A0xd277836d88cc268a!2z0JLQstC10YDRhQ!5e0!3m2!1sru!2sby!4v1685293438499!5m2!1sru!2sby"
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                style="border:0; width:100%; height:100%" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="contacts_footer-form form">
               <div class="form-content">
-                <form id="contact_form" action="https://formspree.io/f/moqzoeay" method="POST">
+                <form id="contact_form" action="https://formspree.io/f/mdorvqay" method="POST">
                   <h2 class="form-headline">Можете связаться с нами, задав свой вопрос в форме для обратной связи, и
                     мы
                     вам перезвоним!</h2>
@@ -203,8 +218,7 @@
                     <input required name="phone" type="text" class="form-field-input" placeholder="Номер телефона">
                   </div>
                   <div class="form-field">
-                    <textarea name="comment" type="text" class="form-field-input"
-                      placeholder="Ваше сообщение"></textarea>
+                    <textarea name="comment" class="form-field-input" placeholder="Ваше сообщение"></textarea>
                   </div>
                   <input id="form_btn-submit" type="submit" class="form_button button" value="Отправить">
                 </form>
@@ -212,9 +226,14 @@
             </div>
           </div>
         </div>
+      </div>
     </section>
   </main>
 
+  <noscript>
+    <div>Please enable JavaScript for better user experience.</div>
+  </noscript>
+
   
   
 
@@ -224,6 +243,38 @@
   
   
   
+
+  <!--Google Analitics-->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-42932023-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!--Google Analitics-->
+  <!-- Yandex.Metrika -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(95686798, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/95686798" style="position:absolute; left:-9999px;" alt="yandex"/></div></noscript>
+  <!-- /Yandex.Metrika -->
 </body>
 
 </html>
