@@ -5,11 +5,22 @@
 // @import 'src/styles/mixins/link.scss';
 
 .product {
-    padding: toRem(160) 0 toRem(54);
-    background-color: $c-base-background;
+    padding: toRem(120) 0 0;
+    background-color: $c-light-dark-background;
 
     @include media(s, m, l) {
-        padding: toRem(120) 0 toRem(50);
+        padding: toRem(120) 0 0;
+    }
+
+    &-wrapper {
+        background-color: $c-base-background;
+        margin: toRem(50) 0 0;
+        padding: toRem(50) 0 toRem(50);
+
+        @include media(s, m, l) {
+            margin: toRem(25) 0 0;
+            padding: toRem(25) 0 toRem(50);
+        }
     }
 
     &-headline {
@@ -18,10 +29,11 @@
         font-style: normal;
         font-weight: 700;
         line-height: toRem(50);
+        text-align: center;
 
-        @include media(m, l) {
-            text-align: center;
-        }
+        // @include media(m, l) {
+        //     text-align: center;
+        // }
 
         @include media(m, s) {
             text-align: left;
@@ -104,16 +116,11 @@
             a {
                 text-decoration: none;
                 outline: none;
+                color: $c-orange;
             }
         }
 
         &-describe {
-            margin-top: toRem(30);
-
-            @include media(s, m) {
-                margin-top: toRem(22);
-            }
-
             .describe {
 
                 &-text {
@@ -135,7 +142,9 @@
                     &-item {
                         display: flex;
                         justify-content: flex-start;
-                        align-items: center;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        position: relative;
 
                         color: $c-dark-olive;
                         font-size: toRem(18);
@@ -144,7 +153,7 @@
                         line-height: normal;
                         background: $c-list-background;
                         margin: 0 0 2px;
-                        padding: toRem(18) toRem(25);
+                        padding: toRem(18) toRem(30);
 
                         @include media(s, m) {
                             font-size: toRem(13);
@@ -153,11 +162,21 @@
 
                         &::before {
                             content: '';
+                            top: toRem(26);
+                            left: toRem(15);
+
+                            position: absolute;
                             width: 5px;
                             height: 5px;
                             border-radius: 33px;
                             background: $c-dark-olive;
-                            margin-right: toRem(10);
+
+                            @include media(s, m) {
+                                top: toRem(16);
+                                left: toRem(6);
+                                width: 3px;
+                                height: 3px;
+                            }
                         }
                     }
                 }
@@ -187,7 +206,7 @@
             padding-bottom: 40px;
 
             @include media(s, m) {
-                max-height: 320px;
+                // max-height: 320px;
                 min-height: 30vh;
             }
 
