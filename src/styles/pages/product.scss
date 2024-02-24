@@ -5,11 +5,12 @@
 // @import 'src/styles/mixins/link.scss';
 
 .product {
-    padding: toRem(120) 0 0;
+    padding: toRem(100) 0 0;
     background-color: $c-light-dark-background;
 
     @include media(s, m, l) {
-        padding: toRem(120) 0 0;
+        padding: toRem(100) 0 0;
+        background-color: $c-base-background;
     }
 
     &-wrapper {

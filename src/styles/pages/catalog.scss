@@ -199,10 +199,10 @@
             }
 
             &.-equipment {
-                padding: toRem(66) 0;
+                padding: toRem(40) 0;
 
                 @include media(s, m, l) {
-                    padding: toRem(50) 0;
+                    padding: toRem(30) 0;
                 }
             }
         }
