@@ -11,10 +11,17 @@
     .header {
         background-color: $c-light-dark-background;
 
-        &-top_line {
-            padding: toRem(20) 0;
-            max-height: 110px;
-            box-sizing: border-box;
+        @include media(s, m, l) {
+            &-top_line {
+                padding: toRem(20) 0;
+                max-height: 110px;
+                box-sizing: border-box;
+
+                &-logo {
+                    max-width: toRem(90);
+                    max-height: toRem(30);
+                }
+            }
         }
 
         &-nav {
@@ -28,8 +35,12 @@
     .products {
         padding: toRem(160) 0 toRem(54);
 
+        @include media(xl) {
+            padding: toRem(120) 0 toRem(54);
+        }
+
         @include media(s, m, l) {
-            padding: toRem(120) 0 toRem(50);
+            padding: toRem(100) 0 toRem(50);
         }
 
         &-headline {

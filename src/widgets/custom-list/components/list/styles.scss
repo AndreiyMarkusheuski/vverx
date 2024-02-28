@@ -17,11 +17,11 @@
         justify-content: center;
 
         @include media(l) {
-            grid-template-columns: auto auto auto;
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         @include media(s, m) {
-            grid-template-columns: auto auto;
+            grid-template-columns: 1fr 1fr;
 
             &.--row {
                 grid-template-columns: auto;

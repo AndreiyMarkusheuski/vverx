@@ -6,6 +6,7 @@ Swiper.use([Pagination])
 
 new Swiper(".detailed_card-swiper", {
   slidesPerView: "1",
+  autoHeight: true,
   spaceBetween: 20,
   loop: true,
   pagination: {

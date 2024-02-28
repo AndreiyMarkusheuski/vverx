@@ -14,9 +14,9 @@ const Card = ({ id, title, shortDescribtion, imgUrls, className }) => (
     <Title className="card-headline" level={5}>
       {title}
     </Title>
-    <Title className="card-describe" level={6}>
+    {shortDescribtion ? <Title className="card-describe" level={6}>
       {shortDescribtion}
-    </Title>
+    </Title> : null}
     <a className="card-button" href={`./${id}/`}>
       Подробнее
     </a>

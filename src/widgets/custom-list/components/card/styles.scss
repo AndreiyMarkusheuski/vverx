@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-self: center;
     justify-content: flex-start;
     padding: toRem(20) toRem(10) 0;
     height: 100%;
@@ -18,7 +19,7 @@
     max-width: 320px;
 
     @include media(s, m, l) {
-        padding: toRem(10) toRem(20) 0;
+        padding: toRem(10) toRem(15) 0;
     }
 
     @include media(s, xs) {
@@ -59,7 +60,7 @@
 
             &-describe {
                 @include media(s, xs, xxs) {
-                    margin: toRem(10) 0 toRem(12);
+                    margin: toRem(0) 0;
                 }
 
                 @include media(s, xs) {
@@ -106,15 +107,6 @@
                     line-height: toRem(18);
                 }
             }
-
-            &-button {
-                @include media(s, xs) {
-                    font-size: toRem(14);
-                    max-height: 38px;
-                    min-height: 38px;
-                    padding: toRem(15) toRem(20);
-                }
-            }
         }
     }
 
@@ -128,6 +120,14 @@
         line-height: normal;
         width: 100%;
         position: relative;
+
+        @include media(s, xs, xxs) {
+            font-size: toRem(18);
+        }
+
+        @include media(s, xs) {
+            font-size: toRem(18);
+        }
 
         &:after {
             content: '';
@@ -144,12 +144,22 @@
     }
 
     &-describe {
-        margin: toRem(10) 0 toRem(40);
+        margin: 0;
         color: $c-text-additional;
         font-size: toRem(16);
         font-style: normal;
         font-weight: 500;
         line-height: toRem(30);
+
+        @include media(l, xl) {
+            margin: toRem(10) 0;
+            line-height: toRem(24);
+        }
+
+        @include media(xs, xxs) {
+            font-size: toRem(14);
+            line-height: toRem(24);
+        }
     }
 
     &-button {
@@ -196,6 +206,11 @@
             background: $c-button-background;
             border: 2px solid $c-button-background;
             color: $c-text-contrast;
+        }
+
+        @include media(s, xs, xxs, m, l, xl) {
+            padding: 15px 20px;
+            min-height: toRem(55);
         }
     }
 }
