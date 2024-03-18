@@ -5,22 +5,26 @@
 // @import 'src/styles/mixins/link.scss';
 
 .product {
-    padding: toRem(100) 0 0;
+    padding: toRem(95) 0 0;
     background-color: $c-light-dark-background;
 
-    @include media(s, m, l) {
+    @include media(xl) {
+        padding: toRem(88) 0 0;
+    }
+
+    @include media(s, m) {
         padding: toRem(65) 0 0;
         background-color: $c-base-background;
     }
     
     .header {
 
-        @include media(s, m) {
             &-top_line {
                 padding: toRem(20) 0;
                 max-height: 110px;
                 box-sizing: border-box;
 
+            @include media(s, m) {
                 &-logo {
                     max-width: toRem(90);
                     max-height: toRem(30);

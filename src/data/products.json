@@ -1,7 +1,15 @@
 [
   {
-    "name": "Подъемники",
-    "id": "lifts"
+    "name": "Коленчатые подъемники",
+    "id": "articulated-boom-lifts"
+  },
+  {
+    "name": "Экскаваторы-погрузчики",
+    "id": "backhoe_loaders"
+  },
+  {
+    "name": "Ножничные подъемники",
+    "id": "scissor-lifts"
   },
   {
     "name": "Виброплиты",
@@ -10,9 +18,5 @@
   {
     "name": "Телескопические погрузчики",
     "id": "telehandlers"
-  },
-  {
-    "name": "Экскаваторы-погрузчики",
-    "id": "backhoe_loaders"
   }
 ]
