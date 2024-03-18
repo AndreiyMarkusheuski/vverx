@@ -10,8 +10,8 @@ import "swiper/css/navigation";
 
 const renderSlides = ({ id, name }) => (
   <SwiperSlide key={id} className="products-swiper-item">
-    <a href={`./catalog/?type=rent&equipment=${id}`}>
-      <img className="products-swiper-img" src={getImageURL(id)} alt={id} />
+    <a href={`./catalog/rent/${id}/`}>
+      <img loading="lazy" className="products-swiper-img" src={getImageURL(id)} alt={id} />
       <p className="products-swiper-text">{name}</p>
     </a>
   </SwiperSlide>
