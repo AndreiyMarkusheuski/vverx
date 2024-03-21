@@ -11,15 +11,22 @@
     .header {
         background-color: $c-light-dark-background;
 
-        @include media(s, m, l) {
-            &-top_line {
-                padding: toRem(20) 0;
-                max-height: 110px;
-                box-sizing: border-box;
+        &-top_line {
+            padding: toRem(20) 0;
+            max-height: 110px;
+            box-sizing: border-box;
 
-                &-logo {
-                    max-width: toRem(90);
-                    max-height: toRem(30);
+            &-logo {
+                max-width: toRem(100);
+                max-height: toRem(40);
+            }
+
+            &-call_us {
+                padding: toRem(15) toRem(20);
+                font-size: toRem(16);
+                &::before { 
+                    max-width: 18px;
+                    max-height: 18px;
                 }
             }
         }
@@ -33,15 +40,7 @@
     }
 
     .products {
-        padding: toRem(160) 0 toRem(54);
-
-        @include media(xl) {
-            padding: toRem(120) 0 toRem(54);
-        }
-
-        @include media(s, m, l) {
-            padding: toRem(100) 0 toRem(50);
-        }
+        padding: toRem(100) 0 toRem(50);
 
         &-headline {
             color: $c-text-additional;
@@ -49,6 +48,7 @@
             font-style: normal;
             font-weight: 700;
             line-height: toRem(50);
+            margin-bottom: toRem(30);
 
             @include media(m, l) {
                 text-align: center;
@@ -84,6 +84,7 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
+                flex-wrap: wrap;
 
                 @include media(s, m) {
                     flex-direction: column;
@@ -97,12 +98,12 @@
                 align-items: center;
                 border-radius: 3px;
                 border: 2px solid $c-base-background;
-                padding: 22px 40px;
+                padding: toRem(20) toRem(20);
                 margin: toRem(10);
                 box-sizing: border-box;
                 background: transparent;
 
-                min-height: toRem(70);
+                min-height: toRem(80);
                 max-width: 310px;
                 width: 100%;
 

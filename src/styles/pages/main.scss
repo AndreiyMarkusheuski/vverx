@@ -673,6 +673,18 @@
             }
         }
 
+        &-text {
+            color: $c-secondary-text;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 3vh;
+            font-size: 2.5vh;
+
+            @include media(s, m, xl) {
+                line-height: 3vh;
+            }
+        }
+
         &-social {
             max-height: 30vh;
             display: flex;

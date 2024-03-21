@@ -12,7 +12,7 @@
             {
               "id": "caterpillar-444",
               "title": "Caterpillar 444",
-              "shortDescribtion": "",
+              "shortDescribtion": "Экскаватор-погрузчик",
               "imgUrls": ["caterpillar_444", "caterpillar_444_2", "caterpillar_444_4"],
               "describtionList": [
                 "Глубина копания: 6,2 м",
@@ -29,7 +29,7 @@
             {
               "id": "jcb-5cx",
               "title": "JCB 5CX",
-              "shortDescribtion": "",
+              "shortDescribtion": "Экскаватор-погрузчик",
               "imgUrls": ["JCB_5CX_1", "JCB_5CX_4", "JCB_5CX_3"],
               "describtionList": [
                 "Глубина копания: 6,5 м",
@@ -47,9 +47,9 @@
           ]
         },
         {
-          "product": "lifts",
-          "title": "Подъёмники",
-          "describtion": "В нашем парке подъемников представлены лидеры своего рынка, это компании <span class='text__orange'>JLG</span> и <span class='text__orange'>Haulotte</span>. Мы предлагаем Вам <span class='text__orange'>коленчатые</span> и <span class='text__orange'>ножничные</span> подъемники.",
+          "product": "articulated-boom-lifts",
+          "title": "Коленчатые подъемники",
+          "describtion": "В нашем парке коленчатых подъемников представлены лидеры своего рынка, это компании <span class='text__orange'>JLG</span>. Мы предлагаем Вам <span class='text__orange'>коленчатые</span> подъемники.",
           "items": [
             {
               "id": "jlg-800aj",
@@ -108,7 +108,14 @@
                 "Размеры корзины: 0,79 х 1,85 м",
                 "Привод: полный 4 х 4"
               ]
-            },
+            }
+          ]
+        },
+        {
+          "product": "scissor-lifts",
+          "title": "Ножничные подъемники",
+          "describtion": "В нашем парке ножничных подъемников представлены лидеры своего рынка, это компании <span class='text__orange'>JLG</span> и <span class='text__orange'>Haulotte</span>. Мы предлагаем Вам <span class='text__orange'>ножничные</span> подъемники.",
+          "items": [
             {
               "id": "jlg-500rts",
               "title": "Ножничный подъемник JLG 500RTS",
