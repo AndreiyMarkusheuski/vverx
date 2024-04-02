@@ -2,6 +2,11 @@
 @import 'src/styles/tools/to-rem.scss';
 @import 'src/styles/mixins/media.scss';
 
+@import './card/styles.scss';
+@import './list/styles.scss';
+@import './title/styles.scss';
+
+
 .catalog_section {
     &-headline {
         color: $c-text-additional;
