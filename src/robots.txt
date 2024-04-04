@@ -1,4 +1,9 @@
 User-agent: *
-Disallow:
-
+Disallow: /*?type=
+Disallow: /*?gad_source
+Disallow: /*?gtm_debug
+Disallow: /*?C=
+Disallow: /*?etext=
+Disallow: /*?hhtmFrom
+Disallow: /*?_escaped_fragment
 Sitemap: https://vverx.by/sitemap.xml
