@@ -1,22 +1,27 @@
 [
   {
     "name": "Коленчатые подъемники",
-    "id": "articulated-boom-lifts"
+    "id": "arenda-podemnika/samohodnyj-kolenchatyj",
+    "imgUrl": "articulated-boom-lifts"
   },
   {
     "name": "Экскаваторы-погрузчики",
-    "id": "backhoe_loaders"
+    "id": "arenda-ehkskavatora-pogruzchika",
+    "imgUrl": "backhoe_loaders"
   },
   {
     "name": "Ножничные подъемники",
-    "id": "scissor-lifts"
+    "id": "arenda-podemnika/samohodnyj-nozhnichnyj",
+    "imgUrl": "scissor-lifts"
   },
   {
     "name": "Виброплиты",
-    "id": "plits"
+    "id": "arenda-vibroplity",
+    "imgUrl": "plits"
   },
   {
     "name": "Телескопические погрузчики",
-    "id": "telehandlers"
+    "id": "arenda-teleskopicheskogo-pogruzchika",
+    "imgUrl": "telehandlers"
   }
 ]

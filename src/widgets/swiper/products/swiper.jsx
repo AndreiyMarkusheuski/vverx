@@ -8,10 +8,10 @@ import getImageURL from "/widgets/tools/get-image-url";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const renderSlides = ({ id, name }) => (
+const renderSlides = ({ id, name, imgUrl }) => (
   <SwiperSlide key={id} className="products-swiper-item">
-    <a href={`./catalog/rent/${id}/`}>
-      <img loading="lazy" className="products-swiper-img" src={getImageURL(id)} alt={id} />
+    <a href={`./catalog/${id}/`}>
+      <img loading="lazy" className="products-swiper-img" src={getImageURL(imgUrl)} alt={id} />
       <p className="products-swiper-text">{name}</p>
     </a>
   </SwiperSlide>
