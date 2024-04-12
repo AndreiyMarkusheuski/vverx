@@ -47,6 +47,29 @@
           ]
         },
         {
+          "product": "arenda-podemnika",
+          "title": "Аренда подъемника",
+          "describtion": "В нашем парке коленчатых подъемников представлены лидеры своего рынка, это компании <span class='text__orange'>JLG</span>.",
+          "items": [
+            {
+              "id": "samohodnyj-kolenchatyj",
+              "title": "Коленчатые подъемники",
+              "shortDescribtion": "",
+              "imgUrls": ["JLG_800AJ_1"],
+              "describtionList": [
+              ]
+            },
+            {
+              "id": "samohodnyj-nozhnichnyj",
+              "title": "Ножничные подъемники",
+              "shortDescribtion": "",
+              "imgUrls": ["JLG_500RTS_1"],
+              "describtionList": [
+              ]
+            }
+          ]
+        },
+        {
           "product": "samohodnyj-kolenchatyj",
           "title": "Коленчатые подъемники",
           "describtion": "В нашем парке коленчатых подъемников представлены лидеры своего рынка, это компании <span class='text__orange'>JLG</span>. Мы предлагаем Вам <span class='text__orange'>коленчатые</span> подъемники.",
