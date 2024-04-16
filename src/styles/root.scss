@@ -746,3 +746,47 @@ input[type=number] {
     font-size: 1.5rem;
 	    line-height: 41px;
 }
+.catalog .products .products-headline{
+    margin-bottom: 1rem;
+}
+.products-pickers.-equipment{
+    .breadcrumbs{
+        justify-content: center;
+    }
+}
+.breadcrumbs{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    gap: 0.4em 0;
+	li{
+		list-style: none;
+		display: flex;
+		align-items: center;		
+		a{
+		color: #202020;
+        font-size: 0.7rem;
+		font-weight: 500;
+		line-height: 120%;
+		text-transform: uppercase;
+		text-decoration: none;
+		outline: none;
+		transition: all 0.3s ease-in-out;
+		}
+		&:not(:last-child){
+			&:after{
+			    content: "";
+				width: 20px;
+				height: 0.7rem;
+				background-image: url(../assets/icons/black-arrow.svg);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				margin-right: 0.875rem;
+				margin-left: 0.875rem;
+				display: block;
+				rotate: 180deg;
+			}
+		}
+	}
+}
