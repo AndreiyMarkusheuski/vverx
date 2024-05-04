@@ -3,15 +3,28 @@ import { Pagination, Navigation, FreeMode } from "swiper/modules";
 
 import data from "/data/products.json";
 import Arrow from "/widgets/specific-components/arrow";
-import getImageURL from "/widgets/tools/get-image-url";
+
+import articulatedBoomLiftsIcon from '/public/assets/images/articulated-boom-lifts.png'
+import backhoeLoadersIcon from '/public/assets/images/backhoe_loaders.png'
+import scissorLiftsIcon from '/public/assets/images/scissor-lifts.png'
+import plitsIcon from '/public/assets/images/plits.png'
+import telehandlersIcon from '/public/assets/images/telehandlers.png'
 
 import "swiper/css";
 import "swiper/css/navigation";
 
+const iconObj = Object.freeze({
+  'articulated-boom-lifts': articulatedBoomLiftsIcon,
+  'backhoe_loaders': backhoeLoadersIcon,
+  'scissor-lifts': scissorLiftsIcon,
+  'plits': plitsIcon,
+  'telehandlers': telehandlersIcon
+})
+
 const renderSlides = ({ id, name, imgUrl }) => (
   <SwiperSlide key={id} className="products-swiper-item">
     <a href={`./catalog/${id}/`}>
-      <img loading="lazy" className="products-swiper-img" src={getImageURL(imgUrl)} alt={id} />
+      <img loading="lazy" className="products-swiper-img" src={iconObj[imgUrl]} alt={id} />
       <p className="products-swiper-text">{name}</p>
     </a>
   </SwiperSlide>
