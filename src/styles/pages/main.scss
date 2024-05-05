@@ -65,8 +65,10 @@
                 }
 
                 &-links {
-                    & .active .header-nav-link{
-                        font-size: 2vh;
+                    & .active {
+                        .header-nav-link, .header-nav-links-dropdown > a {
+                            font-size: 2vh;
+                        }
                     }
                     &::before {
                         bottom: 3vh;
@@ -74,7 +76,7 @@
                     }
                 }
 
-                &-link {
+                &-link, &-links-dropdown > a {
                     padding: 0;
                     margin: 1vh 0;
                     font-size: 1.3vh;

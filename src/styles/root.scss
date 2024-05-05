@@ -231,6 +231,10 @@ input[type=number] {
                 transition: all .8s ease;
                 top: 28vh;
             }
+
+            @include media(s, m, l) {
+                overflow: scroll;
+            }
         }
 
         &-logo {
@@ -251,6 +255,13 @@ input[type=number] {
             justify-content: center;
             position: relative;
             transition: all .8s ease;
+
+            &>.--desktop {
+                display: block;
+            }
+            &>.--mobile {
+                display: none;
+            }
 
             @include media(xxl, xl) {
                 align-items: flex-end;
@@ -334,8 +345,16 @@ input[type=number] {
             }
 
             @include media(s, m, l) {
+                &>.--desktop {
+                    display: none;
+                }
+                &>.--mobile {
+                    display: block;
+                }
+
                 align-items: center;
                 padding: toRem(15) 0;
+                margin: toRem(20) 0;
 
                 & li:last-child {
                     a::after {
@@ -343,6 +362,68 @@ input[type=number] {
                     }
                 }
             }
+
+            &-dropdown {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+
+                &-button, &-content > a{ 
+                    outline: none;
+                    text-decoration: none;
+                    color: $c-text;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    font-size: 2vh;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 26.4px;
+                    text-transform: uppercase;
+                    position: relative;
+                    padding: .5vh 0;
+                    transition: all .8s ease;
+
+                    &::after {
+                        content: '';
+                        background-image: url('/assets/icons/nav_border.svg');
+                        background-repeat: no-repeat;
+                        width: toRem(230);
+                        height: 1px;
+                        margin: toRem(18) 0;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $c-orange-text;
+                    }
+
+                    &.show, &.active {
+                        color: $c-orange-text;
+                    }
+                }
+
+
+                &-content {
+                    display: block;
+                    min-width: 160px;
+                    z-index: 1;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.8s ease-out;
+
+                    &>a {
+                        font-size: 1.5vh;
+                    }
+
+                      &.show {
+                        max-height: 400px; /* adjust this value to fit your content */
+                      }
+                  }
+
+              }
 
         }
 
@@ -401,6 +482,10 @@ input[type=number] {
 
             @include media(s, m, l) {
                 flex-direction: column;
+
+                &.show {
+                    color: $c-orange-text;
+                }
 
                 &::after {
                     content: '';
@@ -602,10 +687,10 @@ input[type=number] {
             @include groupedZIndex('section');
         }
 
-        &~.button_bg_action {
-            opacity: .5;
-            transform: translateX(-50%);
-        }
+        // &~.button_bg_action {
+        //     opacity: .5;
+        //     transform: translateX(-50%);
+        // }
     }
 }
 

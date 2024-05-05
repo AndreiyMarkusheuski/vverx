@@ -41,7 +41,7 @@ const handleSubmitForm = (e) => {
     form.reset();
   }
 };
-// @ts-ignore 
+
 submitBtn.addEventListener("click", handleSubmitForm);
 inputs.forEach((input) => {
   input.addEventListener("focus", addInputFocus);
