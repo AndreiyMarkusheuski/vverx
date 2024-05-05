@@ -220,36 +220,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <footer class="footer_contacts" itemscope itemtype="https://schema.org/Organization">
-        <div class="container">
-		<meta itemprop="name" content="Вверх Техно" />
+      <footer
+	itemscope itemtype="https://schema.org/Organization"
+      class="section contacts_footer smooth_scroll-section fp-auto-height-responsive">
+	  <meta itemprop="name" content="Вверх Техно" />
 	  <link itemprop="image" href="https://vverx.by/assets/icons/logo.svg" />
-          <h2 class="footer_contacts-headline">Свяжитесь с нами!</h2>
-        <p class="footer_contacts-text">Забронировать технику или узнать подробнее о ней можно по указанным номерам
-          телефона или написав нам письмо на электронную почту:</p>
-        <a href="tel:+375447262626" class="footer_contacts-link">
-          <p class="text" itemprop="telephone">+375 (44) 726-26-26</p>
-          <p class="text__orange">+375 (44) 726-26-26</p>
-        </a>
-        <a href="tel:+375173783806" class="footer_contacts-link">
-          <p class="text" itemprop="telephone">+375 (17) 378-38-06</p>
-          <p class="text__orange">+375 (17) 378-38-06</p>
-        </a>
-        <a href="mailto:info@vverx.by" class="footer_contacts-link">
-          <p class="text" itemprop="email">info@vverx.by</p>
-          <p class="text__orange">info@vverx.by</p>
-        </a>
-		<p class="footer_contacts-text footer_wrking_hrs">Пн-вс 9:00-18:00</p>
-        <div class="footer_contacts-social">
-          <a href='https://instagram.com/vverh_tehno' target="_blank"
-            class="footer_contacts-social-link -instagram"></a>
-          <a href='https://www.tiktok.com/@vverh_tehno' target="_blank" class="footer_contacts-social-link -tiktok"></a>
+      <div data-name="intro" class="contacts_footer-content">
+        <div class="container">
+          <h2 class="contacts_footer-headline">Свяжитесь с нами!</h2>
+          <p class="footer_contacts-text">Забронировать технику или узнать подробнее о ней можно по указанным номерам
+            телефона или написав нам письмо на электронную почту:</p>
+          <a href="tel:+375447262626" class="contacts_footer-link">
+            <p class="text" itemprop="telephone">+375 (44) 726-26-26</p>
+            <p class="text__orange">+375 (44) 726-26-26</p>
+          </a>
+          <a href="tel:+375173783806" class="contacts_footer-link">
+            <p class="text" itemprop="telephone">+375 (17) 378-38-06</p>
+            <p class="text__orange">+375 (17) 378-38-06</p>
+          </a>
+          <a href="mailto:info@vverx.by" class="contacts_footer-link">
+            <p class="text" itemprop="email">info@vverx.by</p>
+            <p class="text__orange">info@vverx.by</p>
+          </a>
+		  <p class="contacts_footer-text">Пн-вс 9:00-18:00</p>
+          <div class="contacts_footer-social">
+            <a href='https://instagram.com/vverh_tehno' target="_blank"
+              class="contacts_footer-social-link -instagram"></a>
+            <a href='https://www.tiktok.com/@vverh_tehno' target="_blank"
+              class="contacts_footer-social-link -tiktok"></a>
+          </div>
+          <p class="contacts_footer-text" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="postalCode">220015</span>, <span itemprop="addressLocality">Республика Беларусь, г.Минск</span>, <span itemprop="streetAddress">ул.Пономаренко, д.35А</span></p>
         </div>
-        <p class="footer_contacts-text" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="postalCode">220015</span>, <span itemprop="addressLocality">Республика Беларусь, г.Минск</span>, <span itemprop="streetAddress">ул.Пономаренко, д.35А</span></p>
+        <div class="container">
+          <div class="contacts_footer-wrapper">
+            <div class="contacts_footer-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55166.09298577327!2d27.467500381867662!3d53.88302667404664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdaac28a85ce9%3A0xd277836d88cc268a!2z0JLQstC10YDRhQ!5e0!3m2!1sru!2sby!4v1685293438499!5m2!1sru!2sby"
+                style="border:0; width:100%; height:100%" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contacts_footer-form form">
+              <div class="form-content">
+                <form id="contact_form" action="https://formspree.io/f/mdorvqay" method="POST">
+                  <h2 class="form-headline">Можете связаться с нами, задав свой вопрос в форме для обратной связи, и
+                    мы
+                    вам перезвоним!</h2>
+                  <div class="form-field">
+                    <input required name="name" type="text" class="form-field-input" placeholder="Ваше имя">
+                  </div>
+                  <div class="form-field">
+                    <input required name="phone" type="text" class="form-field-input" placeholder="Номер телефона">
+                  </div>
+                  <div class="form-field">
+                    <textarea name="comment" class="form-field-input" placeholder="Ваше сообщение"></textarea>
+                  </div>
+                  <input id="form_btn-submit" type="submit" class="form_button button" value="Отправить">
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
+      </div>
+    </footer>
   </main>
   
+  <script defer type="module" src="/scripts/form.js"></script>
   <script type="module" src="/scripts/menu.js"></script>
   <script type="module" src="/scripts/onload.js"></script>
   <script type="module" src="/scripts/swiper-product.js"></script>
