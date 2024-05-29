@@ -98,4 +98,14 @@
 	h3{
 	    font-size: 20px;
 	}
+	ol, ul{
+	    li{
+		list-style-position:inside
+		}
+	}
+	p{
+		+ ol, + ul{
+		margin-top:1em
+		}
+	}
 }

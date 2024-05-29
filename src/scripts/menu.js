@@ -42,5 +42,7 @@ bgButton.addEventListener("click", handleMenuClose);
 actionButtons.forEach((actionButton) =>
   actionButton.addEventListener("click", handleMenuClose)
 );
+if(dropdownButton){
+	dropdownButton.addEventListener("click", toggleMenuDropDown);
+}
 
-dropdownButton.addEventListener("click", toggleMenuDropDown);
