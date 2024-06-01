@@ -11,7 +11,7 @@
 
     &-item {
         width: 100%;
-        height: 40vh;
+        height: 33vh;
         padding: 6vh 4vh 4vh;
         box-sizing: border-box;
         position: relative;
@@ -20,6 +20,10 @@
         background-size: 100% 100%;
         max-height: 40vh;
         max-width: 30%;
+
+        @include media(xl) {
+            padding: 5vh 3vh 3vh;
+        }
 
         @include media(s, m, l) {
             width: 332px;
@@ -37,12 +41,12 @@
         width: 5vh;
         height: 5vh;
 
-        @include media(xl) {
-            top: -14px; // height/2 
-            left: calc(50% - 12.5px);
-            width: 25px;
-            height: 25px;
-        }
+        // @include media(xl) {
+        //     top: -14px; // height/2 
+        //     left: calc(50% - 12.5px);
+        //     width: 25px;
+        //     height: 25px;
+        // }
     }
 
     &-title {
@@ -66,7 +70,7 @@
     &-text {
         color: $c-text;
         text-align: center;
-        font-size: 2.3vh;
+        font-size: 2vh;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
