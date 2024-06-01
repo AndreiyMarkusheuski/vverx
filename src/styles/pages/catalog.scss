@@ -211,10 +211,10 @@
             }
 
             &.-equipment {
-                padding: toRem(40) 0;
+                padding: toRem(40) 0 0;
 
                 @include media(s, m, l) {
-                    padding: toRem(30) 0;
+                    padding: toRem(30) 0 0;
                 }
             }
         }
@@ -248,12 +248,28 @@
             font-style: normal;
             font-weight: 700;
             line-height: 180%;
+            margin-bottom: toRem(25);
 
             @include media(s, m) {
-                font-size: toRem(24);
+                font-size: toRem(30);
+                line-height: 130%;
             }
         }
 
+        &-description {
+            color: $c-text;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 3.5vh;
+            font-size: 2.5vh;
+            margin-bottom: toRem(25);
+
+            @include media(s, m, xl) {
+                line-height: 3vh;
+                margin-bottom: toRem(20);
+                font-size: 2vh;
+            }
+        }
         &-link {
             padding: 0;
             margin: 0;
@@ -287,8 +303,8 @@
                 transition: all .3s ease .05s;
 
                 @include media(s, m, xl) {
-                    font-size: toRem(20);
                     line-height: 3vh;
+                    font-size: 2vh;
                 }
             }
 
@@ -314,6 +330,7 @@
 
             @include media(s, m, xl) {
                 line-height: 3vh;
+                font-size: 2vh;
             }
         }
 
