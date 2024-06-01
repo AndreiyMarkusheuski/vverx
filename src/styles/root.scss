@@ -443,6 +443,11 @@ input[type=number] {
             padding: .5vh 0;
             transition: all .8s ease;
 
+
+            &.active {
+                color: $c-orange-text;
+            }
+
             &:hover {
                 cursor: pointer;
                 color: $c-orange-text;
@@ -827,7 +832,7 @@ input[type=number] {
         background-color: $c-orange;
     }
 }
-.catalog  .footer_wrking_hrs.footer_contacts-text{
+.catalog  .footer_wrking_hrs.contacts_footer-text{
     font-size: 1.5rem;
 	    line-height: 41px;
 }
