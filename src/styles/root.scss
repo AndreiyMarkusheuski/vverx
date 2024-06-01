@@ -443,6 +443,11 @@ input[type=number] {
             padding: .5vh 0;
             transition: all .8s ease;
 
+
+            &.active {
+                color: $c-orange-text;
+            }
+
             &:hover {
                 cursor: pointer;
                 color: $c-orange-text;
