@@ -6,14 +6,19 @@
 
 .contacts_page {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     // overflow: hidden;
-    background-color: $c-light-dark-background;
+    // background-color: $c-light-dark-background;
+    background-image: url('/assets/images/contacts.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .header {
-        background-color: $c-base-background;
+        background-color: transparent;
 
         &-top_line {
             padding: toRem(20) 0;
@@ -23,6 +28,12 @@
             &-logo {
                 max-width: toRem(100);
                 max-height: toRem(40);
+                background-image: url('/assets/icons/logo-light.svg') !important;
+
+
+                @include media(l, m, s) {
+                    background-image: url('/assets/icons/logo.svg') !important;
+                }
             }
 
             &-call_us {
@@ -44,18 +55,26 @@
     }
 
     .content {
-        background-image: url('/assets/images/contacts.png');
-        background-position: 20% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: toRem(100) 0 toRem(50);
+        padding: toRem(30) 0 0;
         height: fit-content;
+        min-height: 100vh;
         position: relative;
         box-sizing: border-box;
 
-        @include media(m, s, xs) {
-            background-size: 140% 100%;
-            background-attachment: fixed;
+        &-content {
+            height: fit-content;
+            position: relative;
+            box-sizing: border-box;
+            padding-top: 100px;
+            padding-bottom: 30px;
+
+            @include media(m) {
+                padding: 100px 0;
+            }
+
+            @include media(s, xs) {
+                padding: 60px 0;
+            }
         }
 
         &-headline {
@@ -66,82 +85,16 @@
             line-height: 180%;
 
             @include media(s, m) {
-                font-size: toRem(34);
-            }
-        }
-
-        &-contacts_list {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-
-            @include media(s, m) {
-                flex-direction: column;
-            }
-
-            &-item {
-                position: relative;
-                flex: 1 1 auto;
-                max-width: 30%;
-                min-width: 30%;
-                padding-top: 65px;
-
-                @include media(s, m) {
-                    max-width: 80%;
-                }
-
-                &-title {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    align-items: center;
-
-                &.-phone::before {
-                    content: '';
-                    background-image: url('/assets/icons/telephone.svg');
-                    background-size: contain;
-                    width: 40px;
-                    height: 40px;
-                    margin-right: 10px;
-                }
-
-                &.-mail::before {
-                    content: '';
-                    background-image: url('/assets/icons/mail.svg');
-                    background-size: contain;
-                    width: 40px;
-                    height: 40px;
-                    margin-right: 10px;
-                }
-
-                &.-address::before {
-                    content: '';
-                    background-image: url('/assets/icons/address.svg');
-                    background-size: contain;
-                    width: 40px;
-                    height: 40px;
-                    margin-right: 10px;
-                }
-
-                &.-social::before {
-                    content: '';
-                    background-image: url('/assets/icons/socials.svg');
-                    background-size: contain;
-                    width: 40px;
-                    height: 40px;
-                    margin-right: 10px;
-                }
-            }
+                font-size: toRem(24);
             }
         }
 
         &-link {
             padding: 0;
-            margin: 0;
             display: block;
             width: fit-content;
-            margin: toRem(10) 0 0;
-            color: $c-text;
+            margin: toRem(15) 0 0;
+            color: $c-secondary-text;
             font-size: 2.5vh;
             font-style: normal;
             font-weight: 400;
@@ -151,7 +104,7 @@
             height: 3vh;
             overflow: hidden;
 
-            @include media(s, m) {
+            @include media(s, m, xl) {
                 line-height: 3vh;
                 height: 3vh;
             }
@@ -167,9 +120,9 @@
                 transform: translateY(0);
                 transition: all .3s ease .05s;
 
-                @include media(s, m) {
-                    font-size: 2.5vh;
-                    line-height: 3.4vh;
+                @include media(s, m, xl) {
+                    font-size: toRem(20);
+                    line-height: 3vh;
                 }
             }
 
@@ -179,7 +132,7 @@
                 .text__orange {
                     transform: translateY(-3vh);
 
-                    @include media(s, m) {
+                    @include media(s, m, xl) {
                         transform: translateY(-3vh);
                     }
                 }
@@ -187,11 +140,12 @@
         }
 
         &-text {
-            color: $c-text;
+            color: $c-secondary-text;
             font-style: normal;
             font-weight: 400;
             line-height: 3vh;
             font-size: 2.5vh;
+            margin-top: toRem(15);
 
             @include media(s, m, xl) {
                 line-height: 3vh;
@@ -199,7 +153,7 @@
         }
 
         &-social {
-            max-height: toRem(40);
+            max-height: 30vh;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -213,17 +167,17 @@
                 overflow: hidden;
                 box-sizing: border-box;
 
-                @include media(s, m) {
-                    width: 35px;
-                    height: 35px;
+                @include media(s, m, xl) {
+                    width: 28px;
+                    height: 28px;
                 }
 
                 &:hover {
                     &::after {
                         transform: translateY(-48px) !important;
 
-                        @include media(s, m) {
-                            transform: translateY(-35px) !important;
+                        @include media(s, m, xl) {
+                            transform: translateY(-28px) !important;
                         }
                     }
 
@@ -246,14 +200,14 @@
                     background-size: contain;
                     transition: all .3s ease .05s;
 
-                    @include media(s, m) {
-                        width: 28px;
-                        height: 28px;
+                    @include media(s, m, xl) {
+                        width: 23px;
+                        height: 23px;
                     }
                 }
 
                 &.-instagram::after {
-                    background-image: url('/assets/icons/instagram-black.svg');
+                    background-image: url('/assets/icons/instagram.svg');
                     transform: translateY(0);
                 }
 
@@ -261,13 +215,13 @@
                     background-image: url('/assets/icons/instagram-orange.svg');
                     transform: translateY(48px);
 
-                    @include media(s, m) {
-                        transform: translateY(35px);
+                    @include media(s, m, xl) {
+                        transform: translateY(28px);
                     }
                 }
 
                 &.-tiktok::after {
-                    background-image: url('/assets/icons/tiktok-black.svg');
+                    background-image: url('/assets/icons/tiktok.svg');
                     transform: translateY(0);
                 }
 
@@ -275,8 +229,8 @@
                     background-image: url('/assets/icons/tiktok-orange.svg');
                     transform: translateY(48px);
 
-                    @include media(s, m) {
-                        transform: translateY(35px);
+                    @include media(s, m, xl) {
+                        transform: translateY(28px);
                     }
                 }
             }
@@ -310,8 +264,7 @@
         &-form {
             flex: 6;
             box-sizing: border-box;
-            border: 2.684px solid rgba(0, 0, 0, 0.70);
-
+            border: 2.684px solid #FFF;
             padding: toRem(22) toRem(15);
 
             @include media(s, m) {
@@ -322,7 +275,7 @@
 
             .form {
                 &-headline {
-                    color: $c-text;
+                    color: $c-secondary-text;
                     font-style: normal;
                     font-weight: 400;
                     font-size: toRem(16);
@@ -352,7 +305,8 @@
                         border: none;
 
                         border-radius: 3.691px;
-                        border: 2px solid rgba(0, 0, 0, 0.70);
+                        border: 2px solid #FFF;
+                        background: rgba(0, 0, 0, 0.70);
                         width: -webkit-fill-available;
                         width: -moz-available;
                         width: fill-available;
@@ -363,7 +317,7 @@
                     &-input,
                     &-input::placeholder {
                         font-family: $f-main;
-                        color: $c-text;
+                        color: rgba(255, 255, 255, 0.60);
                         font-size: toRem(14);
                         font-style: normal;
                         font-weight: 400;
