@@ -369,8 +369,22 @@ input[type=number] {
                 flex-direction: column;
                 align-items: center;
 
+                &-button {
+
+                    &::before {
+                        content: '+';
+                        position: absolute;
+                        line-height: 20px;
+                        padding: .5vh 0;
+                        font-size: 2vh;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+
 
                 &-button, &-content > a{ 
+                    background-color: transparent;
                     outline: none;
                     text-decoration: none;
                     color: $c-text;
@@ -405,7 +419,6 @@ input[type=number] {
                     }
                 }
 
-
                 &-content {
                     display: block;
                     min-width: 160px;
@@ -422,7 +435,6 @@ input[type=number] {
                         max-height: 400px; /* adjust this value to fit your content */
                       }
                   }
-
               }
 
         }
