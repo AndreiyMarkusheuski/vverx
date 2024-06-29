@@ -1,0 +1,80 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/mixins/media.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/fonts/index.scss';
+@import 'src/styles/mixins/link.scss';
+
+.not_found {
+    overflow: hidden;
+    background-color: $c-base-background;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+
+    .header {
+        background-color: $c-base-background;
+
+        &-top_line {
+            padding: toRem(20) 0;
+            max-height: 110px;
+            box-sizing: border-box;
+            justify-content: center;
+
+            &-logo {
+                max-width: toRem(100);
+                max-height: toRem(40);
+            }
+
+            &-call_us {
+                padding: toRem(15) toRem(20);
+                font-size: toRem(16);
+                &::before { 
+                    max-width: 18px;
+                    max-height: 18px;
+                }
+            }
+        }
+
+        &-nav {
+            @include media(xxl, xl) {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    &-title {
+        text-transform: uppercase;
+        margin: toRem(15) 0;
+
+        @include media(s, m) {
+            font-size: toRem(20);
+        }
+    }
+
+    &-text {
+        // text-transform: uppercase;
+        text-align: center;
+
+        @include media(s, m) {
+            font-size: toRem(14);
+        }
+    }
+
+    &-image {
+        max-width: 40%;
+        max-height: 50vh;
+
+        @include media(s, m) {
+            max-width: 100%;
+        }
+    }
+}
