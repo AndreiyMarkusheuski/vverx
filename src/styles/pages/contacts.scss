@@ -332,7 +332,7 @@
                     &:after {
                         content: '';
                         position: absolute;
-                        bottom: -1px;
+                        bottom: 0px;
                         width: 0%;
                         height: 2px;
                         background-color: $c-orange-text;
@@ -360,7 +360,7 @@
                     &.warning::before,
                     &.focus:after,
                     &.warning::after {
-                        width: 50%;
+                        width: 49.3%;
                     }
 
                     &.pass {

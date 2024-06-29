@@ -3,7 +3,8 @@
 @mixin button() {
   display: block;
   width: fit-content;
-  padding: 2.2vh 3vh;
+  padding: toRem(15) toRem(25);
+  box-sizing: border-box;
 
   background-color: $c-button-background;
 
