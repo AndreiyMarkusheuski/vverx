@@ -206,8 +206,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <li class='describe-list-item'>Расход топлива – 0,9л/час</li>
                   <li class='describe-list-item'>Реверсивная</li>
                 </ul>
-              </div><a href="tel:+375 (44) 726-26-26" class="button --phone detailed_card-button"><span>+375 (44)
-                  726-26-26</span></a>
+              </div>
+                <div class="detailed_card-buttons">
+                  <a href="tel:+375 (44) 726-26-26" class="button --phone detailed_card-button"><span>+375 (44)
+                      726-26-26</span></a>
+                  <button id="openModal" class="button detailed_card-button">Заказать онлайн</button>
+                </div>
               <p class="detailed_card-short_describe">Или напишите нам на почту <a
                   href="mailto:info@vverx.by">info@vverx.by</a></p>
             </div>
@@ -270,7 +274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <div class="form-field">
                     <textarea name="comment" class="form-field-input" placeholder="Ваше сообщение"></textarea>
                   </div>
-                  <input id="form_btn-submit" type="submit" class="form_button button" value="Отправить">
+                  <button id="form_btn-submit" class="form_button button">Отправить</button>
                 </form>
               </div>
             </div>
@@ -278,8 +282,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </footer>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <button id="closeModal" class="modal-close_btn"><span></span><span></span></button>
+        <div class="modal-form">
+          <div class="form-content">
+            <form id="modal_form" action="https://formspree.io/f/xovaqanq" method="POST">
+              <h2 class="modal-form-headline">Можете задать свой вопрос или заказать онлайн, и
+                мы
+                вам перезвоним!</h2>
+              <div class="modal-form-field">
+                <input required name="Имя" type="text" class="modal-form-field-input" placeholder="Введите ваше имя">
+              </div>
+              <div class="modal-form-field">
+                <input required name="Телефон" type="text" class="modal-form-field-input"
+                  placeholder="Введите ваш номер телефона">
+              </div>
+              <div class="modal-form-field -hide">
+                <input name="Продукт" value="AMMANN APR 22/40" type="text" class="modal-form-field-input">
+              </div>
+              <div class="modal-form-field">
+                <textarea name="Вопрос" class="modal-form-field-input" placeholder="Введите ваш вопрос"></textarea>
+              </div>
+              <button id="modal-form_btn-submit" class="modal-form_button button">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+
   <script defer type="module" src="/scripts/form.js"></script>
+  <script defer type="module" src="/scripts/modal-form.js"></script>
+  <script type="module" src="/scripts/modal.js"></script>
   <script type="module" src="/scripts/menu.js"></script>
   <script type="module" src="/scripts/onload.js"></script>
   <script type="module" src="/scripts/swiper-product.js"></script>

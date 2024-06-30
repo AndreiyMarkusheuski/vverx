@@ -1,0 +1,239 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/mixins/media.scss';
+@import 'src/styles/tools/to-rem.scss';
+@import 'src/styles/fonts/index.scss';
+@import 'src/styles/mixins/link.scss';
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: toRem(35) toRem(25);
+    border: 1px solid #888;
+    width: 80%;
+    position: relative;
+    max-width: toRem(450);
+
+
+    @include media(s) {
+      padding: toRem(25);
+      width: 100%;
+      margin: 0 15px;
+    }
+  }
+
+  &-close_btn {
+    position: absolute;
+    top: toRem(5);
+    right: toRem(5);
+    width: 20px;
+    height: 20px;
+    @include groupedZIndex('overlay');
+    outline: none;
+    background: transparent;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    & span {
+        background-color: $c-dark-background;
+        position: absolute;
+        border-radius: 2px;
+        transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+        width: 100%;
+        height: 3px;
+        transition-duration: .5s;
+
+        &:first-child {
+            top: 0;
+            left: 0
+        }
+
+        &:nth-child(2) {
+            top: 16px;
+            left: 0
+        }
+    }
+
+    & span:first-child {
+        transform: rotate(45deg);
+        top: 8px;
+        background-color: $c-orange;
+    }
+
+    & span:nth-child(2) {
+        transform: rotate(-45deg);
+        top: 8px;
+        background-color: $c-orange;
+    }
+  }
+
+  &-form {
+    flex: 6;
+    box-sizing: border-box;
+    border: 2.684px solid rgba(0, 0, 0, 0.70);
+
+    padding: toRem(35);
+
+    @include media(s, m) {
+      flex: auto;
+      padding: toRem(20);
+    }
+
+    @include media(s) {
+      padding: toRem(15);
+    }
+
+    .modal-form {
+      &-headline {
+        color: $c-text;
+        font-style: normal;
+        font-weight: 400;
+        font-size: toRem(16);
+        line-height: 22px;
+        margin-bottom: toRem(20);
+
+        @include media(s, m) {
+          font-size: toRem(20);
+          line-height: 32px;
+          margin-bottom: toRem(30);
+        }
+
+        @include media(s) {
+          font-size: toRem(18);
+          line-height: 26px;
+          margin-bottom: toRem(20);
+        }
+      }
+
+      &-field {
+        position: relative;
+        max-width: toRem(380);
+        margin-top: toRem(12);
+
+        @include media(s, m) {
+          max-width: 100%;
+        }
+
+        &.-hide {
+          display: none;
+        }
+
+        &-input {
+          background: none;
+          text-decoration: none;
+          outline: none;
+          border: none;
+
+          border-radius: 3.691px;
+          border: 2px solid rgba(0, 0, 0, 0.70);
+          width: -webkit-fill-available;
+          width: -moz-available;
+          width: fill-available;
+          padding: toRem(12);
+          resize: none;
+        }
+
+        &-input,
+        &-input::placeholder {
+          font-family: $f-main;
+          color: $c-text;
+          font-size: toRem(14);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 14px;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0px;
+          width: 0%;
+          height: 2px;
+          background-color: $c-orange-text;
+          transition: .4s;
+          border-radius: 3.691px;
+        }
+
+        &.warning {
+
+          &:before,
+          &:after {
+            content: '';
+            background-color: $c-orange-text;
+          }
+        }
+
+        &:before {
+          right: 50%;
+        }
+
+        &:after {
+          left: 50%;
+        }
+
+        &.focus:before,
+        &.warning::before,
+        &.focus:after,
+        &.warning::after {
+          width: 49.3%;
+        }
+
+        &.pass {
+          margin-bottom: 4px;
+        }
+
+      }
+
+      &_button {
+        width: 100%;
+        max-width: toRem(186);
+        margin-top: toRem(18);
+        font-size: 1.7vh;
+        padding: 1.5vh 2vh;
+
+
+        @include media(s) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
